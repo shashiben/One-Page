@@ -34,7 +34,6 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
         children: [
           const HeaderSection(
             titles: [],
-            
           ),
           Expanded(
             child: SingleChildScrollView(

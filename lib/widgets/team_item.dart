@@ -43,7 +43,8 @@ class TeamItem extends StatelessWidget {
                   right: 0,
                   child: AnimatedOpacity(
                     duration: const Duration(milliseconds: 400),
-                    opacity: isHovered ? 1 : 0,
+                    opacity:
+                        (isHovered ? 1 : 0) ,
                     child: Container(
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       decoration:

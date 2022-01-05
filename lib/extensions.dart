@@ -50,6 +50,7 @@ extension ContextExtension on BuildContext {
   bool get isSm => size.width > 1200 && size.width <= 768;
   bool get isXs => size.width > 1200 && size.width <= 576;
   bool get alwaysUse24HourFormat => MediaQuery.of(this).alwaysUse24HourFormat;
+
 }
 
 extension WidgetExtensions on Widget {
