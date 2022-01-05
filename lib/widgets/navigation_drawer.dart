@@ -56,7 +56,40 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                   const Icon(
                     Icons.menu,
                     color: textPrimaryColor,
-                  ).onTap(() {}),
+                  ).onTap(() {
+                    showDialog(
+                        barrierColor: primaryColor.withOpacity(0.9),
+                        context: context,
+                        builder: (_) => Material(
+                              color: Colors.transparent,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Align(
+                                    alignment: Alignment.topRight,
+                                    child: const Icon(Icons.close).onTap(() {
+                                      Navigator.pop(context);
+                                    }),
+                                  ),
+                                  Expanded(
+                                      child: SizedBox(
+                                    width: context.width,
+                                    child: Card(
+                                      elevation: 2,
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: widget.childrens,
+                                      ).padding(const EdgeInsets.symmetric(
+                                          vertical: 20)),
+                                    ).padding(const EdgeInsets.symmetric(
+                                        vertical: 20)),
+                                  ))
+                                ],
+                              ).padding(const EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 25)),
+                            ));
+                  }),
                 ],
         )),
       ]),

@@ -41,6 +41,9 @@ class HeaderSection extends StatelessWidget {
                 if (keyList[e] != null && keyList[e]?.currentContext != null) {
                   Scrollable.ensureVisible(keyList[e]!.currentContext!,
                       duration: const Duration(milliseconds: 300));
+                  if (context.width <= 992) {
+                    Navigator.pop(context);
+                  }
                 } else {}
               });
             })),
