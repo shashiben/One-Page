@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
 
 class OrderedList extends StatelessWidget {
   final List<Widget> children;
@@ -19,7 +20,7 @@ class OrderedList extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            leadingIcon ?? const Icon(Icons.arrow_circle_right),
+            leadingIcon ?? const Icon(LineIcons.arrowCircleRight),
             SizedBox(
               width: spacing,
             ),
