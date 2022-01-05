@@ -1,4 +1,3 @@
-import 'package:bootstrap/Ordered_List.dart';
 import 'package:bootstrap/app/text_styles.dart';
 import 'package:bootstrap/bootstrap_button.dart';
 import 'package:bootstrap/bootstrap_col.dart';
@@ -9,6 +8,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../bootstrap_row.dart';
 import 'package:bootstrap/extensions.dart';
+
+import '../ordered_list.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({Key? key}) : super(key: key);
