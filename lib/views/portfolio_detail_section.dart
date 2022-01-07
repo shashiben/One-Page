@@ -71,7 +71,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                                         color: primaryColor),
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {
-                                        GoRouter.of(context).pop(context);
+                                        GoRouter.of(context).pop();
                                       },
                                     children: const [
                                       TextSpan(

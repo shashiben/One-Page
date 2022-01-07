@@ -32,25 +32,27 @@ class PriceSection extends StatelessWidget {
             textAlign: TextAlign.center,
           ).padding(const EdgeInsets.only(bottom: 30)),
         ),
-        SizedBox(
-          width: context.width * 0.8,
-          child: BootstrapRow(
-              horizontalSpacing: 10,
-              verticalSpacing: 30,
-              verticalAlignment: MainAxisAlignment.start,
-              children: [
-                ...priceList
-                    .map((PricingModel e) => BootstrapCol(
-                          sizes: 'col-6 col-md-6 col-lg-4 col-xs-12',
-                          child: PricingItem(
-                            index: priceList.indexOf(e),
-                            pricingModel: e,
-                            isActive: priceList.indexOf(e) == 1,
-                          ),
-                        ))
-                    .toList()
-              ]),
-        ),
+        LayoutBuilder(builder: (context, constraints) {
+          return SizedBox(
+            width: constraints.maxWidth * 0.8,
+            child: BootstrapRow(
+                horizontalSpacing: 10,
+                verticalSpacing: 30,
+                verticalAlignment: MainAxisAlignment.start,
+                children: [
+                  ...priceList
+                      .map((PricingModel e) => BootstrapCol(
+                            sizes: 'col-6 col-md-6 col-lg-4 col-xs-12',
+                            child: PricingItem(
+                              index: priceList.indexOf(e),
+                              pricingModel: e,
+                              isActive: priceList.indexOf(e) == 1,
+                            ),
+                          ))
+                      .toList()
+                ]),
+          );
+        }),
       ]),
     );
   }

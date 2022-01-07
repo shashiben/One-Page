@@ -1,6 +1,8 @@
-import 'package:flutter/foundation.dart';
+import 'package:bootstrap/app/text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:universal_html/html.dart' as html;
+import 'package:universal_platform/universal_platform.dart';
+import 'package:webviewx/webviewx.dart';
+import 'package:bootstrap/extensions.dart';
 
 class VideoPlayer extends StatelessWidget {
   final String? url;
@@ -8,21 +10,33 @@ class VideoPlayer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return _videoPlayer(context);
   }
 
-  void playVideo(String atUrl) {
-    if (kIsWeb) {
-      final html.Element? v = html.window.document.getElementById('videoPlayer');
-      if (v != null) {
-        v.setInnerHtml('<source type="video/mp4" src="$atUrl">',
-            validator: html.NodeValidatorBuilder()
-              ..allowElement('source', attributes: ['src', 'type']));
-        final html.Element? a = html.window.document.getElementById('triggerVideoPlayer');
-        if (a != null) {
-          a.dispatchEvent(html.MouseEvent('click'));
-        }
-      }
-    } else {}
+  Widget _videoPlayer(BuildContext context) {
+    bool isVideoAvailable = (UniversalPlatform.isAndroid ||
+        UniversalPlatform.isWeb ||
+        UniversalPlatform.isIOS);
+    return isVideoAvailable
+        ? _webVideo(context).padding(const EdgeInsets.only(top: 20))
+        : Center(
+            child: Text(
+              "Video player is not supported\nfor this platform",
+              style: SectionTitle.h2(context).copyWith(color: Colors.white),
+              textAlign: TextAlign.center,
+            ),
+          );
+  }
+
+  Widget _webVideo(BuildContext context) {
+    String html = '''
+  <iframe width="${context.width - 80}" height="${context.height - 80}" src="https://www.youtube.com/embed/4pGqm9l3wd8" title="Will of D" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    ''';
+    return WebViewX(
+      initialSourceType: SourceType.html,
+      width: context.width,
+      height: context.height,
+      initialContent: html,
+    );
   }
 }

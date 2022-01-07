@@ -1,3 +1,4 @@
+import 'package:bootstrap/widgets/video_player.dart';
 import 'package:flutter/material.dart';
 
 import '../app/colors.dart';
@@ -60,7 +61,12 @@ class VideoSection extends StatelessWidget {
                                         color: Colors.grey,
                                       ).onTap(() {
                                         Navigator.pop(context);
-                                      }))
+                                      })),
+                                  Positioned.fill(
+                                      child: Center(
+                                    child: VideoPlayer()
+                                        .padding(const EdgeInsets.all(20)),
+                                  ))
                                 ]),
                               ),
                             ));
@@ -105,7 +111,8 @@ class VideoSection extends StatelessWidget {
                                   color: Color(0xFF444444)),
                             ).padding(const EdgeInsets.only(top: 10)))
                         .toList()),
-                const Text('Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+                const Text(
+                        'Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                         style: TextStyle(
                             fontFamily: Fonts.openSans,
                             fontSize: 15,

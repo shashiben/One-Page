@@ -131,100 +131,98 @@ class FooterSection extends StatelessWidget {
           child: Container(
             color: const Color(0xFFF8FBFE),
             width: context.width,
-            child: BootstrapRow(
-                verticalSpacing: 15,
-                children: [
-                  BootstrapCol(
-                      sizes: 'col-12 col-md-6',
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text.rich(TextSpan(
-                              style: TextStyle(
-                                fontFamily: Fonts.openSans,
+            child: BootstrapRow(verticalSpacing: 15, children: [
+              BootstrapCol(
+                  sizes: 'col-12 col-md-6',
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text.rich(TextSpan(
+                          style: TextStyle(
+                            fontFamily: Fonts.openSans,
+                          ),
+                          children: [
+                            TextSpan(text: '© Copyright '),
+                            TextSpan(
+                                text: 'OnePage. ',
+                                style: TextStyle(
+                                    fontFamily: Fonts.openSans,
+                                    fontWeight: FontWeight.bold)),
+                            TextSpan(text: 'All Rights Reserved')
+                          ])).padding(const EdgeInsets.only(bottom: 10)),
+                      Text.rich(TextSpan(
+                          style: const TextStyle(
+                            fontFamily: Fonts.openSans,
+                          ),
+                          children: [
+                            const TextSpan(text: 'Coded by '),
+                            TextSpan(
+                                text: 'Shashi Kumar. ',
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {},
+                                style: const TextStyle(
+                                    fontFamily: Fonts.openSans,
+                                    color: primaryColor,
+                                    fontWeight: FontWeight.bold)),
+                          ])),
+                    ],
+                  )),
+              BootstrapCol(
+                  sizes: 'col-12 col-lg-6 col-md-6',
+                  child: Row(
+                    mainAxisAlignment: context.isMobile
+                        ? MainAxisAlignment.center
+                        : MainAxisAlignment.end,
+                    children: [
+                      BootstrapButton(
+                          margin: const EdgeInsets.only(right: 10),
+                          padding: const EdgeInsets.all(10),
+                          child: (bool isHovered) => const Icon(
+                                Icons.facebook_outlined,
+                                color: Colors.white,
+                                size: 20,
                               ),
-                              children: [
-                                TextSpan(text: '© Copyright '),
-                                TextSpan(
-                                    text: 'OnePage. ',
-                                    style: TextStyle(
-                                        fontFamily: Fonts.openSans,
-                                        fontWeight: FontWeight.bold)),
-                                TextSpan(text: 'All Rights Reserved')
-                              ])).padding(const EdgeInsets.only(bottom: 10)),
-                          Text.rich(TextSpan(
-                              style: const TextStyle(
-                                fontFamily: Fonts.openSans,
+                          onPressed: () {}),
+                      BootstrapButton(
+                          margin: const EdgeInsets.only(right: 10),
+                          padding: const EdgeInsets.all(10),
+                          child: (bool isHovered) => const Icon(
+                                LineIcons.instagram,
+                                color: Colors.white,
+                                size: 20,
                               ),
-                              children: [
-                                const TextSpan(text: 'Coded by '),
-                                TextSpan(
-                                    text: 'Shashi Kumar. ',
-                                    recognizer: TapGestureRecognizer()
-                                      ..onTap = () {},
-                                    style: const TextStyle(
-                                        fontFamily: Fonts.openSans,
-                                        color: primaryColor,
-                                        fontWeight: FontWeight.bold)),
-                              ])),
-                        ],
-                      )),
-                  BootstrapCol(
-                      sizes: 'col-12 col-lg-6 col-md-6',
-                      child: Row(
-                        mainAxisAlignment: context.isMobile
-                            ? MainAxisAlignment.spaceAround
-                            : MainAxisAlignment.end,
-                        children: [
-                          BootstrapButton(
-                              margin: const EdgeInsets.only(right: 10),
-                              padding: const EdgeInsets.all(10),
-                              child: (bool isHovered) => const Icon(
-                                    Icons.facebook_outlined,
-                                    color: Colors.white,
-                                    size: 20,
-                                  ),
-                              onPressed: () {}),
-                          BootstrapButton(
-                              margin: const EdgeInsets.only(right: 10),
-                              padding: const EdgeInsets.all(10),
-                              child: (bool isHovered) => const Icon(
-                                    LineIcons.instagram,
-                                    color: Colors.white,
-                                    size: 20,
-                                  ),
-                              onPressed: () {}),
-                          BootstrapButton(
-                              margin: const EdgeInsets.only(right: 10),
-                              padding: const EdgeInsets.all(10),
-                              child: (bool isHovered) => const Icon(
-                                    LineIcons.linkedinIn,
-                                    color: Colors.white,
-                                    size: 20,
-                                  ),
-                              onPressed: () {}),
-                          BootstrapButton(
-                              margin: const EdgeInsets.only(right: 10),
-                              padding: const EdgeInsets.all(10),
-                              child: (bool isHovered) => const Icon(
-                                    LineIcons.github,
-                                    color: Colors.white,
-                                    size: 20,
-                                  ),
-                              onPressed: () {}),
-                          BootstrapButton(
-                              margin: const EdgeInsets.only(right: 10),
-                              padding: const EdgeInsets.all(10),
-                              child: (bool isHovered) => const Icon(
-                                    LineIcons.facebook,
-                                    color: Colors.white,
-                                    size: 20,
-                                  ),
-                              onPressed: () {}),
-                        ],
-                      ))
-                ]),
+                          onPressed: () {}),
+                      BootstrapButton(
+                          margin: const EdgeInsets.only(right: 10),
+                          padding: const EdgeInsets.all(10),
+                          child: (bool isHovered) => const Icon(
+                                LineIcons.linkedinIn,
+                                color: Colors.white,
+                                size: 20,
+                              ),
+                          onPressed: () {}),
+                      BootstrapButton(
+                          margin: const EdgeInsets.only(right: 10),
+                          padding: const EdgeInsets.all(10),
+                          child: (bool isHovered) => const Icon(
+                                LineIcons.github,
+                                color: Colors.white,
+                                size: 20,
+                              ),
+                          onPressed: () {}),
+                      BootstrapButton(
+                          margin: const EdgeInsets.only(right: 10),
+                          padding: const EdgeInsets.all(10),
+                          child: (bool isHovered) => const Icon(
+                                LineIcons.facebook,
+                                color: Colors.white,
+                                size: 20,
+                              ),
+                          onPressed: () {}),
+                    ],
+                  ))
+            ]),
           ),
         ),
       ],

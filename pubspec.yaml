@@ -32,11 +32,12 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^1.0.0
-  google_fonts: ^2.2.0
   line_icons: ^2.0.1
   simple_animations: ^4.0.1
   universal_html: ^2.0.8
   go_router:
+  universal_platform:
+  webviewx:
 
 dev_dependencies:
   flutter_lints: ^1.0.0

@@ -13,6 +13,7 @@ class BootstrapContainer extends StatelessWidget {
     required this.children,
     this.fluid = false,
     this.decoration,
+    this.physics,
     this.scrollController,
     this.padding = const EdgeInsets.all(0),
   }) : super(key: key);
@@ -43,7 +44,15 @@ class BootstrapContainer extends StatelessWidget {
   ///
   final Alignment alignment;
 
+  ///
+  /// ScrollController
+  ///
   final ScrollController? scrollController;
+
+  ///
+  /// Scroll Physics
+  ///
+  final ScrollPhysics? physics;
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +65,7 @@ class BootstrapContainer extends StatelessWidget {
       alignment: alignment,
       child: SingleChildScrollView(
         primary: false,
+        physics: physics ?? const AlwaysScrollableScrollPhysics(),
         controller: scrollController,
         padding: padding,
         child: Column(

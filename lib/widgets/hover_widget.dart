@@ -1,5 +1,5 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/gestures/events.dart';
 
 class HoverWidget extends StatefulWidget {
   final Widget Function(BuildContext context, bool isHovered) child;
