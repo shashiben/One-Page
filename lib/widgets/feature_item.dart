@@ -1,10 +1,10 @@
-import 'package:bootstrap/app/colors.dart';
-import 'package:bootstrap/models/feature_model.dart';
-import 'package:bootstrap/widgets/hover_widget.dart';
 import 'package:flutter/material.dart';
 
+import '../app/colors.dart';
 import '../app/text_styles.dart';
-import 'package:bootstrap/extensions.dart';
+import '../extensions.dart';
+import '../models/feature_model.dart';
+import 'hover_widget.dart';
 
 class FeatureItem extends StatefulWidget {
   final FeatureModel feature;
@@ -35,7 +35,7 @@ class _FeatureItemState extends State<FeatureItem>
 
   @override
   Widget build(BuildContext context) {
-    return HoverWidget(child: ((context, isHovered) {
+    return HoverWidget(child: (BuildContext context, bool isHovered) {
       if (isHovered) {
         _controller.forward();
       } else {
@@ -77,6 +77,6 @@ class _FeatureItemState extends State<FeatureItem>
           ]),
         ),
       );
-    }));
+    });
   }
 }

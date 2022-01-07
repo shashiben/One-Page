@@ -1,6 +1,7 @@
-import 'package:bootstrap/widgets/hover_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:bootstrap/extensions.dart';
+
+import '../extensions.dart';
+import 'hover_widget.dart';
 
 class CompanyLogoItem extends StatefulWidget {
   final String image;
@@ -22,12 +23,12 @@ class _CompanyLogoItemState extends State<CompanyLogoItem>
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      double width = constraints.maxWidth * 0.45;
+    return LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
+      final double width = constraints.maxWidth * 0.45;
       return Center(
         child: SizedBox(
           width: width,
-          child: HoverWidget(child: (context, isHovered) {
+          child: HoverWidget(child: (BuildContext context, bool isHovered) {
             if (isHovered) {
               scaleController.forward();
             } else {

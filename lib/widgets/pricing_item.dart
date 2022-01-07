@@ -1,11 +1,11 @@
-import 'package:bootstrap/app/colors.dart';
-import 'package:bootstrap/models/pricing_model.dart';
-import 'package:bootstrap/widgets/hover_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
+import '../app/colors.dart';
+import '../app/fonts.dart';
 import '../bootstrap_button.dart';
-import 'package:bootstrap/extensions.dart';
+import '../extensions.dart';
+import '../models/pricing_model.dart';
+import 'hover_widget.dart';
 
 class PricingItem extends StatelessWidget {
   final PricingModel pricingModel;
@@ -20,12 +20,12 @@ class PricingItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final backgroundColor =
+    final Color backgroundColor =
         isActive ? context.themeData.primaryColor : Colors.white;
-    final borderColor =
+    final Color borderColor =
         isActive ? Colors.white : context.themeData.primaryColor;
     return HoverWidget(
-      child: (context, isItemHovered) => Container(
+      child: (BuildContext context, bool isItemHovered) => Container(
         alignment: Alignment.center,
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
@@ -48,28 +48,32 @@ class PricingItem extends StatelessWidget {
             children: [
               Text(
                 pricingModel.name,
-                style: GoogleFonts.raleway(
+                style: TextStyle(
+                    fontFamily: Fonts.raleway,
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
                     color: isActive ? Colors.white : textPrimaryColor),
               ).padding(const EdgeInsets.all(15).copyWith(top: 25)),
               Text.rich(TextSpan(
-                  text: "\$",
-                  style: GoogleFonts.openSans(
+                  text: '\$',
+                  style: TextStyle(
+                      fontFamily: Fonts.openSans,
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
                       color: isActive ? Colors.white : textPrimaryColor),
                   children: [
                     TextSpan(
-                      text: "${pricingModel.price}",
-                      style: GoogleFonts.openSans(
+                      text: '${pricingModel.price}',
+                      style: TextStyle(
+                          fontFamily: Fonts.openSans,
                           fontSize: 42,
                           fontWeight: FontWeight.w600,
                           color: isActive ? Colors.white : textPrimaryColor),
                     ),
                     TextSpan(
-                      text: "/month",
-                      style: GoogleFonts.raleway(
+                      text: '/month',
+                      style: TextStyle(
+                          fontFamily: Fonts.raleway,
                           fontSize: 16,
                           fontWeight: FontWeight.w300,
                           color: isActive
@@ -77,15 +81,17 @@ class PricingItem extends StatelessWidget {
                               : const Color(0xFFbababa)),
                     ),
                   ])).padding(const EdgeInsets.only(bottom: 20)),
-              ...pricingModel.included.map((e) => Text(
+              ...pricingModel.included.map((String e) => Text(
                     e,
-                    style: GoogleFonts.openSans(
+                    style: TextStyle(
+                        fontFamily: Fonts.openSans,
                         fontSize: 14,
                         color: isActive ? Colors.white : textPrimaryColor),
                   ).padding(const EdgeInsets.only(bottom: 16))),
-              ...pricingModel.notIncluded.map((e) => Text(
+              ...pricingModel.notIncluded.map((String e) => Text(
                     e,
-                    style: GoogleFonts.openSans(
+                    style: TextStyle(
+                        fontFamily: Fonts.openSans,
                         fontSize: 14,
                         decoration: TextDecoration.lineThrough,
                         color:
@@ -103,20 +109,20 @@ class PricingItem extends StatelessWidget {
                         ? context.themeData.primaryColor
                         : Colors.white,
                     variant: ButtonVariant.outlined,
-                    child: ((isHovered) => Text(
-                          "Buy now",
-                          style: GoogleFonts.openSans(
+                    child: (bool isHovered) => Text(
+                          'Buy now',
+                          style: TextStyle(
+                              fontFamily: Fonts.openSans,
                               fontWeight: FontWeight.bold,
                               color: isActive
                                   ? (!isHovered ? borderColor : backgroundColor)
                                   : !isHovered
                                       ? context.themeData.primaryColor
                                       : Colors.white),
-                        )),
+                        ),
                     onPressed: () {}),
               )
             ],
-            crossAxisAlignment: CrossAxisAlignment.center,
           ),
         ),
       ),

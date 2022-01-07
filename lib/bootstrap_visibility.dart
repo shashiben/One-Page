@@ -12,7 +12,7 @@ class BootstrapVisibility extends StatelessWidget {
   BootstrapVisibility({
     Key? key,
     required this.child,
-    String sizes = "",
+    String sizes = '',
   })  : sizes = sizes.trim(),
         super(key: key) {
     _initialize();
@@ -35,15 +35,15 @@ class BootstrapVisibility extends StatelessWidget {
       BootstrapUtils.getInitialVisibilityMap();
 
   void _initialize() {
-    List<String> parts = sizes.isEmpty
+    final List<String> parts = sizes.isEmpty
         ? []
         : sizes
             .toLowerCase()
             .split(' ')
-            .where((t) => t.trim().isNotEmpty)
+            .where((String t) => t.trim().isNotEmpty)
             .toList();
-    for (String part in parts) {
-      for (String pfx in prefixesList) {
+    for (final String part in parts) {
+      for (final String pfx in prefixesList) {
         final String prefix = 'col-$pfx';
         if (part.startsWith(prefix) && pfx != '') {
           _visibilityPerSize[pfx] = true;

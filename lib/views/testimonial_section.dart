@@ -1,12 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:bootstrap/app/data.dart';
-import 'package:bootstrap/extensions.dart';
-import 'package:bootstrap/widgets/testimonial_item.dart';
 
 import '../app/colors.dart';
+import '../app/data.dart';
 import '../app/text_styles.dart';
+import '../extensions.dart';
+import '../models/testimonial_model.dart';
+import '../widgets/testimonial_item.dart';
 
 class TestimonialSection extends StatefulWidget {
   const TestimonialSection({Key? key}) : super(key: key);
@@ -34,21 +35,20 @@ class _TestimonialSectionState extends State<TestimonialSection> {
     return Container(
       color: Colors.white,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "TESTIMONIALS",
+            'TESTIMONIALS',
             style: SectionTitle.h2(context),
             textAlign: TextAlign.center,
           ),
           Text(
-            "Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.",
+            'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.',
             style: SectionTitle.p(context),
             textAlign: TextAlign.center,
           ).padding(const EdgeInsets.only(top: 10, bottom: 20)),
           SizedBox(
-              height: context.height * 0.8,
+              height: 540,
               width: context.width,
               child: ScrollConfiguration(
                 behavior: ScrollConfiguration.of(context).copyWith(
@@ -60,26 +60,24 @@ class _TestimonialSectionState extends State<TestimonialSection> {
                 child: CarouselSlider(
                   carouselController: pageController,
                   options: CarouselOptions(
-                      onPageChanged: (index, reason) {
+                      onPageChanged: (int index, CarouselPageChangedReason reason) {
                         setState(() {
                           currentIndex = index;
                         });
                       },
-                      enableInfiniteScroll: true,
                       viewportFraction: (400 / context.width) > 1
                           ? 1
                           : (400 / context.width)),
                   items: reviewsList
-                      .map((e) => TestimonialItem(review: e))
+                      .map((TestimonialModel e) => TestimonialItem(review: e))
                       .toList(),
                 ),
               )),
           Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
               children: List.generate(
                   reviewsList.length,
-                  (index) => AnimatedContainer(
+                  (int index) => AnimatedContainer(
                       margin: const EdgeInsets.symmetric(horizontal: 4),
                       height: 15,
                       width: 15,

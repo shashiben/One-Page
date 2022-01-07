@@ -1,10 +1,11 @@
-import 'package:bootstrap/app/colors.dart';
-import 'package:bootstrap/models/service_model.dart';
-import 'package:bootstrap/widgets/hover_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:bootstrap/extensions.dart';
+
+import '../app/colors.dart';
+import '../app/fonts.dart';
+import '../extensions.dart';
+import '../models/service_model.dart';
+import 'hover_widget.dart';
 
 class ServiceItem extends StatelessWidget {
   final ServiceModel serviceModel;
@@ -13,7 +14,7 @@ class ServiceItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HoverWidget(
-      child: (context, isHovered) => Container(
+      child: (BuildContext context, bool isHovered) => Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           color: Colors.white,
@@ -30,7 +31,6 @@ class ServiceItem extends StatelessWidget {
           ],
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
               height: 100,
@@ -38,7 +38,6 @@ class ServiceItem extends StatelessWidget {
               child: Stack(
                 children: [
                   Align(
-                    alignment: Alignment.center,
                     child: SvgPicture.string(
                       serviceModel.background,
                       height: 100,
@@ -47,7 +46,6 @@ class ServiceItem extends StatelessWidget {
                     ),
                   ),
                   Align(
-                    alignment: Alignment.center,
                     child: Icon(
                       serviceModel.icon,
                       size: 30,
@@ -59,7 +57,8 @@ class ServiceItem extends StatelessWidget {
             ),
             Text(
               serviceModel.title,
-              style: GoogleFonts.raleway(
+              style: const TextStyle(
+                  fontFamily: Fonts.raleway,
                   color: textPrimaryColor,
                   fontWeight: FontWeight.w600,
                   fontSize: 22),
@@ -67,7 +66,8 @@ class ServiceItem extends StatelessWidget {
             ).padding(const EdgeInsets.only(top: 10, bottom: 15)),
             Text(
               serviceModel.description,
-              style: GoogleFonts.openSans(
+              style: const TextStyle(
+                  fontFamily: Fonts.openSans,
                   color: textPrimaryColor,
                   fontWeight: FontWeight.w300,
                   fontSize: 14),

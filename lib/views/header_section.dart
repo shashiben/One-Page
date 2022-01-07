@@ -1,12 +1,12 @@
-import 'package:bootstrap/bootstrap_button.dart';
-import 'package:bootstrap/widgets/hover_widget.dart';
-import 'package:bootstrap/widgets/navigation_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:bootstrap/extensions.dart';
 
 import '../app/colors.dart';
+import '../app/fonts.dart';
+import '../bootstrap_button.dart';
+import '../extensions.dart';
+import '../widgets/hover_widget.dart';
+import '../widgets/navigation_drawer.dart';
 
 class HeaderSection extends StatelessWidget {
   final ScrollController? scrollController;
@@ -28,15 +28,16 @@ class HeaderSection extends StatelessWidget {
       scrollController: scrollController,
       color: Colors.white,
       childrens: [
-        ...titles.map((e) => HoverWidget(child: (context, isHovered) {
+        ...titles.map((String e) => HoverWidget(child: (BuildContext context, bool isHovered) {
               return Text(e,
-                      style: GoogleFonts.openSans(
+                      style: TextStyle(
+                          fontFamily: Fonts.openSans,
                           fontSize: 14,
                           color: isHovered
                               ? primaryColor
                               : const Color(0xFF16507B)))
-                  .padding(const EdgeInsets.symmetric(vertical: 10)
-                      .copyWith(left: 30))
+                  .padding(const EdgeInsets.symmetric(vertical: 10),
+                      margin: const EdgeInsets.only(left: 30))
                   .onTap(() {
                 if (keyList[e] != null && keyList[e]?.currentContext != null) {
                   Scrollable.ensureVisible(keyList[e]!.currentContext!,
@@ -52,18 +53,21 @@ class HeaderSection extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
             margin: const EdgeInsets.only(left: 30),
             onPressed: () {},
-            child: (isHovered) => Text(
-                  "Get started",
-                  style: GoogleFonts.poppins(
+            child: (bool isHovered) => const Text(
+                  'Get started',
+                  style: TextStyle(
+                      fontFamily: Fonts.poppins,
                       color: Colors.white,
                       fontSize: 14,
                       fontWeight: FontWeight.w500),
                 )),
       ],
-      leading: Text(
-        "OnePage",
-        style:
-            GoogleFonts.poppins(fontSize: 28, color: const Color(0xFF16507B)),
+      leading: const Text(
+        'OnePage',
+        style: TextStyle(
+            fontFamily: Fonts.poppins,
+            fontSize: 28,
+            color: Color(0xFF16507B)),
       ).onTap(() {
         GoRouter.of(context).push('/');
       }),

@@ -1,9 +1,11 @@
-import 'package:bootstrap/app/data.dart';
-import 'package:bootstrap/bootstrap_col.dart';
-import 'package:bootstrap/bootstrap_row.dart';
-import 'package:bootstrap/widgets/feature_item.dart';
 import 'package:flutter/material.dart';
-import 'package:bootstrap/extensions.dart';
+
+import '../app/data.dart';
+import '../bootstrap_col.dart';
+import '../bootstrap_row.dart';
+import '../extensions.dart';
+import '../models/feature_model.dart';
+import '../widgets/feature_item.dart';
 
 class IconSection extends StatelessWidget {
   const IconSection({Key? key}) : super(key: key);
@@ -18,11 +20,11 @@ class IconSection extends StatelessWidget {
           verticalSpacing: 30,
           horizontalSpacing: 20,
           children: featuresList
-              .map((e) => BootstrapCol(
+              .map((FeatureModel e) => BootstrapCol(
+                    sizes: 'col-12 col-lg-3 col-md-6 col-sm-12',
                     child: FeatureItem(
                       feature: e,
                     ),
-                    sizes: "col-12 col-lg-3 col-md-6 col-sm-12",
                   ))
               .toList()),
     );

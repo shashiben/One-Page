@@ -1,6 +1,7 @@
-import 'package:bootstrap/app/router.dart';
-import 'package:bootstrap/app/theme.dart';
 import 'package:flutter/material.dart';
+
+import 'app/router.dart';
+import 'app/theme.dart';
 
 void main() {
   runApp(const MyApp());

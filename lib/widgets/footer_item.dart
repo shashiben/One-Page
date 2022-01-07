@@ -1,8 +1,9 @@
-import 'package:bootstrap/app/colors.dart';
-import 'package:bootstrap/widgets/hover_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:bootstrap/extensions.dart';
+
+import '../app/colors.dart';
+import '../app/fonts.dart';
+import '../extensions.dart';
+import 'hover_widget.dart';
 
 class FooterItem extends StatelessWidget {
   final String title;
@@ -13,7 +14,7 @@ class FooterItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HoverWidget(
-      child: (context, isHovered) => Row(
+      child: (BuildContext context, bool isHovered) => Row(
         children: [
           const Icon(
             Icons.arrow_forward_ios,
@@ -24,13 +25,14 @@ class FooterItem extends StatelessWidget {
             onTap: () {},
             child: Text(
               title,
-              style: GoogleFonts.openSans(
+              style: TextStyle(
+                  fontFamily: Fonts.openSans,
                   fontSize: 14,
                   color: isHovered ? primaryColor : const Color(0xFF444444)),
             ),
           ),
         ],
-      ).padding(const EdgeInsets.symmetric(vertical:8)),
+      ).padding(const EdgeInsets.symmetric(vertical: 8)),
     );
   }
 }

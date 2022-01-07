@@ -34,8 +34,8 @@ class _ScaleAnimationState extends State<ScaleAnimation>
             duration:
                 widget.animationDuration ?? const Duration(milliseconds: 300));
     if (widget.startAnimation) {
-      Future.delayed(widget.startAfter ?? const Duration(seconds: 0))
-          .then((value) {
+      Future<void>.delayed(widget.startAfter ?? const Duration())
+          .then((dynamic value) {
         _scaleController.forward();
       });
     }

@@ -1,6 +1,7 @@
-import 'package:bootstrap/app/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:bootstrap/extensions.dart';
+
+import '../app/colors.dart';
+import '../extensions.dart';
 
 class NavigationDrawer extends StatefulWidget {
   final Color? color;
@@ -43,12 +44,34 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
       padding: widget.padding ??
           const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
       width: context.width,
+      decoration: widget.decoration ??
+          BoxDecoration(
+            boxShadow: (widget.scrollController == null ||
+                    (widget.scrollController?.offset ?? 0) < 250)
+                ? null
+                : [
+                    BoxShadow(
+                      color: Colors.white.withOpacity(0.8),
+                      spreadRadius: 20,
+                      blurRadius: 5,
+                      offset: const Offset(10, 7),
+                    ),
+                  ],
+            color: widget.color ?? context.themeData.scaffoldBackgroundColor,
+            border: Border(
+              bottom: BorderSide(
+                  width: (widget.scrollController == null ||
+                          (widget.scrollController?.offset ?? 0) < 250)
+                      ? 0.8
+                      : 1,
+                  color: Colors.grey[300]!),
+            ),
+          ),
       child: Row(children: [
         widget.leading,
         Expanded(
             child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
-          mainAxisSize: MainAxisSize.max,
           children: context.width > widget.minWidth
               ? widget.childrens
               : [
@@ -57,13 +80,12 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                     Icons.menu,
                     color: textPrimaryColor,
                   ).onTap(() {
-                    showDialog(
+                    showDialog<void>(
                         barrierColor: primaryColor.withOpacity(0.9),
                         context: context,
                         builder: (_) => Material(
                               color: Colors.transparent,
                               child: Column(
-                                mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
                                     alignment: Alignment.topRight,
@@ -93,29 +115,6 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                 ],
         )),
       ]),
-      decoration: widget.decoration ??
-          BoxDecoration(
-            boxShadow: (widget.scrollController == null ||
-                    (widget.scrollController?.offset ?? 0) < 250)
-                ? null
-                : [
-                    BoxShadow(
-                      color: Colors.white.withOpacity(0.8),
-                      spreadRadius: 20,
-                      blurRadius: 5,
-                      offset: const Offset(10, 7),
-                    ),
-                  ],
-            color: widget.color ?? context.themeData.scaffoldBackgroundColor,
-            border: Border(
-              bottom: BorderSide(
-                  width: (widget.scrollController == null ||
-                          (widget.scrollController?.offset ?? 0) < 250)
-                      ? 0.8
-                      : 1,
-                  color: Colors.grey[300]!),
-            ),
-          ),
     );
   }
 }

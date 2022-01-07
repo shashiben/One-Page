@@ -24,7 +24,7 @@ class FadeAnimation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tween = MultiTween<AnimationType>()
+    final MultiTween<AnimationType> tween = MultiTween<AnimationType>()
       ..add(AnimationType.opacity, Tween(begin: 0.0, end: 1.0),
           opacityDuration ?? const Duration(milliseconds: 500))
       ..add(
@@ -43,7 +43,7 @@ class FadeAnimation extends StatelessWidget {
       duration: tween.duration,
       tween: tween,
       child: child,
-      builder: (context, child, value) => Opacity(
+      builder: (BuildContext context, Widget? child, MultiTweenValues<AnimationType> value) => Opacity(
         opacity: value.get(AnimationType.opacity),
         child: Transform.translate(
             offset: Offset(value.get(AnimationType.translateX),

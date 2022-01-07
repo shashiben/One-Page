@@ -1,8 +1,9 @@
-import 'package:bootstrap/app/colors.dart';
-import 'package:bootstrap/widgets/hover_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:bootstrap/extensions.dart';
+
+import '../app/colors.dart';
+import '../app/fonts.dart';
+import '../extensions.dart';
+import 'hover_widget.dart';
 
 class ContactListTile extends StatelessWidget {
   final String title, subtitle;
@@ -17,10 +18,10 @@ class ContactListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HoverWidget(
-      child: (context, isHovered) => Row(
+      child: (BuildContext context, bool isHovered) => Row(
         children: [
           AnimatedContainer(
-            duration: const Duration(milliseconds: 400),
+              duration: const Duration(milliseconds: 400),
               width: 44,
               height: 44,
               decoration: BoxDecoration(
@@ -39,15 +40,17 @@ class ContactListTile extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: GoogleFonts.raleway(
+                style: const TextStyle(
+                    fontFamily: Fonts.raleway,
                     fontSize: 22,
-                    color: const Color(0xFF124265),
+                    color: Color(0xFF124265),
                     fontWeight: FontWeight.w600),
               ),
               Text(
                 subtitle,
-                style: GoogleFonts.openSans(
-                    color: const Color(0xFF217bbc),
+                style: const TextStyle(
+                    fontFamily: Fonts.openSans,
+                    color: Color(0xFF217bbc),
                     fontWeight: FontWeight.w400),
               )
             ],

@@ -28,12 +28,12 @@ class BootstrapRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> horizontalChildrens = [];
+    final List<Widget> horizontalChildrens = [];
     List<Widget> verticalChildrens = [];
     int accumulatedWidth = 0;
     for (int i = 0; i < children.length; i++) {
-      var col = children.elementAt(i);
-      var colWidth = col.currentConfig(context) ?? 1;
+      final BootstrapCol col = children.elementAt(i);
+      final int colWidth = col.currentConfig(context) ?? 1;
       if (accumulatedWidth + colWidth > rowSegments) {
         if (accumulatedWidth < rowSegments) {
           verticalChildrens.add(Spacer(
@@ -44,7 +44,6 @@ class BootstrapRow extends StatelessWidget {
         horizontalChildrens.add(Row(
           crossAxisAlignment: gridVerticalAlignment,
           mainAxisAlignment: gridHorizontalAlignment,
-          mainAxisSize: MainAxisSize.max,
           children: verticalChildrens,
         ));
         horizontalChildrens.add(SizedBox(
@@ -72,7 +71,6 @@ class BootstrapRow extends StatelessWidget {
       }
 
       horizontalChildrens.add(Row(
-        mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: gridVerticalAlignment,
         mainAxisAlignment: gridHorizontalAlignment,
         children: verticalChildrens,
@@ -82,7 +80,6 @@ class BootstrapRow extends StatelessWidget {
     return Container(
       padding: padding,
       child: Column(
-        mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: horizontalAlignment,
         mainAxisAlignment: verticalAlignment,
         children: horizontalChildrens,

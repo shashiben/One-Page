@@ -1,6 +1,7 @@
-import 'package:bootstrap/widgets/hover_widget.dart';
 import 'package:flutter/material.dart';
+
 import 'extensions.dart';
+import 'widgets/hover_widget.dart';
 
 enum ButtonVariant { filled, outlined }
 
@@ -31,7 +32,7 @@ class BootstrapButton extends StatelessWidget {
     return InkWell(
         onTap: onPressed,
         child: HoverWidget(
-            child: (context, isHovered) => variant == ButtonVariant.filled
+            child: (BuildContext context, bool isHovered) => variant == ButtonVariant.filled
                 ? Container(
                     margin: margin,
                     padding: padding,

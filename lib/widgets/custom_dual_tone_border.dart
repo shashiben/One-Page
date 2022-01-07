@@ -3,27 +3,27 @@ import 'package:flutter/material.dart';
 class MyPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    double w = size.width;
-    double h = size.height;
-    double lineWidth = 60;
+    final double w = size.width;
+    final double h = size.height;
+    const double lineWidth = 60;
 
-    Paint redPaint = Paint()
+    final Paint redPaint = Paint()
       ..color = Colors.white
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2.5;
 
-    Path topRightArc = Path()
+    final Path topRightArc = Path()
       ..moveTo(w, h)
       ..lineTo(w - lineWidth, h);
 
-    Path bottomLeftArc = Path()
+    final Path bottomLeftArc = Path()
       ..moveTo(w, h)
       ..lineTo(w, h - lineWidth);
-    Path c = Path()
+    final Path c = Path()
       ..moveTo(0, 0)
       ..lineTo(lineWidth, 0);
 
-    Path d = Path()
+    final Path d = Path()
       ..moveTo(0, 0)
       ..lineTo(0, lineWidth);
 

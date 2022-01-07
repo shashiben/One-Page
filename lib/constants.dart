@@ -7,14 +7,14 @@ double gutterSize = 48.0;
 int numberOfColumns = 12;
 
 mixin Prefixes {
-  static const String xl = "xl";
-  static const String lg = "lg";
-  static const String md = "md";
-  static const String sm = "sm";
+  static const String xl = 'xl';
+  static const String lg = 'lg';
+  static const String md = 'md';
+  static const String sm = 'sm';
 }
 mixin ArgPrefixType {
-  static const String order = "order";
-  static const String col = "col";
-  static const String offset = "offset";
+  static const String order = 'order';
+  static const String col = 'col';
+  static const String offset = 'offset';
 }
 enum GridPrefixes { xl, lg, md, sm, xs }

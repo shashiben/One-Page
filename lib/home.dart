@@ -1,20 +1,21 @@
-import 'package:bootstrap/bootstrap_container.dart';
-import 'package:bootstrap/views/about_section.dart';
-import 'package:bootstrap/views/client_section.dart';
-import 'package:bootstrap/views/contact_section.dart';
-import 'package:bootstrap/views/cta_section.dart';
-import 'package:bootstrap/views/faq_section.dart';
-import 'package:bootstrap/views/footer_section.dart';
-import 'package:bootstrap/views/header_section.dart';
-import 'package:bootstrap/views/home_section.dart';
-import 'package:bootstrap/views/icon_section.dart';
-import 'package:bootstrap/views/portfolio_section.dart';
-import 'package:bootstrap/views/price_section.dart';
-import 'package:bootstrap/views/services_section.dart';
-import 'package:bootstrap/views/team_section.dart';
-import 'package:bootstrap/views/testimonial_section.dart';
 import 'package:flutter/material.dart';
-import 'package:bootstrap/extensions.dart';
+
+import 'bootstrap_container.dart';
+import 'extensions.dart';
+import 'views/about_section.dart';
+import 'views/client_section.dart';
+import 'views/contact_section.dart';
+import 'views/cta_section.dart';
+import 'views/faq_section.dart';
+import 'views/footer_section.dart';
+import 'views/header_section.dart';
+import 'views/home_section.dart';
+import 'views/icon_section.dart';
+import 'views/portfolio_section.dart';
+import 'views/price_section.dart';
+import 'views/services_section.dart';
+import 'views/team_section.dart';
+import 'views/testimonial_section.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -26,14 +27,14 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   ScrollController scrollController = ScrollController();
   double currentHeight = 0.0;
-  final sectionKeys = {
-    "Home": GlobalKey(debugLabel: "Home"),
-    "About": GlobalKey(debugLabel: "About"),
-    "Services": GlobalKey(debugLabel: "Services"),
-    "Portfolio": GlobalKey(debugLabel: "Portfolio"),
-    "Team": GlobalKey(debugLabel: "Team"),
-    "Pricing": GlobalKey(debugLabel: "Pricing"),
-    "Contact": GlobalKey(debugLabel: "Contact"),
+  final Map<String, GlobalKey<State<StatefulWidget>>> sectionKeys = {
+    'Home': GlobalKey(debugLabel: 'Home'),
+    'About': GlobalKey(debugLabel: 'About'),
+    'Services': GlobalKey(debugLabel: 'Services'),
+    'Portfolio': GlobalKey(debugLabel: 'Portfolio'),
+    'Team': GlobalKey(debugLabel: 'Team'),
+    'Pricing': GlobalKey(debugLabel: 'Pricing'),
+    'Contact': GlobalKey(debugLabel: 'Contact'),
   };
   @override
   void initState() {
@@ -73,13 +74,13 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         children: [
           HeaderSection(
             titles: const [
-              "Home",
-              "About",
-              "Services",
-              "Portfolio",
-              "Team",
-              "Pricing",
-              "Contact"
+              'Home',
+              'About',
+              'Services',
+              'Portfolio',
+              'Team',
+              'Pricing',
+              'Contact'
             ],
             keyList: sectionKeys,
           ),
@@ -87,7 +88,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             child: BootstrapContainer(
                 scrollController: scrollController,
                 fluid: true,
-                padding: const EdgeInsets.all(0),
                 alignment: Alignment.center,
                 decoration: const BoxDecoration(color: Colors.white),
                 children: [
@@ -98,38 +98,38 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                             colorFilter: ColorFilter.mode(
                                 Color.fromRGBO(255, 255, 255, 0.8),
                                 BlendMode.lighten),
-                            image: AssetImage("assets/hero-bg.jpg"),
+                            image: AssetImage('assets/hero-bg.jpg'),
                             fit: BoxFit.fill)),
                     child: Column(
                       children: [
                         HomeSection(
-                          key: sectionKeys["Home"],
+                          key: sectionKeys['Home'],
                         ),
                         const IconSection(),
                       ],
                     ),
                   ),
                   AboutSection(
-                    key: sectionKeys["About"],
+                    key: sectionKeys['About'],
                   ),
                   const ClientSection(),
                   const TestimonialSection(),
                   ServicesSection(
-                    key: sectionKeys["Services"],
+                    key: sectionKeys['Services'],
                   ),
                   const CTASection(),
                   PortfolioSection(
-                    key: sectionKeys["Portfolio"],
+                    key: sectionKeys['Portfolio'],
                   ),
                   TeamSection(
-                    key: sectionKeys["Team"],
+                    key: sectionKeys['Team'],
                   ),
                   PriceSection(
-                    key: sectionKeys["Pricing"],
+                    key: sectionKeys['Pricing'],
                   ),
                   const FAQSection(),
                   ContactSection(
-                    key: sectionKeys["Contact"],
+                    key: sectionKeys['Contact'],
                   ),
                   const FooterSection()
                 ]),

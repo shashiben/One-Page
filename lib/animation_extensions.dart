@@ -1,6 +1,7 @@
-import 'package:bootstrap/widgets/fadeAnimation.dart';
-import 'package:bootstrap/widgets/scale_transition.dart';
 import 'package:flutter/material.dart';
+
+import 'widgets/fadeAnimation.dart';
+import 'widgets/scale_transition.dart';
 
 extension AnimationExtension on Widget {
   Widget fade({
@@ -13,12 +14,12 @@ extension AnimationExtension on Widget {
   }) {
     return FadeAnimation(
       delay: seconds,
-      child: this,
       xDistance: xDistance,
       yDistance: yDistance,
       opacityDuration: opacityDuration,
       xTranslateDuration: xTranslateDuration,
       yTranslateDuration: yTranslateDuration,
+      child: this,
     );
   }
 
@@ -28,15 +29,15 @@ extension AnimationExtension on Widget {
     AnimationController? controller,
     bool? startAnimation,
     double? begin,
-    end,
+   double? end,
   }) {
     return ScaleAnimation(
-      child: this,
       animationDuration: animationDuration,
       startAfter: startAfter,
       controller: controller,
       begin: begin,
       end: end,
+      child: this,
     );
   }
 }

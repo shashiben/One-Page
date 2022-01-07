@@ -1,12 +1,13 @@
-import 'package:bootstrap/app/colors.dart';
-import 'package:bootstrap/app/data.dart';
-import 'package:bootstrap/models/portfolio_model.dart';
-import 'package:bootstrap/widgets/custom_dual_tone_border.dart';
-import 'package:bootstrap/widgets/hover_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:bootstrap/extensions.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+import '../app/colors.dart';
+import '../app/data.dart';
+import '../app/fonts.dart';
+import '../extensions.dart';
+import '../models/portfolio_model.dart';
+import 'custom_dual_tone_border.dart';
+import 'hover_widget.dart';
 
 class PortfolioItem extends StatefulWidget {
   final PortfolioModel portfolioItem;
@@ -32,7 +33,7 @@ class _PortfolioItemState extends State<PortfolioItem>
 
   @override
   Widget build(BuildContext context) {
-    return HoverWidget(child: (context, isHovered) {
+    return HoverWidget(child: (BuildContext context, bool isHovered) {
       if (isHovered) {
         scaleController.forward();
       } else {
@@ -58,26 +59,28 @@ class _PortfolioItemState extends State<PortfolioItem>
                         color: Colors.transparent,
                       ),
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             widget.portfolioItem.name,
-                            style: GoogleFonts.raleway(
+                            style: const TextStyle(
+                                fontFamily: Fonts.raleway,
                                 fontSize: 20,
                                 fontWeight: FontWeight.w600,
                                 color: Colors.white),
                           ),
                           Text(
                             widget.portfolioItem.type.toUpperCase(),
-                            style: GoogleFonts.openSans(
+                            style: const TextStyle(
+                                fontFamily: Fonts.openSans,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
                                 color: Colors.white),
                           ).padding(const EdgeInsets.symmetric(vertical: 12)),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.max,
                             children: [
-                              HoverWidget(child: (context, isHovered) {
+                              HoverWidget(child: (BuildContext context, bool isHovered) {
                                 return Icon(
                                   Icons.add,
                                   color: isHovered
@@ -87,7 +90,7 @@ class _PortfolioItemState extends State<PortfolioItem>
                                 ).padding(const EdgeInsets.only(right: 10));
                               }),
                               HoverWidget(
-                                child: (_, isHovered) => Icon(
+                                child: (_, bool isHovered) => Icon(
                                   Icons.link,
                                   color: isHovered
                                       ? Colors.white
@@ -101,9 +104,6 @@ class _PortfolioItemState extends State<PortfolioItem>
                             ],
                           )
                         ],
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.center,
                       ),
                     ),
                   ),
@@ -117,24 +117,24 @@ class _PortfolioItemState extends State<PortfolioItem>
       setState(() {
         currentPage = portfolioItems.indexOf(widget.portfolioItem);
       });
-      final pageController = PageController(
+      final PageController pageController = PageController(
           initialPage: portfolioItems.indexOf(widget.portfolioItem));
-      showDialog(
+      showDialog<void>(
           context: context,
-          builder: (_) => StatefulBuilder(builder: (context, setState) {
+          builder: (_) => StatefulBuilder(builder: (BuildContext context, setState) {
                 return Material(
                   color: Colors.transparent,
                   child: Stack(
                     children: [
                       PageView(
-                        onPageChanged: (index) {
+                        onPageChanged: (int index) {
                           setState(() {
                             currentPage = index;
                           });
                         },
                         controller: pageController,
                         children: portfolioItems
-                            .map((e) => Image.asset(
+                            .map((PortfolioModel e) => Image.asset(
                                   e.image,
                                   fit: BoxFit.fitHeight,
                                 ))
@@ -145,15 +145,15 @@ class _PortfolioItemState extends State<PortfolioItem>
                           right: 15,
                           child: Container(
                             padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                                color: Colors.black,
+                                borderRadius: BorderRadius.circular(4)),
                             child: HoverWidget(
-                              child: (_, isHovered) => Icon(
+                              child: (_, bool isHovered) => Icon(
                                 Icons.close,
                                 color: isHovered ? Colors.white : Colors.grey,
                               ),
                             ),
-                            decoration: BoxDecoration(
-                                color: Colors.black,
-                                borderRadius: BorderRadius.circular(4)),
                           ).onTap(() {
                             Navigator.pop(context);
                           })),
@@ -164,18 +164,18 @@ class _PortfolioItemState extends State<PortfolioItem>
                             child: Container(
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 8, vertical: 12),
+                              decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(4)),
                               child: HoverWidget(
-                                child: (_, isHovered) => Icon(
+                                child: (_, bool isHovered) => Icon(
                                   Icons.arrow_forward_ios,
                                   color: isHovered ? Colors.white : Colors.grey,
                                 ),
                               ),
-                              decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(4)),
                             ).onTap(() {
                               pageController.animateToPage(
-                                  (((currentPage) + 1) % portfolioItems.length)
+                                  ((currentPage + 1) % portfolioItems.length)
                                       .toInt(),
                                   duration: const Duration(milliseconds: 300),
                                   curve: Curves.linearToEaseOut);
@@ -189,18 +189,18 @@ class _PortfolioItemState extends State<PortfolioItem>
                               padding: const EdgeInsets.symmetric(
                                       horizontal: 8, vertical: 12)
                                   .copyWith(left: 12),
+                              decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(4)),
                               child: HoverWidget(
-                                child: (_, isHovered) => Icon(
+                                child: (_, bool isHovered) => Icon(
                                   Icons.arrow_back_ios,
                                   color: isHovered ? Colors.white : Colors.grey,
                                 ),
                               ),
-                              decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(4)),
                             ).onTap(() {
                               pageController.animateToPage(
-                                  (((currentPage) - 1) % portfolioItems.length)
+                                  ((currentPage - 1) % portfolioItems.length)
                                       .toInt(),
                                   duration: const Duration(milliseconds: 300),
                                   curve: Curves.linearToEaseOut);
@@ -215,11 +215,14 @@ class _PortfolioItemState extends State<PortfolioItem>
                             decoration: BoxDecoration(
                                 color: Colors.black.withOpacity(0.5)),
                             child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Center(
                                     child: Text(
                                       portfolioItems[currentPage].name,
-                                      style: GoogleFonts.raleway(
+                                      style: const TextStyle(
+                                          fontFamily: Fonts.raleway,
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold,
                                           color: Colors.white),
@@ -230,10 +233,9 @@ class _PortfolioItemState extends State<PortfolioItem>
                                   Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
-                                      mainAxisSize: MainAxisSize.max,
                                       children: List.generate(
                                           portfolioItems.length,
-                                          (index) => AnimatedContainer(
+                                          (int index) => AnimatedContainer(
                                               margin:
                                                   const EdgeInsets.symmetric(
                                                       horizontal: 4),
@@ -247,9 +249,7 @@ class _PortfolioItemState extends State<PortfolioItem>
                                                           .withOpacity(0.4)),
                                               duration: const Duration(
                                                   milliseconds: 300))))
-                                ],
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start),
+                                ]),
                           ))
                     ],
                   ),

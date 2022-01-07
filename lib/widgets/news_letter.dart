@@ -1,7 +1,8 @@
-import 'package:bootstrap/bootstrap_button.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:bootstrap/extensions.dart';
+
+import '../app/fonts.dart';
+import '../bootstrap_button.dart';
+import '../extensions.dart';
 
 class NewsLetterWidget extends StatelessWidget {
   const NewsLetterWidget({Key? key}) : super(key: key);
@@ -9,16 +10,21 @@ class NewsLetterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "Join Our Newsletter",
-          style: GoogleFonts.raleway(
-              fontWeight: FontWeight.bold, color: const Color(0xFF444444)),
+        const Text(
+          'Join Our Newsletter',
+          style: TextStyle(
+              fontFamily: Fonts.raleway,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF444444)),
         ).padding(const EdgeInsets.only(bottom: 16)),
-        Text(
-          "Tamen quem nulla quae legam multos aute sint culpa legam noster magna",
-          style: GoogleFonts.openSans(
-              fontSize: 14, color: const Color(0xFF777777)),
+        const Text(
+          'Tamen quem nulla quae legam multos aute sint culpa legam noster magna',
+          style: TextStyle(
+              fontFamily: Fonts.openSans,
+              fontSize: 14,
+              color: Color(0xFF777777)),
         ).padding(const EdgeInsets.only(bottom: 15)),
         SizedBox(
           height: 48,
@@ -31,12 +37,14 @@ class NewsLetterWidget extends StatelessWidget {
                 borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(8),
                     bottomRight: Radius.circular(8)),
-                child: (isHovered) => Center(
-                  child: Text(
-                    "Subscribe",
+                child: (bool isHovered) => Center(
+                  child: const Text(
+                    'Subscribe',
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.openSans(
-                        fontWeight: FontWeight.w400, color: Colors.white),
+                    style: TextStyle(
+                        fontFamily: Fonts.openSans,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white),
                   ).padding(const EdgeInsets.symmetric(horizontal: 15)),
                 ),
                 onPressed: () {},
@@ -48,7 +56,6 @@ class NewsLetterWidget extends StatelessWidget {
           )),
         )
       ],
-      crossAxisAlignment: CrossAxisAlignment.start,
     );
   }
 }

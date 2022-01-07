@@ -1,9 +1,10 @@
-import 'package:bootstrap/models/team_model.dart';
-import 'package:bootstrap/widgets/hover_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:bootstrap/extensions.dart';
 import 'package:line_icons/line_icons.dart';
+
+import '../app/fonts.dart';
+import '../extensions.dart';
+import '../models/team_model.dart';
+import 'hover_widget.dart';
 
 class TeamItem extends StatelessWidget {
   final TeamModel member;
@@ -12,7 +13,7 @@ class TeamItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HoverWidget(
-      child: (context, isHovered) => Container(
+      child: (BuildContext context, bool isHovered) => Container(
         width: context.width,
         decoration: BoxDecoration(boxShadow: [
           BoxShadow(
@@ -43,8 +44,7 @@ class TeamItem extends StatelessWidget {
                   right: 0,
                   child: AnimatedOpacity(
                     duration: const Duration(milliseconds: 400),
-                    opacity:
-                        (isHovered ? 1 : 0) ,
+                    opacity: isHovered ? 1 : 0,
                     child: Container(
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       decoration:
@@ -58,8 +58,8 @@ class TeamItem extends StatelessWidget {
                             (LineIcons.instagram),
                             (LineIcons.linkedin)
                           ]
-                              .map((e) => HoverWidget(
-                                    child: (context, isIconHovered) => Icon(
+                              .map((IconData e) => HoverWidget(
+                                    child: (BuildContext context, bool isIconHovered) => Icon(
                                       e,
                                       size: 20,
                                       color: isIconHovered
@@ -80,15 +80,18 @@ class TeamItem extends StatelessWidget {
               children: [
                 Text(
                   member.name,
-                  style: GoogleFonts.raleway(
+                  style: const TextStyle(
+                      fontFamily: Fonts.raleway,
                       fontSize: 18,
-                      color: const Color(0xFF124265),
+                      color: Color(0xFF124265),
                       fontWeight: FontWeight.w700),
                 ).padding(const EdgeInsets.only(bottom: 5)),
                 Text(
                   member.role,
-                  style: GoogleFonts.openSans(
-                      fontSize: 13, color: const Color(0xFFAAAAAA)),
+                  style: const TextStyle(
+                      fontFamily: Fonts.openSans,
+                      fontSize: 13,
+                      color: Color(0xFFAAAAAA)),
                 )
               ],
             ),

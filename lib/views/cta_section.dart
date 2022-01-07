@@ -1,7 +1,8 @@
-import 'package:bootstrap/bootstrap_button.dart';
 import 'package:flutter/material.dart';
-import 'package:bootstrap/extensions.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+import '../app/fonts.dart';
+import '../bootstrap_button.dart';
+import '../extensions.dart';
 
 class CTASection extends StatelessWidget {
   const CTASection({Key? key}) : super(key: key);
@@ -14,16 +15,20 @@ class CTASection extends StatelessWidget {
       decoration: BoxDecoration(color: context.themeData.primaryColor),
       child: Column(
         children: [
-          Text(
-            "Call To Action",
-            style: GoogleFonts.raleway(
-                fontSize: 28, color: Colors.white, fontWeight: FontWeight.bold),
+          const Text(
+            'Call To Action',
+            style: TextStyle(
+                fontFamily: Fonts.raleway,
+                fontSize: 28,
+                color: Colors.white,
+                fontWeight: FontWeight.bold),
           ),
           SizedBox(
             width: context.isMobile ? context.width * 0.8 : context.width * 0.6,
-            child: Text(
-              "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-              style: GoogleFonts.openSans(
+            child: const Text(
+              'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+              style: TextStyle(
+                  fontFamily: Fonts.openSans,
                   fontSize: 16,
                   color: Colors.white,
                   fontWeight: FontWeight.w300),
@@ -35,17 +40,17 @@ class CTASection extends StatelessWidget {
               color: Colors.white,
               outlineColor: context.themeData.primaryColor,
               variant: ButtonVariant.outlined,
-              child: ((isHovered) => Text(
-                    "Call To Action",
-                    style: GoogleFonts.openSans(
+              child: (bool isHovered) => Text(
+                    'Call To Action',
+                    style: TextStyle(
+                        fontFamily: Fonts.openSans,
                         fontWeight: FontWeight.bold,
                         color: isHovered
                             ? context.themeData.primaryColor
                             : Colors.white),
-                  )),
+                  ),
               onPressed: () {})
         ],
-        crossAxisAlignment: CrossAxisAlignment.center,
       ),
     );
   }

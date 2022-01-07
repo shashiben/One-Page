@@ -1,8 +1,9 @@
-import 'package:bootstrap/bootstrap_col.dart';
-import 'package:bootstrap/bootstrap_row.dart';
-import 'package:bootstrap/widgets/company_logo_item.dart';
 import 'package:flutter/material.dart';
-import 'package:bootstrap/extensions.dart';
+
+import '../bootstrap_col.dart';
+import '../bootstrap_row.dart';
+import '../extensions.dart';
+import '../widgets/company_logo_item.dart';
 
 class ClientSection extends StatelessWidget {
   const ClientSection({Key? key}) : super(key: key);
@@ -17,10 +18,10 @@ class ClientSection extends StatelessWidget {
         verticalSpacing: 20,
         children: List.generate(
             6,
-            (index) => BootstrapCol(
-                sizes: "col-lg-2 col-md-4 col-6 col-sm-6 col-xs-6",
+            (int index) => BootstrapCol(
+                sizes: 'col-lg-2 col-md-4 col-6 col-sm-6 col-xs-6',
                 child: CompanyLogoItem(
-                  image: "assets/clients/client-${index + 1}.png",
+                  image: 'assets/clients/client-${index + 1}.png',
                 ).padding(const EdgeInsets.symmetric(horizontal: 15)))),
       ),
     );

@@ -40,9 +40,9 @@ extension ContextExtension on BuildContext {
 
   bool get isLandscape => orientation == Orientation.landscape;
   bool get isPortrait => orientation == Orientation.portrait;
-  bool get isMobile => (shortestSide < 600);
-  bool get isSmallTablet => (shortestSide >= 600);
-  bool get isLargeTablet => (shortestSide >= 720);
+  bool get isMobile => shortestSide < 600;
+  bool get isSmallTablet => shortestSide >= 600;
+  bool get isLargeTablet => shortestSide >= 720;
   bool get isTablet => isSmallTablet || isLargeTablet;
   bool get isXl => size.width > 1200;
   bool get isLg => size.width > 992 && size.width <= 1200;

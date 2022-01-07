@@ -1,14 +1,15 @@
-import 'package:bootstrap/app/colors.dart';
-import 'package:bootstrap/app/data.dart';
-import 'package:bootstrap/bootstrap_col.dart';
-import 'package:bootstrap/bootstrap_row.dart';
-import 'package:bootstrap/widgets/hover_widget.dart';
-import 'package:bootstrap/widgets/portfolio_item.dart';
 import 'package:flutter/material.dart';
-import 'package:bootstrap/extensions.dart';
-import 'package:google_fonts/google_fonts.dart';
 
+import '../app/colors.dart';
+import '../app/data.dart';
+import '../app/fonts.dart';
 import '../app/text_styles.dart';
+import '../bootstrap_col.dart';
+import '../bootstrap_row.dart';
+import '../extensions.dart';
+import '../models/portfolio_model.dart';
+import '../widgets/hover_widget.dart';
+import '../widgets/portfolio_item.dart';
 
 class PortfolioSection extends StatefulWidget {
   const PortfolioSection({Key? key}) : super(key: key);
@@ -20,31 +21,31 @@ class PortfolioSection extends StatefulWidget {
 class _PortfolioSectionState extends State<PortfolioSection>
     with SingleTickerProviderStateMixin {
   int selectedIndex = 0;
-  List<String> tabs = ["All", "App", "Card", "Web"];
+  List<String> tabs = ['All', 'App', 'Card', 'Web'];
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(children: [
         Text(
-          "PORTFOLIO",
+          'PORTFOLIO',
           style: SectionTitle.h2(context),
           textAlign: TextAlign.center,
         ),
         Text(
-          "Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.",
+          'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.',
           style: SectionTitle.p(context),
           textAlign: TextAlign.center,
         ).padding(const EdgeInsets.only(top: 10, bottom: 20)),
         Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
             children: List.generate(
                 tabs.length,
-                (index) => HoverWidget(
-                      child: (context, isTabHovered) => Text(
+                (int index) => HoverWidget(
+                      child: (BuildContext context, bool isTabHovered) => Text(
                         tabs[index].toUpperCase(),
-                        style: GoogleFonts.openSans(
+                        style: TextStyle(
+                            fontFamily: Fonts.openSans,
                             color: (index == selectedIndex || isTabHovered)
                                 ? primaryColor
                                 : textPrimaryColor,
@@ -67,16 +68,16 @@ class _PortfolioSectionState extends State<PortfolioSection>
             horizontalSpacing: 20,
             verticalSpacing: 20,
             children: portfolioItems
-                .map((e) => (e.type == tabs.elementAt(selectedIndex) ||
+                .map((PortfolioModel e) => (e.type == tabs.elementAt(selectedIndex) ||
                         selectedIndex == 0)
                     ? BootstrapCol(
-                        sizes: "col-12 col-lg-4 col-md-6",
+                        sizes: 'col-12 col-lg-4 col-md-6',
                         child: PortfolioItem(
                           portfolioItem: e,
                           shouldDisplay: true,
                         ))
                     : BootstrapCol(
-                        sizes: "col-0 col-sm-0", child: const SizedBox()))
+                        sizes: 'col-0 col-sm-0', child: const SizedBox()))
                 .toList())
       ]).padding(const EdgeInsets.symmetric(horizontal: 20, vertical: 60)),
     );

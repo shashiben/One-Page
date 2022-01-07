@@ -13,12 +13,12 @@ class VideoPlayer extends StatelessWidget {
 
   void playVideo(String atUrl) {
     if (kIsWeb) {
-      final v = html.window.document.getElementById('videoPlayer');
+      final html.Element? v = html.window.document.getElementById('videoPlayer');
       if (v != null) {
         v.setInnerHtml('<source type="video/mp4" src="$atUrl">',
             validator: html.NodeValidatorBuilder()
               ..allowElement('source', attributes: ['src', 'type']));
-        final a = html.window.document.getElementById('triggerVideoPlayer');
+        final html.Element? a = html.window.document.getElementById('triggerVideoPlayer');
         if (a != null) {
           a.dispatchEvent(html.MouseEvent('click'));
         }

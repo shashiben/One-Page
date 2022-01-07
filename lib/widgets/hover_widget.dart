@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/gestures/events.dart';
 
 class HoverWidget extends StatefulWidget {
   final Widget Function(BuildContext context, bool isHovered) child;
@@ -13,15 +14,15 @@ class _HoverWidgetState extends State<HoverWidget> {
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
-      onEnter: (_) {
+      onEnter: (PointerEnterEvent event) {
+        setState(() => isHovered = true);
+      },
+      onExit: (PointerExitEvent event) {
+        setState(() => isHovered = false);
+      },
+      onHover: (PointerHoverEvent event) {
         setState(() {
           isHovered = true;
-        });
-      },
-      onExit: (_) {
-        
-        setState(() {
-          isHovered = false;
         });
       },
       child: widget.child(context, isHovered),

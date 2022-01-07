@@ -16,8 +16,7 @@ class OrderedList extends StatelessWidget {
       shrinkWrap: true,
       itemCount: children.length,
       physics: const NeverScrollableScrollPhysics(),
-      itemBuilder: (context, index) => Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+      itemBuilder: (BuildContext context, int index) => Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             leadingIcon ?? const Icon(LineIcons.arrowCircleRight),
