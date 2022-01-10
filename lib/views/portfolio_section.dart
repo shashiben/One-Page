@@ -1,11 +1,10 @@
+import 'package:bootstrap/widgets/responsive_grid.dart';
 import 'package:flutter/material.dart';
 
 import '../app/colors.dart';
 import '../app/data.dart';
 import '../app/fonts.dart';
 import '../app/text_styles.dart';
-import '../bootstrap_col.dart';
-import '../bootstrap_row.dart';
 import '../extensions/extensions.dart';
 import '../models/portfolio_model.dart';
 import '../widgets/hover_widget.dart';
@@ -42,7 +41,8 @@ class _PortfolioSectionState extends State<PortfolioSection>
             children: List.generate(
                 tabs.length,
                 (int index) => HoverWidget(
-                      builder: (BuildContext context, bool isTabHovered) => Text(
+                      builder: (BuildContext context, bool isTabHovered) =>
+                          Text(
                         tabs[index].toUpperCase(),
                         style: TextStyle(
                             fontFamily: Fonts.openSans,
@@ -52,33 +52,31 @@ class _PortfolioSectionState extends State<PortfolioSection>
                             fontWeight: FontWeight.w600,
                             fontSize: 14),
                       )
-                          .container(const EdgeInsets.fromLTRB(
+                              .container(const EdgeInsets.fromLTRB(
                         10,
                         15,
                         8,
                         15,
                       ))
-                          .onTap(() {
+                              .onTap(() {
                         setState(() {
                           selectedIndex = index;
                         });
                       }),
                     ))),
-        BootstrapRow(
-            horizontalSpacing: 20,
-            verticalSpacing: 20,
-            children: portfolioItems
+        ResponsiveGrid(
+            sizes: 'col-12 col-lg-4 col-md-6',
+            // horizontalSpacing: 20,
+            // verticalSpacing: 20,
+            childrens: portfolioItems
                 .map((PortfolioModel e) =>
                     (e.type == tabs.elementAt(selectedIndex) ||
                             selectedIndex == 0)
-                        ? BootstrapCol(
-                            sizes: 'col-12 col-lg-4 col-md-6',
-                            child: PortfolioItem(
-                              portfolioItem: e,
-                              shouldDisplay: true,
-                            ))
-                        : BootstrapCol(
-                            sizes: 'col-0 col-sm-0', child: const SizedBox()))
+                        ? PortfolioItem(
+                            portfolioItem: e,
+                            shouldDisplay: true,
+                          )
+                        : const SizedBox())
                 .toList())
       ]).container(const EdgeInsets.symmetric(horizontal: 20, vertical: 60)),
     );

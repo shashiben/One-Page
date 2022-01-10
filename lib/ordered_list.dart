@@ -13,6 +13,7 @@ class OrderedList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       primary: false,
+      itemExtent: 50,
       shrinkWrap: true,
       itemCount: children.length,
       physics: const NeverScrollableScrollPhysics(),

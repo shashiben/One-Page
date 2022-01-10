@@ -1,5 +1,5 @@
 List<String> prefixesList = ['xl', 'lg', 'md', 'sm', 'xs'];
-List<String> prefixesReversedList = ['xs', 'sm', 'md', 'lg', 'xl'];
+List<String> prefixesReversedList = prefixesList.reversed.toList();
 List<String> allPrefixList = ['xl', 'lg', 'md', 'sm', 'xs'];
 
 double oneColumnRatio = 0.083333;

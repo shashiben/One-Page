@@ -42,7 +42,8 @@ class _PortfolioItemState extends State<PortfolioItem>
         children: [
           Image.asset(
             widget.portfolioItem.image,
-            fit: BoxFit.fitHeight,
+            width: double.infinity,
+            fit: BoxFit.fill,
           ),
           Positioned.fill(
             child: ScaleTransition(

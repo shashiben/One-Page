@@ -80,7 +80,7 @@ class BootstrapUtils {
   ///Get values from string
   ///
   static Map<String, int> getAllColValues(String sizes) {
-    final Map<String, int> result = {};
+    final Map<String, int> subResult = {};
     final List<String> getPrefixList = sizes
         .toLowerCase()
         .trim()
@@ -93,18 +93,26 @@ class BootstrapUtils {
         if (splittedList.first == 'col' &&
             int.tryParse(splittedList.last) != null) {
           if (int.parse(splittedList.last) <= 12) {
-            result['sm'] = int.parse(splittedList.last);
+            subResult['sm'] = int.parse(splittedList.last);
           }
         }
       } else if (splittedList.length == 3) {
         if (splittedList.first == 'col' &&
             int.tryParse(splittedList.last) != null) {
           if (int.parse(splittedList.last) <= 12) {
-            result[splittedList.elementAt(1)] = int.parse(splittedList.last);
+            subResult[splittedList.elementAt(1)] = int.parse(splittedList.last);
           }
         }
       }
     }
+    final Map<String, int> result = {};
+    for (int i = 0; i < prefixesReversedList.length; i++) {
+      String prefix = prefixesReversedList.elementAt(i);
+      int nullValue =
+          i == 0 ? 12 : result[prefixesReversedList.elementAt(i - 1)]!;
+      result[prefix] = subResult[prefix] ?? nullValue;
+    }
+
     return result;
   }
 
@@ -152,5 +160,4 @@ class BootstrapUtils {
       return result;
     }
   }
-
 }

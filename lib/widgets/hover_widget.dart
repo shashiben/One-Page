@@ -20,15 +20,19 @@ class _HoverWidgetState extends State<HoverWidget> {
   Widget build(BuildContext context) {
     return Listener(
       onPointerHover: (p) {
-        setState(() {
-          isHovered = true;
-        });
+        if (!isHovered) {
+          setState(() {
+            isHovered = true;
+          });
+        }
       },
       onPointerUp: (p) {
         Future.delayed(widget.hoverDuration).then((value) {
-          setState(() {
-            isHovered = false;
-          });
+          if (isHovered && mounted) {
+            setState(() {
+              isHovered = false;
+            });
+          }
         });
       },
       child: MouseRegion(

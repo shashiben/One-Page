@@ -23,7 +23,7 @@ class HomeSection extends StatelessWidget {
                   'One Page Bootstrap\nWebsite Template',
                   style: h1(context),
                   textAlign: TextAlign.center,
-                ).translate(animationDuration: const Duration(seconds: 1)),
+                ),
                 Text(
                   'We are team of talented designers',
                   style: h2(context),
