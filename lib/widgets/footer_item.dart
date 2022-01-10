@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../app/colors.dart';
 import '../app/fonts.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 import 'hover_widget.dart';
 
 class FooterItem extends StatelessWidget {
@@ -16,9 +15,9 @@ class FooterItem extends StatelessWidget {
     return HoverWidget(
       child: (BuildContext context, bool isHovered) => Row(
         children: [
-          const Icon(
+          Icon(
             Icons.arrow_forward_ios,
-            color: primaryColor,
+            color: context.primaryColor,
             size: 14,
           ).padding(const EdgeInsets.only(right: 10)),
           InkWell(
@@ -28,7 +27,9 @@ class FooterItem extends StatelessWidget {
               style: TextStyle(
                   fontFamily: Fonts.openSans,
                   fontSize: 14,
-                  color: isHovered ? primaryColor : const Color(0xFF444444)),
+                  color: isHovered
+                      ? context.primaryColor
+                      : const Color(0xFF444444)),
             ),
           ),
         ],

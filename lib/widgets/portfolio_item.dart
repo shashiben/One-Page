@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../app/colors.dart';
 import '../app/data.dart';
 import '../app/fonts.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 import '../models/portfolio_model.dart';
 import 'custom_dual_tone_border.dart';
 import 'hover_widget.dart';
@@ -50,7 +49,7 @@ class _PortfolioItemState extends State<PortfolioItem>
               scale: Tween(begin: 0.0, end: 1.0).animate(scaleController),
               child: Center(
                 child: Container(
-                  color: primaryColor.withOpacity(0.6),
+                  color: context.primaryColor.withOpacity(0.6),
                   padding: const EdgeInsets.all(20.0),
                   child: CustomPaint(
                     painter: MyPainter(),
@@ -80,14 +79,239 @@ class _PortfolioItemState extends State<PortfolioItem>
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              HoverWidget(child: (BuildContext context, bool isHovered) {
+                              HoverWidget(child:
+                                  (BuildContext context, bool isHovered) {
                                 return Icon(
                                   Icons.add,
                                   color: isHovered
                                       ? Colors.white
                                       : const Color.fromRGBO(
                                           255, 255, 255, 0.6),
-                                ).padding(const EdgeInsets.only(right: 10));
+                                )
+                                    .padding(const EdgeInsets.only(right: 10))
+                                    .onTap(() {
+                                  setState(() {
+                                    currentPage = portfolioItems
+                                        .indexOf(widget.portfolioItem);
+                                  });
+                                  final PageController pageController =
+                                      PageController(
+                                          initialPage: portfolioItems
+                                              .indexOf(widget.portfolioItem));
+                                  showDialog<void>(
+                                      context: context,
+                                      builder: (_) => StatefulBuilder(builder:
+                                              (BuildContext context, setState) {
+                                            return Material(
+                                              color: Colors.transparent,
+                                              child: Stack(
+                                                children: [
+                                                  PageView(
+                                                    onPageChanged: (int index) {
+                                                      setState(() {
+                                                        currentPage = index;
+                                                      });
+                                                    },
+                                                    controller: pageController,
+                                                    children: portfolioItems
+                                                        .map((PortfolioModel
+                                                                e) =>
+                                                            Image.asset(
+                                                              e.image,
+                                                              fit: BoxFit
+                                                                  .fitHeight,
+                                                            ))
+                                                        .toList(),
+                                                  ),
+                                                  Positioned(
+                                                      top: 15,
+                                                      right: 15,
+                                                      child: Container(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(8),
+                                                        decoration: BoxDecoration(
+                                                            color: Colors.black,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        4)),
+                                                        child: HoverWidget(
+                                                          child: (_,
+                                                                  bool
+                                                                      isHovered) =>
+                                                              Icon(
+                                                            Icons.close,
+                                                            color: isHovered
+                                                                ? Colors.white
+                                                                : Colors.grey,
+                                                          ),
+                                                        ),
+                                                      ).onTap(() {
+                                                        Navigator.pop(context);
+                                                      })),
+                                                  Positioned(
+                                                      top: context.height / 2 -
+                                                          20,
+                                                      right: 15,
+                                                      child: Center(
+                                                        child: Container(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .symmetric(
+                                                                  horizontal: 8,
+                                                                  vertical: 12),
+                                                          decoration: BoxDecoration(
+                                                              color:
+                                                                  Colors.black,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          4)),
+                                                          child: HoverWidget(
+                                                            child: (_,
+                                                                    bool
+                                                                        isHovered) =>
+                                                                Icon(
+                                                              Icons
+                                                                  .arrow_forward_ios,
+                                                              color: isHovered
+                                                                  ? Colors.white
+                                                                  : Colors.grey,
+                                                            ),
+                                                          ),
+                                                        ).onTap(() {
+                                                          pageController.animateToPage(
+                                                              ((currentPage + 1) %
+                                                                      portfolioItems
+                                                                          .length)
+                                                                  .toInt(),
+                                                              duration:
+                                                                  const Duration(
+                                                                      milliseconds:
+                                                                          300),
+                                                              curve: Curves
+                                                                  .linearToEaseOut);
+                                                        }),
+                                                      )),
+                                                  Positioned(
+                                                      top: context.height / 2 -
+                                                          20,
+                                                      left: 15,
+                                                      child: Center(
+                                                        child: Container(
+                                                          padding: const EdgeInsets
+                                                                      .symmetric(
+                                                                  horizontal: 8,
+                                                                  vertical: 12)
+                                                              .copyWith(
+                                                                  left: 12),
+                                                          decoration: BoxDecoration(
+                                                              color:
+                                                                  Colors.black,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          4)),
+                                                          child: HoverWidget(
+                                                            child: (_,
+                                                                    bool
+                                                                        isHovered) =>
+                                                                Icon(
+                                                              Icons
+                                                                  .arrow_back_ios,
+                                                              color: isHovered
+                                                                  ? Colors.white
+                                                                  : Colors.grey,
+                                                            ),
+                                                          ),
+                                                        ).onTap(() {
+                                                          pageController.animateToPage(
+                                                              ((currentPage - 1) %
+                                                                      portfolioItems
+                                                                          .length)
+                                                                  .toInt(),
+                                                              duration:
+                                                                  const Duration(
+                                                                      milliseconds:
+                                                                          300),
+                                                              curve: Curves
+                                                                  .linearToEaseOut);
+                                                        }),
+                                                      )),
+                                                  Positioned(
+                                                      bottom: 0,
+                                                      right: 0,
+                                                      left: 0,
+                                                      child: Container(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .symmetric(
+                                                                vertical: 20),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                                color: Colors
+                                                                    .black
+                                                                    .withOpacity(
+                                                                        0.5)),
+                                                        child: Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .min,
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              Center(
+                                                                child: Text(
+                                                                  portfolioItems[
+                                                                          currentPage]
+                                                                      .name,
+                                                                  style: const TextStyle(
+                                                                      fontFamily:
+                                                                          Fonts
+                                                                              .raleway,
+                                                                      fontSize:
+                                                                          20,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      color: Colors
+                                                                          .white),
+                                                                ).padding(const EdgeInsets
+                                                                            .symmetric(
+                                                                        horizontal:
+                                                                            20)
+                                                                    .copyWith(
+                                                                        bottom:
+                                                                            25)),
+                                                              ),
+                                                              Row(
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .center,
+                                                                  children: List.generate(
+                                                                      portfolioItems
+                                                                          .length,
+                                                                      (int index) => AnimatedContainer(
+                                                                          margin: const EdgeInsets.symmetric(
+                                                                              horizontal:
+                                                                                  4),
+                                                                          height:
+                                                                              15,
+                                                                          width:
+                                                                              15,
+                                                                          decoration: BoxDecoration(
+                                                                              shape: BoxShape.circle,
+                                                                              color: index == currentPage ? context.primaryColor : context.primaryColor.withOpacity(0.4)),
+                                                                          duration: const Duration(milliseconds: 300))))
+                                                            ]),
+                                                      ))
+                                                ],
+                                              ),
+                                            );
+                                          }));
+                                });
                               }),
                               HoverWidget(
                                 child: (_, bool isHovered) => Icon(
@@ -113,148 +337,6 @@ class _PortfolioItemState extends State<PortfolioItem>
           )
         ],
       );
-    }).onTap(() {
-      setState(() {
-        currentPage = portfolioItems.indexOf(widget.portfolioItem);
-      });
-      final PageController pageController = PageController(
-          initialPage: portfolioItems.indexOf(widget.portfolioItem));
-      showDialog<void>(
-          context: context,
-          builder: (_) => StatefulBuilder(builder: (BuildContext context, setState) {
-                return Material(
-                  color: Colors.transparent,
-                  child: Stack(
-                    children: [
-                      PageView(
-                        onPageChanged: (int index) {
-                          setState(() {
-                            currentPage = index;
-                          });
-                        },
-                        controller: pageController,
-                        children: portfolioItems
-                            .map((PortfolioModel e) => Image.asset(
-                                  e.image,
-                                  fit: BoxFit.fitHeight,
-                                ))
-                            .toList(),
-                      ),
-                      Positioned(
-                          top: 15,
-                          right: 15,
-                          child: Container(
-                            padding: const EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                                color: Colors.black,
-                                borderRadius: BorderRadius.circular(4)),
-                            child: HoverWidget(
-                              child: (_, bool isHovered) => Icon(
-                                Icons.close,
-                                color: isHovered ? Colors.white : Colors.grey,
-                              ),
-                            ),
-                          ).onTap(() {
-                            Navigator.pop(context);
-                          })),
-                      Positioned(
-                          top: context.height / 2 - 20,
-                          right: 15,
-                          child: Center(
-                            child: Container(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 12),
-                              decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(4)),
-                              child: HoverWidget(
-                                child: (_, bool isHovered) => Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: isHovered ? Colors.white : Colors.grey,
-                                ),
-                              ),
-                            ).onTap(() {
-                              pageController.animateToPage(
-                                  ((currentPage + 1) % portfolioItems.length)
-                                      .toInt(),
-                                  duration: const Duration(milliseconds: 300),
-                                  curve: Curves.linearToEaseOut);
-                            }),
-                          )),
-                      Positioned(
-                          top: context.height / 2 - 20,
-                          left: 15,
-                          child: Center(
-                            child: Container(
-                              padding: const EdgeInsets.symmetric(
-                                      horizontal: 8, vertical: 12)
-                                  .copyWith(left: 12),
-                              decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(4)),
-                              child: HoverWidget(
-                                child: (_, bool isHovered) => Icon(
-                                  Icons.arrow_back_ios,
-                                  color: isHovered ? Colors.white : Colors.grey,
-                                ),
-                              ),
-                            ).onTap(() {
-                              pageController.animateToPage(
-                                  ((currentPage - 1) % portfolioItems.length)
-                                      .toInt(),
-                                  duration: const Duration(milliseconds: 300),
-                                  curve: Curves.linearToEaseOut);
-                            }),
-                          )),
-                      Positioned(
-                          bottom: 0,
-                          right: 0,
-                          left: 0,
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(vertical: 20),
-                            decoration: BoxDecoration(
-                                color: Colors.black.withOpacity(0.5)),
-                            child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Center(
-                                    child: Text(
-                                      portfolioItems[currentPage].name,
-                                      style: const TextStyle(
-                                          fontFamily: Fonts.raleway,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white),
-                                    ).padding(const EdgeInsets.symmetric(
-                                            horizontal: 20)
-                                        .copyWith(bottom: 25)),
-                                  ),
-                                  Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: List.generate(
-                                          portfolioItems.length,
-                                          (int index) => AnimatedContainer(
-                                              margin:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 4),
-                                              height: 15,
-                                              width: 15,
-                                              decoration: BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  color: index == currentPage
-                                                      ? primaryColor
-                                                      : primaryColor
-                                                          .withOpacity(0.4)),
-                                              duration: const Duration(
-                                                  milliseconds: 300))))
-                                ]),
-                          ))
-                    ],
-                  ),
-                );
-              }));
     });
   }
 }

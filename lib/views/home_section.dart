@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../app/colors.dart';
 import '../app/fonts.dart';
 import '../app/text_styles.dart';
 import '../bootstrap_button.dart';
 import '../bootstrap_col.dart';
 import '../bootstrap_row.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 
 class HomeSection extends StatelessWidget {
   const HomeSection({Key? key}) : super(key: key);
@@ -31,7 +30,7 @@ class HomeSection extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ).padding(const EdgeInsets.only(top: 10)),
                 BootstrapButton(
-                  color: primaryColor,
+                  color: context.primaryColor,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 50, vertical: 14),
                   margin: const EdgeInsets.only(top: 30),

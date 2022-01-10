@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'bootstrap_utils.dart';
-import 'extensions.dart';
+import 'extensions/extensions.dart';
 
 ///
 /// Implementation of the Bootstrap .container and .container-fluid

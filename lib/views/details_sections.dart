@@ -4,7 +4,7 @@ import '../app/data.dart';
 import '../app/fonts.dart';
 import '../bootstrap_col.dart';
 import '../bootstrap_row.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 
 class DetailsSection extends StatelessWidget {
   const DetailsSection({Key? key}) : super(key: key);

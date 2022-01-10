@@ -3,11 +3,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../app/colors.dart';
 import '../app/fonts.dart';
 import '../bootstrap_col.dart';
 import '../bootstrap_row.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 import 'footer_section.dart';
 import 'header_section.dart';
 
@@ -37,6 +36,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
           ),
           Expanded(
             child: SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -65,10 +65,10 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                               children: [
                                 Text.rich(TextSpan(
                                     text: 'Home   ',
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                         fontFamily: Fonts.openSans,
                                         fontSize: 14,
-                                        color: primaryColor),
+                                        color: context.primaryColor),
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {
                                         GoRouter.of(context).pop();
@@ -124,7 +124,9 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                                       child: CarouselSlider(
                                         carouselController: pageController,
                                         options: CarouselOptions(
-                                            onPageChanged: (int index, CarouselPageChangedReason reason) {
+                                            onPageChanged: (int index,
+                                                CarouselPageChangedReason
+                                                    reason) {
                                               setState(() {
                                                 currentIndex = index;
                                               });
@@ -150,8 +152,8 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                                             decoration: BoxDecoration(
                                                 shape: BoxShape.circle,
                                                 color: index == currentIndex
-                                                    ? primaryColor
-                                                    : primaryColor
+                                                    ? context.primaryColor
+                                                    : context.primaryColor
                                                         .withOpacity(0.4)),
                                             duration: const Duration(
                                                 milliseconds: 300)))).padding(
@@ -238,7 +240,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
             style: TextStyle(
                 fontFamily: Fonts.openSans,
                 fontSize: 15,
-                color: hasLink ? primaryColor : const Color(0xFF444444),
+                color: hasLink ? context.primaryColor : const Color(0xFF444444),
                 fontWeight: FontWeight.w400),
           )
         ])).padding(const EdgeInsets.only(top: 10));

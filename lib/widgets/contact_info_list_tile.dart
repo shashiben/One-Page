@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../app/colors.dart';
 import '../app/fonts.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 import 'hover_widget.dart';
 
 class ContactListTile extends StatelessWidget {
@@ -27,13 +26,13 @@ class ContactListTile extends StatelessWidget {
               decoration: BoxDecoration(
                   color: isHovered
                       ? const Color(0xFF2487ce)
-                      : primaryColor.withOpacity(0.2),
+                      : context.primaryColor.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(5)),
               padding: const EdgeInsets.all(8),
               child: Icon(
                 leadingIcon,
                 size: 20,
-                color: isHovered ? Colors.white : primaryColor,
+                color: isHovered ? Colors.white : context.primaryColor,
               )),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

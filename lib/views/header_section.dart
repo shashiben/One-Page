@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../app/colors.dart';
 import '../app/fonts.dart';
 import '../bootstrap_button.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 import '../widgets/hover_widget.dart';
 import '../widgets/navigation_drawer.dart';
 
@@ -28,13 +27,14 @@ class HeaderSection extends StatelessWidget {
       scrollController: scrollController,
       color: Colors.white,
       childrens: [
-        ...titles.map((String e) => HoverWidget(child: (BuildContext context, bool isHovered) {
+        ...titles.map((String e) =>
+            HoverWidget(child: (BuildContext context, bool isHovered) {
               return Text(e,
                       style: TextStyle(
                           fontFamily: Fonts.openSans,
                           fontSize: 14,
                           color: isHovered
-                              ? primaryColor
+                              ? context.primaryColor
                               : const Color(0xFF16507B)))
                   .padding(const EdgeInsets.symmetric(vertical: 10),
                       margin: const EdgeInsets.only(left: 30))
@@ -49,7 +49,7 @@ class HeaderSection extends StatelessWidget {
               });
             })),
         BootstrapButton(
-            color: primaryColor,
+            color: context.primaryColor,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
             margin: const EdgeInsets.only(left: 30),
             onPressed: () {},
@@ -65,9 +65,7 @@ class HeaderSection extends StatelessWidget {
       leading: const Text(
         'OnePage',
         style: TextStyle(
-            fontFamily: Fonts.poppins,
-            fontSize: 28,
-            color: Color(0xFF16507B)),
+            fontFamily: Fonts.poppins, fontSize: 28, color: Color(0xFF16507B)),
       ).onTap(() {
         GoRouter.of(context).push('/');
       }),

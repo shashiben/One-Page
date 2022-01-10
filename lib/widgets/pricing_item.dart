@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../app/colors.dart';
 import '../app/fonts.dart';
 import '../bootstrap_button.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 import '../models/pricing_model.dart';
 import 'hover_widget.dart';
 
@@ -21,9 +21,8 @@ class PricingItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color backgroundColor =
-        isActive ? context.themeData.primaryColor : Colors.white;
-    final Color borderColor =
-        isActive ? Colors.white : context.themeData.primaryColor;
+        isActive ? context.primaryColor : Colors.white;
+    final Color borderColor = isActive ? Colors.white : context.primaryColor;
     return HoverWidget(
       child: (BuildContext context, bool isItemHovered) => Container(
         alignment: Alignment.center,
@@ -102,12 +101,9 @@ class PricingItem extends StatelessWidget {
                 child: BootstrapButton(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 50, vertical: 14),
-                    color: !isActive
-                        ? context.themeData.primaryColor
-                        : Colors.white,
-                    outlineColor: isActive
-                        ? context.themeData.primaryColor
-                        : Colors.white,
+                    color: !isActive ? context.primaryColor : Colors.white,
+                    outlineColor:
+                        isActive ? context.primaryColor : Colors.white,
                     variant: ButtonVariant.outlined,
                     child: (bool isHovered) => Text(
                           'Buy now',
@@ -117,7 +113,7 @@ class PricingItem extends StatelessWidget {
                               color: isActive
                                   ? (!isHovered ? borderColor : backgroundColor)
                                   : !isHovered
-                                      ? context.themeData.primaryColor
+                                      ? context.primaryColor
                                       : Colors.white),
                         ),
                     onPressed: () {}),

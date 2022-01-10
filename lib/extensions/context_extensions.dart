@@ -1,17 +1,5 @@
 import 'package:flutter/material.dart';
-export 'animation_extensions.dart';
 
-/// if ([width] > 1200) {
-///      return "xl";
-///    } else if (width > 992) {
-///      return "lg";
-///    } else if (width > 768) {
-///      return "md";
-///    } else if (width > 576) {
-///      return "sm";
-///    } else {
-///      return "";
-///    }
 extension ContextExtension on BuildContext {
   MediaQueryData get mediaQuery => MediaQuery.of(this);
   Size get size => mediaQuery.size;
@@ -51,23 +39,12 @@ extension ContextExtension on BuildContext {
   bool get isXs => size.width > 1200 && size.width <= 576;
   bool get alwaysUse24HourFormat => MediaQuery.of(this).alwaysUse24HourFormat;
 
-}
+  Color get primaryColor => themeData.primaryColor;
+  Color get primaryColorDark => themeData.primaryColorDark;
+  Color get primaryColorLight => themeData.primaryColorLight;
+  Color get cardColor => themeData.cardColor;
+  Color get canvasColor => themeData.canvasColor;
+  Color get shadowColor => themeData.shadowColor;
 
-extension WidgetExtensions on Widget {
-  Widget padding(EdgeInsets? padding, {EdgeInsets? margin}) => Container(
-        padding: padding,
-        margin: margin,
-        child: this,
-      );
-  Widget decoration(BoxDecoration decoration) => DecoratedBox(
-        decoration: decoration,
-        child: this,
-      );
-  Widget center() => Center(
-        child: this,
-      );
-  Widget onTap(void Function() onTap) => InkWell(
-        onTap: onTap,
-        child: this,
-      );
+  IconThemeData get primaryIconTheme => themeData.primaryIconTheme;
 }

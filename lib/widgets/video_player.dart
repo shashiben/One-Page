@@ -2,7 +2,7 @@ import 'package:bootstrap/app/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:universal_platform/universal_platform.dart';
 import 'package:webviewx/webviewx.dart';
-import 'package:bootstrap/extensions.dart';
+import 'package:bootstrap/extensions/extensions.dart';
 
 class VideoPlayer extends StatelessWidget {
   final String? url;

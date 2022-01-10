@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
 import '../app/fonts.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 import '../models/team_model.dart';
 import 'hover_widget.dart';
 
@@ -27,53 +27,51 @@ class TeamItem extends StatelessWidget {
           ),
         ], color: Colors.white, borderRadius: BorderRadius.circular(6)),
         child: Column(children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(6), topRight: Radius.circular(6)),
-            child: Stack(
-              children: [
-                Image.asset(
-                  member.image,
-                  fit: BoxFit.cover,
-                  width: context.width,
-                  height: 300,
-                ),
-                Positioned(
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  child: AnimatedOpacity(
-                    duration: const Duration(milliseconds: 400),
-                    opacity: isHovered ? 1 : 0,
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      decoration:
-                          BoxDecoration(color: Colors.white.withOpacity(0.8)),
-                      width: double.infinity,
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            (LineIcons.twitter),
-                            (LineIcons.facebook),
-                            (LineIcons.instagram),
-                            (LineIcons.linkedin)
-                          ]
-                              .map((IconData e) => HoverWidget(
-                                    child: (BuildContext context, bool isIconHovered) => Icon(
-                                      e,
-                                      size: 20,
-                                      color: isIconHovered
-                                          ? context.themeData.primaryColor
-                                          : const Color(0xFF124265),
-                                    ),
-                                  ))
-                              .toList()),
-                    ),
+          Stack(
+            children: [
+              Image.asset(
+                member.image,
+                fit: BoxFit.cover,
+                width: context.width,
+                height: 300,
+              ),
+              Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: AnimatedOpacity(
+                  duration: const Duration(milliseconds: 400),
+                  opacity: isHovered ? 1 : 0,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    decoration:
+                        BoxDecoration(color: Colors.white.withOpacity(0.8)),
+                    width: double.infinity,
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          (LineIcons.twitter),
+                          (LineIcons.facebook),
+                          (LineIcons.instagram),
+                          (LineIcons.linkedin)
+                        ]
+                            .map((IconData e) => HoverWidget(
+                                  child: (BuildContext context,
+                                          bool isIconHovered) =>
+                                      Icon(
+                                    e,
+                                    size: 20,
+                                    color: isIconHovered
+                                        ? context.primaryColor
+                                        : const Color(0xFF124265),
+                                  ),
+                                ))
+                            .toList()),
                   ),
-                )
-              ],
-            ),
-          ),
+                ),
+              )
+            ],
+          ).clipRRect(topLeft: 6, topRight: 6),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
             child: Column(

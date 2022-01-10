@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../app/fonts.dart';
 import '../bootstrap_button.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 
 class CTASection extends StatelessWidget {
   const CTASection({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class CTASection extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.symmetric(vertical: 50),
-      decoration: BoxDecoration(color: context.themeData.primaryColor),
+      decoration: BoxDecoration(color: context.primaryColor),
       child: Column(
         children: [
           const Text(
@@ -38,16 +38,14 @@ class CTASection extends StatelessWidget {
           BootstrapButton(
               padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 14),
               color: Colors.white,
-              outlineColor: context.themeData.primaryColor,
+              outlineColor: context.primaryColor,
               variant: ButtonVariant.outlined,
               child: (bool isHovered) => Text(
                     'Call To Action',
                     style: TextStyle(
                         fontFamily: Fonts.openSans,
                         fontWeight: FontWeight.bold,
-                        color: isHovered
-                            ? context.themeData.primaryColor
-                            : Colors.white),
+                        color: isHovered ? context.primaryColor : Colors.white),
                   ),
               onPressed: () {})
         ],

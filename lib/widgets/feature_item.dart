@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../app/colors.dart';
 import '../app/text_styles.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 import '../models/feature_model.dart';
 import 'hover_widget.dart';
 
@@ -66,12 +66,12 @@ class _FeatureItemState extends State<FeatureItem>
             Icon(
               widget.feature.icon,
               size: 36,
-              color: primaryColor,
+              color: context.primaryColor,
             ).padding(const EdgeInsets.only(top: 10, bottom: 20)),
             Text(
               widget.feature.title,
-              style: a(context)
-                  .copyWith(color: isHovered ? primaryColor : textPrimaryColor),
+              style: a(context).copyWith(
+                  color: isHovered ? context.primaryColor : textPrimaryColor),
             ).padding(const EdgeInsets.only(bottom: 15)),
             Text(widget.feature.description)
           ]),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../app/colors.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 
 class NavigationDrawer extends StatefulWidget {
   final Color? color;
@@ -81,7 +81,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                     color: textPrimaryColor,
                   ).onTap(() {
                     showDialog<void>(
-                        barrierColor: primaryColor.withOpacity(0.9),
+                        barrierColor: context.primaryColor.withOpacity(0.9),
                         context: context,
                         builder: (_) => Material(
                               color: Colors.transparent,

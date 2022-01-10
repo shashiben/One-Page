@@ -4,7 +4,7 @@ import '../app/data.dart';
 import '../app/text_styles.dart';
 import '../bootstrap_col.dart';
 import '../bootstrap_row.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 import '../models/service_model.dart';
 import '../widgets/service_item.dart';
 

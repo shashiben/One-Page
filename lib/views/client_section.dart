@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../bootstrap_col.dart';
 import '../bootstrap_row.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 import '../widgets/company_logo_item.dart';
 
 class ClientSection extends StatelessWidget {

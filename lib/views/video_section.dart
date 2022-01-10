@@ -5,7 +5,7 @@ import '../app/colors.dart';
 import '../app/fonts.dart';
 import '../bootstrap_col.dart';
 import '../bootstrap_row.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 import '../ordered_list.dart';
 
 class VideoSection extends StatelessWidget {
@@ -37,12 +37,12 @@ class VideoSection extends StatelessWidget {
                     color: Colors.white,
                   )
                       .padding(const EdgeInsets.all(15))
-                      .decoration(const BoxDecoration(
-                          shape: BoxShape.circle, color: primaryColor))
+                      .decoration(BoxDecoration(
+                          shape: BoxShape.circle, color: context.primaryColor))
                       .padding(const EdgeInsets.all(12))
                       .decoration(BoxDecoration(
                           shape: BoxShape.circle,
-                          color: primaryColor.withOpacity(0.3)))
+                          color: context.primaryColor.withOpacity(0.3)))
                       .center()
                       .onTap(() {
                     showDialog<void>(
@@ -64,7 +64,7 @@ class VideoSection extends StatelessWidget {
                                       })),
                                   Positioned.fill(
                                       child: Center(
-                                    child: VideoPlayer()
+                                    child: const VideoPlayer()
                                         .padding(const EdgeInsets.all(20)),
                                   ))
                                 ]),
@@ -96,13 +96,12 @@ class VideoSection extends StatelessWidget {
                       color: Color(0xFF444444)),
                 ).padding(const EdgeInsets.only(bottom: 16)),
                 OrderedList(
-                    leadingIcon: const Icon(Icons.checklist),
                     children: [
-                      'Ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                      'Duis aute irure dolor in reprehenderit in voluptate velit.',
-                      'Voluptate repellendus pariatur reprehenderit corporis sint.',
-                      'Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.'
-                    ]
+                  'Ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                  'Duis aute irure dolor in reprehenderit in voluptate velit.',
+                  'Voluptate repellendus pariatur reprehenderit corporis sint.',
+                  'Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.'
+                ]
                         .map((String e) => Text(
                               e,
                               style: const TextStyle(

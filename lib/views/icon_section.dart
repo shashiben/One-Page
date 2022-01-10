@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../app/data.dart';
 import '../bootstrap_col.dart';
 import '../bootstrap_row.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 import '../models/feature_model.dart';
 import '../widgets/feature_item.dart';
 

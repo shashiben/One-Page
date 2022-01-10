@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../app/colors.dart';
 import '../app/fonts.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 import '../models/service_model.dart';
 import 'hover_widget.dart';
 

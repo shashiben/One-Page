@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../bootstrap_utils.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 
 class ResponsiveStaggeredgridView extends StatefulWidget {
   final String sizes;

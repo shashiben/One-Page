@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../app/fonts.dart';
 import '../bootstrap_button.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 
 class NewsLetterWidget extends StatelessWidget {
   const NewsLetterWidget({Key? key}) : super(key: key);

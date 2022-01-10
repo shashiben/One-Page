@@ -16,15 +16,14 @@ class OrderedList extends StatelessWidget {
       shrinkWrap: true,
       itemCount: children.length,
       physics: const NeverScrollableScrollPhysics(),
-      itemBuilder: (BuildContext context, int index) => Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            leadingIcon ?? const Icon(LineIcons.arrowCircleRight),
-            SizedBox(
-              width: spacing,
-            ),
-            Expanded(child: children[index])
-          ]),
+      itemBuilder: (BuildContext context, int index) =>
+          Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        leadingIcon ?? const Icon(LineIcons.doubleCheck),
+        SizedBox(
+          width: spacing,
+        ),
+        Expanded(child: children[index])
+      ]),
     );
   }
 }

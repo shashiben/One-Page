@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'bootstrap_utils.dart';
 import 'constants.dart';
-import 'extensions.dart';
+import 'extensions/extensions.dart';
 
 class BootstrapCol extends StatelessWidget {
   final List<int?> _config = <int?>[]..length = 5;

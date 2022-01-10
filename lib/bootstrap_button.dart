@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'extensions.dart';
+import 'extensions/extensions.dart';
 import 'widgets/hover_widget.dart';
 
 enum ButtonVariant { filled, outlined }
@@ -32,12 +32,13 @@ class BootstrapButton extends StatelessWidget {
     return InkWell(
         onTap: onPressed,
         child: HoverWidget(
-            child: (BuildContext context, bool isHovered) => variant == ButtonVariant.filled
+            child: (BuildContext context, bool isHovered) => variant ==
+                    ButtonVariant.filled
                 ? Container(
                     margin: margin,
                     padding: padding,
                     decoration: BoxDecoration(
-                        color: color ?? context.themeData.primaryColor,
+                        color: color ?? context.primaryColor,
                         borderRadius: borderRadius ?? BorderRadius.circular(5)),
                     child: child(isHovered),
                   )
@@ -47,10 +48,9 @@ class BootstrapButton extends StatelessWidget {
                     padding: padding,
                     decoration: BoxDecoration(
                         border: Border.all(
-                            color: color ?? context.themeData.primaryColor,
-                            width: 1.5),
+                            color: color ?? context.primaryColor, width: 1.5),
                         color: isHovered
-                            ? (color ?? context.themeData.primaryColor)
+                            ? (color ?? context.primaryColor)
                             : outlineColor,
                         borderRadius: borderRadius ?? BorderRadius.circular(5)),
                     child: child(isHovered),

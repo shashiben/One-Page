@@ -7,7 +7,7 @@ import '../app/fonts.dart';
 import '../bootstrap_button.dart';
 import '../bootstrap_col.dart';
 import '../bootstrap_row.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 import '../widgets/footer_item.dart';
 import '../widgets/news_letter.dart';
 
@@ -161,9 +161,9 @@ class FooterSection extends StatelessWidget {
                                 text: 'Shashi Kumar. ',
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {},
-                                style: const TextStyle(
+                                style: TextStyle(
                                     fontFamily: Fonts.openSans,
-                                    color: primaryColor,
+                                    color: context.primaryColor,
                                     fontWeight: FontWeight.bold)),
                           ])),
                     ],

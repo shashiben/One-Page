@@ -6,7 +6,7 @@ import '../app/fonts.dart';
 import '../app/text_styles.dart';
 import '../bootstrap_col.dart';
 import '../bootstrap_row.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 import '../models/portfolio_model.dart';
 import '../widgets/hover_widget.dart';
 import '../widgets/portfolio_item.dart';
@@ -47,7 +47,7 @@ class _PortfolioSectionState extends State<PortfolioSection>
                         style: TextStyle(
                             fontFamily: Fonts.openSans,
                             color: (index == selectedIndex || isTabHovered)
-                                ? primaryColor
+                                ? context.primaryColor
                                 : textPrimaryColor,
                             fontWeight: FontWeight.w600,
                             fontSize: 14),
@@ -68,16 +68,17 @@ class _PortfolioSectionState extends State<PortfolioSection>
             horizontalSpacing: 20,
             verticalSpacing: 20,
             children: portfolioItems
-                .map((PortfolioModel e) => (e.type == tabs.elementAt(selectedIndex) ||
-                        selectedIndex == 0)
-                    ? BootstrapCol(
-                        sizes: 'col-12 col-lg-4 col-md-6',
-                        child: PortfolioItem(
-                          portfolioItem: e,
-                          shouldDisplay: true,
-                        ))
-                    : BootstrapCol(
-                        sizes: 'col-0 col-sm-0', child: const SizedBox()))
+                .map((PortfolioModel e) =>
+                    (e.type == tabs.elementAt(selectedIndex) ||
+                            selectedIndex == 0)
+                        ? BootstrapCol(
+                            sizes: 'col-12 col-lg-4 col-md-6',
+                            child: PortfolioItem(
+                              portfolioItem: e,
+                              shouldDisplay: true,
+                            ))
+                        : BootstrapCol(
+                            sizes: 'col-0 col-sm-0', child: const SizedBox()))
                 .toList())
       ]).padding(const EdgeInsets.symmetric(horizontal: 20, vertical: 60)),
     );

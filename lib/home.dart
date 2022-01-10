@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'bootstrap_container.dart';
-import 'extensions.dart';
+import 'extensions/extensions.dart';
 import 'views/about_section.dart';
 import 'views/client_section.dart';
 import 'views/contact_section.dart';
@@ -55,7 +55,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             ? FloatingActionButton(
                 elevation: 0,
                 mini: true,
-                backgroundColor: context.themeData.primaryColor,
+                backgroundColor: context.primaryColor,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(4)),
                 onPressed: () {

@@ -5,7 +5,7 @@ import '../app/text_styles.dart';
 import '../bootstrap_button.dart';
 import '../bootstrap_col.dart';
 import '../bootstrap_row.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 import '../ordered_list.dart';
 import 'details_sections.dart';
 import 'video_section.dart';
@@ -49,12 +49,11 @@ class AboutSection extends StatelessWidget {
                                         color: const Color(0xFF444444)),
                                   ).padding(const EdgeInsets.only(bottom: 15)),
                                   OrderedList(
-                                      leadingIcon: const Icon(Icons.checklist),
                                       children: [
-                                        'Ullamco laboris nisi ut aliquip ex ea commodo consequat',
-                                        'Duis aute irure dolor in reprehenderit in voluptate velit',
-                                        'Ullamco laboris nisi ut aliquip ex ea commodo consequat'
-                                      ]
+                                    'Ullamco laboris nisi ut aliquip ex ea commodo consequat',
+                                    'Duis aute irure dolor in reprehenderit in voluptate velit',
+                                    'Ullamco laboris nisi ut aliquip ex ea commodo consequat'
+                                  ]
                                           .map((String e) => Text(
                                                 e,
                                                 style:
@@ -84,7 +83,7 @@ class AboutSection extends StatelessWidget {
                                           fontWeight: FontWeight.bold,
                                           color: isHovered
                                               ? Colors.white
-                                              : context.themeData.primaryColor),
+                                              : context.primaryColor),
                                     ),
                                     onPressed: () {},
                                     variant: ButtonVariant.outlined,

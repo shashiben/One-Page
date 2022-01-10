@@ -7,7 +7,7 @@ import '../app/colors.dart';
 import '../app/data.dart';
 import '../app/fonts.dart';
 import '../app/text_styles.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 import '../widgets/accordion.dart';
 import '../widgets/hover_widget.dart';
 

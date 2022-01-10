@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/fadeAnimation.dart';
-import 'widgets/scale_transition.dart';
+import '../widgets/fadeAnimation.dart';
+import '../widgets/scale_transition.dart';
 
 extension AnimationExtension on Widget {
   Widget fade({

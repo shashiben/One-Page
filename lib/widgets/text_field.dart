@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../extensions.dart';
+import '../extensions/extensions.dart';
 
 class CommonTextField extends StatelessWidget {
   final TextEditingController controller;
