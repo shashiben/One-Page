@@ -1,8 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:visibility_detector/visibility_detector.dart';
-
 import '../app/data.dart';
 import '../app/text_styles.dart';
 import '../extensions/extensions.dart';

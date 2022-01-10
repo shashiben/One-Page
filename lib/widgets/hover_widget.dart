@@ -14,6 +14,11 @@ class _HoverWidgetState extends State<HoverWidget> {
   @override
   Widget build(BuildContext context) {
     return Listener(
+      onPointerHover: (event) {
+        setState(() {
+          isHovered = true;
+        });
+      },
       onPointerUp: (event) {
         if (isHovered) {
           Future.delayed(const Duration(milliseconds: 1500)).then((value) {
