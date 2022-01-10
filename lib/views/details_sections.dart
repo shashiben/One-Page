@@ -1,3 +1,4 @@
+import 'package:bootstrap/widgets/text_counter.dart';
 import 'package:flutter/material.dart';
 
 import '../app/data.dart';
@@ -21,7 +22,10 @@ class DetailsSection extends StatelessWidget {
                   sizes: 'col-6 col-md-6 col-lg-3 col-sm-6 col-xs-6',
                   child: Column(
                     children: [
-                      Text('${e.value}',
+                      AnimatedCounter(
+                          begin: 0,
+                          duration: const Duration(seconds: 5),
+                          end: e.value.toDouble(),
                           style: const TextStyle(
                               fontFamily: Fonts.openSans,
                               fontWeight: FontWeight.w700,
