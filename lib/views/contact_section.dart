@@ -41,7 +41,7 @@ class _ContactSectionState extends State<ContactSection> {
                 'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.',
                 style: SectionTitle.p(context),
                 textAlign: TextAlign.center,
-              ).padding(const EdgeInsets.only(top: 10, bottom: 20)),
+              ).container(const EdgeInsets.only(top: 10, bottom: 20)),
             ],
           ),
           BootstrapRow(children: [
@@ -108,7 +108,7 @@ class _ContactSectionState extends State<ContactSection> {
                 ))
           ])
         ],
-      ).padding(EdgeInsets.symmetric(
+      ).container(EdgeInsets.symmetric(
           vertical: 60, horizontal: context.isMobile ? 20 : 60)),
     );
   }

@@ -20,6 +20,6 @@ class CommonTextField extends StatelessWidget {
             borderSide: const BorderSide(color: Color(0xFFEEEEEE))),
         hintText: hint,
       ),
-    ).padding(const EdgeInsets.only(top: 25));
+    ).container(const EdgeInsets.only(top: 25));
   }
 }

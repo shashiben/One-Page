@@ -1,11 +1,23 @@
 import 'package:flutter/material.dart';
 
 extension WidgetExtensions on Widget {
-  Widget padding(EdgeInsets? padding, {EdgeInsets? margin}) => Container(
-        padding: padding,
-        margin: margin,
-        child: this,
-      );
+  Widget container(EdgeInsets? padding,
+          {EdgeInsets? margin,
+          bool shouldAnimate = false,
+          Duration animationDuration = const Duration(milliseconds: 300),
+          Curve? animationCurve}) =>
+      shouldAnimate
+          ? AnimatedContainer(
+              duration: animationDuration,
+              padding: padding,
+              margin: margin,
+              child: this,
+            )
+          : Container(
+              padding: padding,
+              margin: margin,
+              child: this,
+            );
   Widget decoration(BoxDecoration decoration) => DecoratedBox(
         decoration: decoration,
         child: this,
@@ -23,6 +35,7 @@ extension WidgetExtensions on Widget {
       );
 
   Widget onTap(void Function() onTap) => InkWell(
+        radius: 40,
         onTap: onTap,
         child: this,
       );
@@ -149,6 +162,27 @@ extension WidgetExtensions on Widget {
       width: width,
       height: height,
       child: this,
+    );
+  }
+
+  Widget safeArea({
+    Key? key,
+    bool left = true,
+    bool top = true,
+    bool right = true,
+    bool bottom = true,
+    EdgeInsets minimum = EdgeInsets.zero,
+    bool maintainBottomViewPadding = false,
+  }) {
+    return SafeArea(
+      child: this,
+      key: key,
+      left: left,
+      top: top,
+      right: right,
+      bottom: bottom,
+      maintainBottomViewPadding: maintainBottomViewPadding,
+      minimum: minimum,
     );
   }
 }

@@ -102,13 +102,13 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: widget.childrens,
-                                      ).padding(const EdgeInsets.symmetric(
+                                      ).container(const EdgeInsets.symmetric(
                                           vertical: 20)),
-                                    ).padding(const EdgeInsets.symmetric(
+                                    ).container(const EdgeInsets.symmetric(
                                         vertical: 20)),
                                   ))
                                 ],
-                              ).padding(const EdgeInsets.symmetric(
+                              ).container(const EdgeInsets.symmetric(
                                   horizontal: 20, vertical: 25)),
                             ));
                   }),

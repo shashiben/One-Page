@@ -52,7 +52,7 @@ class PricingItem extends StatelessWidget {
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
                     color: isActive ? Colors.white : textPrimaryColor),
-              ).padding(const EdgeInsets.all(15).copyWith(top: 25)),
+              ).container(const EdgeInsets.all(15).copyWith(top: 25)),
               Text.rich(TextSpan(
                   text: '\$',
                   style: TextStyle(
@@ -79,14 +79,14 @@ class PricingItem extends StatelessWidget {
                               ? Colors.white
                               : const Color(0xFFbababa)),
                     ),
-                  ])).padding(const EdgeInsets.only(bottom: 20)),
+                  ])).container(const EdgeInsets.only(bottom: 20)),
               ...pricingModel.included.map((String e) => Text(
                     e,
                     style: TextStyle(
                         fontFamily: Fonts.openSans,
                         fontSize: 14,
                         color: isActive ? Colors.white : textPrimaryColor),
-                  ).padding(const EdgeInsets.only(bottom: 16))),
+                  ).container(const EdgeInsets.only(bottom: 16))),
               ...pricingModel.notIncluded.map((String e) => Text(
                     e,
                     style: TextStyle(
@@ -95,7 +95,7 @@ class PricingItem extends StatelessWidget {
                         decoration: TextDecoration.lineThrough,
                         color:
                             !isActive ? const Color(0xFFbababa) : Colors.white),
-                  ).padding(const EdgeInsets.only(bottom: 16))),
+                  ).container(const EdgeInsets.only(bottom: 16))),
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: BootstrapButton(

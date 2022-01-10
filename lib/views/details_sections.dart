@@ -33,7 +33,7 @@ class DetailsSection extends StatelessWidget {
                             fontFamily: Fonts.raleway,
                             fontWeight: FontWeight.w600,
                             fontSize: 14),
-                      ).padding(const EdgeInsets.only(top: 8))
+                      ).container(const EdgeInsets.only(top: 8))
                     ],
                   )))
               .toList()),

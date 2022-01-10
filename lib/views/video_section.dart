@@ -1,3 +1,4 @@
+import 'package:bootstrap/widgets/video_play_button.dart';
 import 'package:bootstrap/widgets/video_player.dart';
 import 'package:flutter/material.dart';
 
@@ -32,19 +33,7 @@ class VideoSection extends StatelessWidget {
                   fit: BoxFit.fitWidth,
                 ),
                 Positioned.fill(
-                  child: const Icon(
-                    Icons.play_arrow,
-                    color: Colors.white,
-                  )
-                      .padding(const EdgeInsets.all(15))
-                      .decoration(BoxDecoration(
-                          shape: BoxShape.circle, color: context.primaryColor))
-                      .padding(const EdgeInsets.all(12))
-                      .decoration(BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: context.primaryColor.withOpacity(0.3)))
-                      .center()
-                      .onTap(() {
+                  child: const VideoPlayButton().onTap(() {
                     showDialog<void>(
                         context: context,
                         builder: (_) => Material(
@@ -65,12 +54,12 @@ class VideoSection extends StatelessWidget {
                                   Positioned.fill(
                                       child: Center(
                                     child: const VideoPlayer()
-                                        .padding(const EdgeInsets.all(20)),
+                                        .container(const EdgeInsets.all(20)),
                                   ))
                                 ]),
                               ),
                             ));
-                  }),
+                  }).center(),
                 )
               ],
             )),
@@ -85,7 +74,7 @@ class VideoSection extends StatelessWidget {
                       fontSize: 24,
                       fontWeight: FontWeight.w700,
                       color: textPrimaryColor),
-                ).padding(const EdgeInsets.only(bottom: 8)),
+                ).container(const EdgeInsets.only(bottom: 8)),
                 const Text(
                   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                   style: TextStyle(
@@ -94,7 +83,7 @@ class VideoSection extends StatelessWidget {
                       fontStyle: FontStyle.italic,
                       fontWeight: FontWeight.w600,
                       color: Color(0xFF444444)),
-                ).padding(const EdgeInsets.only(bottom: 16)),
+                ).container(const EdgeInsets.only(bottom: 16)),
                 OrderedList(
                     children: [
                   'Ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -108,7 +97,7 @@ class VideoSection extends StatelessWidget {
                                   fontFamily: Fonts.openSans,
                                   fontSize: 15,
                                   color: Color(0xFF444444)),
-                            ).padding(const EdgeInsets.only(top: 10)))
+                            ).container(const EdgeInsets.only(top: 10)))
                         .toList()),
                 const Text(
                         'Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
@@ -116,7 +105,7 @@ class VideoSection extends StatelessWidget {
                             fontFamily: Fonts.openSans,
                             fontSize: 15,
                             color: Color(0xFF444444)))
-                    .padding(const EdgeInsets.only(top: 20))
+                    .container(const EdgeInsets.only(top: 20))
               ],
             ))
       ]),

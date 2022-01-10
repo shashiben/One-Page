@@ -18,14 +18,14 @@ class NewsLetterWidget extends StatelessWidget {
               fontFamily: Fonts.raleway,
               fontWeight: FontWeight.bold,
               color: Color(0xFF444444)),
-        ).padding(const EdgeInsets.only(bottom: 16)),
+        ).container(const EdgeInsets.only(bottom: 16)),
         const Text(
           'Tamen quem nulla quae legam multos aute sint culpa legam noster magna',
           style: TextStyle(
               fontFamily: Fonts.openSans,
               fontSize: 14,
               color: Color(0xFF777777)),
-        ).padding(const EdgeInsets.only(bottom: 15)),
+        ).container(const EdgeInsets.only(bottom: 15)),
         SizedBox(
           height: 48,
           child: TextField(
@@ -45,7 +45,7 @@ class NewsLetterWidget extends StatelessWidget {
                         fontFamily: Fonts.openSans,
                         fontWeight: FontWeight.w400,
                         color: Colors.white),
-                  ).padding(const EdgeInsets.symmetric(horizontal: 15)),
+                  ).container(const EdgeInsets.symmetric(horizontal: 15)),
                 ),
                 onPressed: () {},
               ),

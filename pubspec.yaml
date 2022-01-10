@@ -37,7 +37,6 @@ dependencies:
   simple_animations: ^4.0.1
   universal_html: ^2.0.8
   universal_platform: ^1.0.0+1
-  visibility_detector: ^0.2.2
   webviewx: ^0.2.1
 
 dev_dependencies:

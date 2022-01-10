@@ -24,14 +24,14 @@ class ServicesSection extends StatelessWidget {
         Text(
           'SERVICES',
           style: SectionTitle.h2(context),
-        ).padding(const EdgeInsets.only(bottom: 20)),
+        ).container(const EdgeInsets.only(bottom: 20)),
         SizedBox(
           width: context.isMobile ? context.width - 40 : context.width * 0.8,
           child: Text(
             'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.',
             style: SectionTitle.p(context),
             textAlign: TextAlign.center,
-          ).padding(const EdgeInsets.only(bottom: 30)),
+          ).container(const EdgeInsets.only(bottom: 30)),
         ),
         SizedBox(
           width: context.isMobile ? context.width * 0.92 : context.width * 0.8,

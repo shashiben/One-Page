@@ -36,7 +36,7 @@ class HeaderSection extends StatelessWidget {
                           color: isHovered
                               ? context.primaryColor
                               : const Color(0xFF16507B)))
-                  .padding(const EdgeInsets.symmetric(vertical: 10),
+                  .container(const EdgeInsets.symmetric(vertical: 10),
                       margin: const EdgeInsets.only(left: 30))
                   .onTap(() {
                 if (keyList[e] != null && keyList[e]?.currentContext != null) {

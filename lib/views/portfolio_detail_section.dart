@@ -156,7 +156,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                                                     : context.primaryColor
                                                         .withOpacity(0.4)),
                                             duration: const Duration(
-                                                milliseconds: 300)))).padding(
+                                                milliseconds: 300)))).container(
                                     const EdgeInsets.symmetric(vertical: 40))
                               ],
                             ),
@@ -180,9 +180,9 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                                               fontFamily: Fonts.raleway,
                                               fontSize: 22,
                                               fontWeight: FontWeight.w700),
-                                        ).padding(
+                                        ).container(
                                             const EdgeInsets.only(bottom: 20)),
-                                        const Divider().padding(
+                                        const Divider().container(
                                             const EdgeInsets.only(bottom: 10)),
                                         cardBody('Category', 'Web design'),
                                         cardBody('Client', 'ASU Company'),
@@ -201,14 +201,14 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                                         fontSize: 26,
                                         fontWeight: FontWeight.w700,
                                         color: Color(0xFF444444)),
-                                  ).padding(const EdgeInsets.only(top: 30)),
+                                  ).container(const EdgeInsets.only(top: 30)),
                                   const Text(
                                     'Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.',
                                     style: TextStyle(
                                         fontFamily: Fonts.openSans,
                                         fontSize: 14,
                                         color: Color(0xFF444444)),
-                                  ).padding(const EdgeInsets.only(top: 20))
+                                  ).container(const EdgeInsets.only(top: 20))
                                 ],
                               ))
                         ],
@@ -243,6 +243,6 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                 color: hasLink ? context.primaryColor : const Color(0xFF444444),
                 fontWeight: FontWeight.w400),
           )
-        ])).padding(const EdgeInsets.only(top: 10));
+        ])).container(const EdgeInsets.only(top: 10));
   }
 }

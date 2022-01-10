@@ -63,7 +63,7 @@ class ServiceItem extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   fontSize: 22),
               textAlign: TextAlign.center,
-            ).padding(const EdgeInsets.only(top: 10, bottom: 15)),
+            ).container(const EdgeInsets.only(top: 10, bottom: 15)),
             Text(
               serviceModel.description,
               style: const TextStyle(
@@ -74,7 +74,7 @@ class ServiceItem extends StatelessWidget {
               textAlign: TextAlign.center,
             )
           ],
-        ).padding(const EdgeInsets.symmetric(horizontal: 20, vertical: 60)),
+        ).container(const EdgeInsets.symmetric(horizontal: 20, vertical: 60)),
       ),
     );
   }

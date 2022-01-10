@@ -67,7 +67,7 @@ class TestimonialItem extends StatelessWidget {
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: Color(0xFF111111)),
-        ).padding(const EdgeInsets.only(top: 10, bottom: 5)),
+        ).container(const EdgeInsets.only(top: 10, bottom: 5)),
         Text(
           review.role,
           style: const TextStyle(

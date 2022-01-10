@@ -67,12 +67,12 @@ class _FeatureItemState extends State<FeatureItem>
               widget.feature.icon,
               size: 36,
               color: context.primaryColor,
-            ).padding(const EdgeInsets.only(top: 10, bottom: 20)),
+            ).container(const EdgeInsets.only(top: 10, bottom: 20)),
             Text(
               widget.feature.title,
               style: a(context).copyWith(
                   color: isHovered ? context.primaryColor : textPrimaryColor),
-            ).padding(const EdgeInsets.only(bottom: 15)),
+            ).container(const EdgeInsets.only(bottom: 15)),
             Text(widget.feature.description)
           ]),
         ),

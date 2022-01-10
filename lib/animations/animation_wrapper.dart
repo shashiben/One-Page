@@ -1,34 +1,33 @@
 import 'package:flutter/material.dart';
 
-class ScaleAnimation extends StatefulWidget {
+class AnimationWrapper extends StatefulWidget {
   final Duration? animationDuration;
   final Duration? startAfter;
   final AnimationController? controller;
   final bool startAnimation;
-  final Widget child;
-  final double? begin, end;
-  const ScaleAnimation(
+  final Widget Function(BuildContext context, AnimationController controller)
+      itemBuilder;
+
+  const AnimationWrapper(
       {Key? key,
       this.animationDuration,
       this.startAfter,
-      this.begin,
-      this.end,
-      required this.child,
       this.controller,
-      this.startAnimation = true})
+      this.startAnimation = true,
+      required this.itemBuilder})
       : super(key: key);
 
   @override
-  _ScaleAnimationState createState() => _ScaleAnimationState();
+  State<AnimationWrapper> createState() => _AnimationWrapperState();
 }
 
-class _ScaleAnimationState extends State<ScaleAnimation>
+class _AnimationWrapperState extends State<AnimationWrapper>
     with SingleTickerProviderStateMixin {
-  late AnimationController _scaleController;
+  late AnimationController _animationController;
   @override
   void initState() {
     super.initState();
-    _scaleController = widget.controller ??
+    _animationController = widget.controller ??
         AnimationController(
             vsync: this,
             duration:
@@ -36,7 +35,7 @@ class _ScaleAnimationState extends State<ScaleAnimation>
     if (widget.startAnimation) {
       Future<void>.delayed(widget.startAfter ?? const Duration())
           .then((dynamic value) {
-        _scaleController.forward();
+        _animationController.forward();
       });
     }
   }
@@ -44,15 +43,11 @@ class _ScaleAnimationState extends State<ScaleAnimation>
   @override
   void dispose() {
     super.dispose();
-    _scaleController.dispose();
+    _animationController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return ScaleTransition(
-      scale: Tween(begin: widget.begin ?? 0.0, end: widget.end ?? 1.0)
-          .animate(_scaleController),
-      child: widget.child,
-    );
+    return widget.itemBuilder(context, _animationController);
   }
 }

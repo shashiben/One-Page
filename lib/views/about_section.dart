@@ -37,7 +37,7 @@ class AboutSection extends StatelessWidget {
                           'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.',
                           style: SectionTitle.p(context),
                           textAlign: TextAlign.center,
-                        ).padding(const EdgeInsets.only(top: 10, bottom: 20)),
+                        ).container(const EdgeInsets.only(top: 10, bottom: 20)),
                         BootstrapRow(verticalSpacing: 20, children: [
                           BootstrapCol(
                               sizes: 'col-12 col-lg-6 col-md-12',
@@ -47,7 +47,7 @@ class AboutSection extends StatelessWidget {
                                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                                     style: SectionTitle.p(context).copyWith(
                                         color: const Color(0xFF444444)),
-                                  ).padding(const EdgeInsets.only(bottom: 15)),
+                                  ).container(const EdgeInsets.only(bottom: 15)),
                                   OrderedList(
                                       children: [
                                     'Ullamco laboris nisi ut aliquip ex ea commodo consequat',
@@ -95,10 +95,10 @@ class AboutSection extends StatelessWidget {
                     )),
               ]),
           const DetailsSection()
-              .padding(const EdgeInsets.symmetric(vertical: 60)),
+              .container(const EdgeInsets.symmetric(vertical: 60)),
           const VideoSection()
         ],
-      ).padding(const EdgeInsets.only(top: 60)),
+      ).container(const EdgeInsets.only(top: 60)),
     );
   }
 }

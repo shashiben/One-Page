@@ -44,7 +44,7 @@ class _TestimonialSectionState extends State<TestimonialSection> {
             'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.',
             style: SectionTitle.p(context),
             textAlign: TextAlign.center,
-          ).padding(const EdgeInsets.only(top: 10, bottom: 20)),
+          ).container(const EdgeInsets.only(top: 10, bottom: 20)),
           ScrollConfiguration(
             behavior: ScrollConfiguration.of(context).copyWith(
               dragDevices: {
@@ -72,7 +72,7 @@ class _TestimonialSectionState extends State<TestimonialSection> {
                       .sizedBox(width: 395, height: 420))
                   .toList(),
             ),
-          ).padding(EdgeInsets.symmetric(
+          ).container(EdgeInsets.symmetric(
               horizontal: context.isMobile ? 20 : context.width * 0.05)),
           Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -92,7 +92,7 @@ class _TestimonialSectionState extends State<TestimonialSection> {
                         pageController.animateToPage(index);
                       })))
         ],
-      ).padding(const EdgeInsets.symmetric(vertical: 60)),
+      ).container(const EdgeInsets.symmetric(vertical: 60)),
     );
   }
 }

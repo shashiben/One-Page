@@ -33,7 +33,7 @@ class CTASection extends StatelessWidget {
                   color: Colors.white,
                   fontWeight: FontWeight.w300),
               textAlign: TextAlign.center,
-            ).padding(const EdgeInsets.only(top: 20, bottom: 20)),
+            ).container(const EdgeInsets.only(top: 20, bottom: 20)),
           ),
           BootstrapButton(
               padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 14),

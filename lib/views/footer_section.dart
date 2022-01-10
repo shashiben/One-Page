@@ -36,7 +36,7 @@ class FooterSection extends StatelessWidget {
                           fontFamily: Fonts.raleway,
                           fontSize: 26,
                           color: Color(0xFF444444)),
-                    ).padding(const EdgeInsets.only(bottom: 10)),
+                    ).container(const EdgeInsets.only(bottom: 10)),
                     const Text(
                       'A108 Adam Street\nNew York, NY 535022\nUnited States',
                       style: TextStyle(
@@ -44,7 +44,7 @@ class FooterSection extends StatelessWidget {
                           height: 1.5,
                           fontSize: 14,
                           color: Color(0xFF777777)),
-                    ).padding(const EdgeInsets.only(bottom: 15)),
+                    ).container(const EdgeInsets.only(bottom: 15)),
                     const Text.rich(TextSpan(children: [
                       TextSpan(
                           text: 'Phone:',
@@ -59,7 +59,7 @@ class FooterSection extends StatelessWidget {
                               fontFamily: Fonts.raleway,
                               fontSize: 14,
                               color: Color(0xFF777777)))
-                    ])).padding(const EdgeInsets.only(bottom: 8)),
+                    ])).container(const EdgeInsets.only(bottom: 8)),
                     const Text.rich(TextSpan(children: [
                       TextSpan(
                           text: 'Email:',
@@ -89,7 +89,7 @@ class FooterSection extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                           color: textPrimaryColor),
-                    ).padding(const EdgeInsets.only(bottom: 12)),
+                    ).container(const EdgeInsets.only(bottom: 12)),
                     const FooterItem(title: 'Home'),
                     const FooterItem(title: 'About us'),
                     const FooterItem(title: 'Services'),
@@ -109,7 +109,7 @@ class FooterSection extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                           color: textPrimaryColor),
-                    ).padding(const EdgeInsets.only(bottom: 12)),
+                    ).container(const EdgeInsets.only(bottom: 12)),
                     const FooterItem(title: 'Web Design'),
                     const FooterItem(title: 'Web Development'),
                     const FooterItem(title: 'Product Management'),
@@ -150,7 +150,7 @@ class FooterSection extends StatelessWidget {
                                     fontFamily: Fonts.openSans,
                                     fontWeight: FontWeight.bold)),
                             TextSpan(text: 'All Rights Reserved')
-                          ])).padding(const EdgeInsets.only(bottom: 10)),
+                          ])).container(const EdgeInsets.only(bottom: 10)),
                       Text.rich(TextSpan(
                           style: const TextStyle(
                             fontFamily: Fonts.openSans,

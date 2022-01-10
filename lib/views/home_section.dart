@@ -23,12 +23,12 @@ class HomeSection extends StatelessWidget {
                   'One Page Bootstrap\nWebsite Template',
                   style: h1(context),
                   textAlign: TextAlign.center,
-                ),
+                ).translate(animationDuration: const Duration(seconds: 1)),
                 Text(
                   'We are team of talented designers',
                   style: h2(context),
                   textAlign: TextAlign.center,
-                ).padding(const EdgeInsets.only(top: 10)),
+                ).container(const EdgeInsets.only(top: 10)),
                 BootstrapButton(
                   color: context.primaryColor,
                   padding:

@@ -75,7 +75,7 @@ class _PortfolioItemState extends State<PortfolioItem>
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
                                 color: Colors.white),
-                          ).padding(const EdgeInsets.symmetric(vertical: 12)),
+                          ).container(const EdgeInsets.symmetric(vertical: 12)),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -88,7 +88,7 @@ class _PortfolioItemState extends State<PortfolioItem>
                                       : const Color.fromRGBO(
                                           255, 255, 255, 0.6),
                                 )
-                                    .padding(const EdgeInsets.only(right: 10))
+                                    .container(const EdgeInsets.only(right: 10))
                                     .onTap(() {
                                   setState(() {
                                     currentPage = portfolioItems
@@ -278,7 +278,7 @@ class _PortfolioItemState extends State<PortfolioItem>
                                                                               .bold,
                                                                       color: Colors
                                                                           .white),
-                                                                ).padding(const EdgeInsets
+                                                                ).container(const EdgeInsets
                                                                             .symmetric(
                                                                         horizontal:
                                                                             20)

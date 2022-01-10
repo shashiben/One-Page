@@ -28,14 +28,14 @@ class FAQSection extends StatelessWidget {
             'FREQUENTLY ASKED QUESTIONS',
             textAlign: TextAlign.center,
             style: SectionTitle.h2(context),
-          ).padding(const EdgeInsets.only(bottom: 20)),
+          ).container(const EdgeInsets.only(bottom: 20)),
           SizedBox(
             width: context.isMobile ? context.width - 40 : context.width * 0.8,
             child: Text(
               'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.',
               style: SectionTitle.p(context),
               textAlign: TextAlign.center,
-            ).padding(const EdgeInsets.only(bottom: 30)),
+            ).container(const EdgeInsets.only(bottom: 30)),
           ),
           ...faqList.entries
               .map((MapEntry<String, String> e) => HoverWidget(
@@ -78,10 +78,10 @@ class FAQSection extends StatelessWidget {
                         Text(
                           e.value,
                           textAlign: TextAlign.start,
-                        ).padding(const EdgeInsets.only(top: 10))
+                        ).container(const EdgeInsets.only(top: 10))
                       ],
                     ),
-                  ).padding(const EdgeInsets.only(top: 20)))
+                  ).container(const EdgeInsets.only(top: 20)))
               .toList()
         ],
       ),

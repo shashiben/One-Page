@@ -36,7 +36,7 @@ class _PortfolioSectionState extends State<PortfolioSection>
           'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.',
           style: SectionTitle.p(context),
           textAlign: TextAlign.center,
-        ).padding(const EdgeInsets.only(top: 10, bottom: 20)),
+        ).container(const EdgeInsets.only(top: 10, bottom: 20)),
         Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(
@@ -52,7 +52,7 @@ class _PortfolioSectionState extends State<PortfolioSection>
                             fontWeight: FontWeight.w600,
                             fontSize: 14),
                       )
-                          .padding(const EdgeInsets.fromLTRB(
+                          .container(const EdgeInsets.fromLTRB(
                         10,
                         15,
                         8,
@@ -80,7 +80,7 @@ class _PortfolioSectionState extends State<PortfolioSection>
                         : BootstrapCol(
                             sizes: 'col-0 col-sm-0', child: const SizedBox()))
                 .toList())
-      ]).padding(const EdgeInsets.symmetric(horizontal: 20, vertical: 60)),
+      ]).container(const EdgeInsets.symmetric(horizontal: 20, vertical: 60)),
     );
   }
 }

@@ -83,7 +83,7 @@ class TeamItem extends StatelessWidget {
                       fontSize: 18,
                       color: Color(0xFF124265),
                       fontWeight: FontWeight.w700),
-                ).padding(const EdgeInsets.only(bottom: 5)),
+                ).container(const EdgeInsets.only(bottom: 5)),
                 Text(
                   member.role,
                   style: const TextStyle(

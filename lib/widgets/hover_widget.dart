@@ -14,33 +14,23 @@ class _HoverWidgetState extends State<HoverWidget> {
   @override
   Widget build(BuildContext context) {
     return Listener(
-      onPointerHover: (event) {
+      onPointerHover: (p) {
         setState(() {
           isHovered = true;
         });
       },
-      onPointerUp: (event) {
-        if (isHovered) {
-          Future.delayed(const Duration(milliseconds: 1500)).then((value) {
-            if (isHovered && mounted) {
-              setState(() {
-                isHovered = false;
-              });
-            }
-          });
-        }
+      onPointerUp: (p) {
+        setState(() {
+          isHovered = false;
+        });
       },
       child: MouseRegion(
-        onEnter: (PointerEnterEvent event) {
-          setState(() => isHovered = true);
-        },
         onExit: (PointerExitEvent event) {
-          setState(() => isHovered = false);
-        },
-        onHover: (PointerHoverEvent event) {
-          setState(() {
-            isHovered = true;
-          });
+          if (isHovered) {
+            setState(() {
+              isHovered = false;
+            });
+          }
         },
         child: widget.child(context, isHovered),
       ),
