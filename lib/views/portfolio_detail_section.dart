@@ -111,7 +111,8 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                             child: Column(
                               children: [
                                 SizedBox(
-                                    height: context.height,
+                                    height:
+                                        context.isMobile ? 250 : context.height,
                                     width: context.width,
                                     child: ScrollConfiguration(
                                       behavior: ScrollConfiguration.of(context)
@@ -136,7 +137,11 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                                             3,
                                             (int index) => Image.asset(
                                                   'assets/portfolio/portfolio-${index + 1}.jpg',
-                                                  fit: BoxFit.fitWidth,
+                                                  fit: context.isMobile
+                                                      ? BoxFit.fitHeight
+                                                      : BoxFit.fitWidth,
+                                                  width: double.infinity,
+                                                  height: double.infinity,
                                                 )),
                                       ),
                                     )),
@@ -220,7 +225,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
           ),
         ],
       ),
-    );
+    ).safeArea(top: context.isMobile || context.isTablet);
   }
 
   Widget cardBody(String title, String content, {bool hasLink = false}) {

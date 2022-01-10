@@ -28,7 +28,7 @@ class HeaderSection extends StatelessWidget {
       color: Colors.white,
       childrens: [
         ...titles.map((String e) =>
-            HoverWidget(child: (BuildContext context, bool isHovered) {
+            HoverWidget(builder: (BuildContext context, bool isHovered) {
               return Text(e,
                       style: TextStyle(
                           fontFamily: Fonts.openSans,

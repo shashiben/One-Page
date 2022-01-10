@@ -14,7 +14,7 @@ class ServiceItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HoverWidget(
-      child: (BuildContext context, bool isHovered) => Container(
+      builder: (BuildContext context, bool isHovered) => Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           color: Colors.white,

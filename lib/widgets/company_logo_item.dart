@@ -28,7 +28,7 @@ class _CompanyLogoItemState extends State<CompanyLogoItem>
       return Center(
         child: SizedBox(
           width: width,
-          child: HoverWidget(child: (BuildContext context, bool isHovered) {
+          child: HoverWidget(builder: (BuildContext context, bool isHovered) {
             if (isHovered) {
               scaleController.forward();
             } else {

@@ -13,7 +13,7 @@ class TeamItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HoverWidget(
-      child: (BuildContext context, bool isHovered) => Container(
+      builder: (BuildContext context, bool isHovered) => Container(
         width: context.width,
         decoration: BoxDecoration(boxShadow: [
           BoxShadow(
@@ -56,7 +56,7 @@ class TeamItem extends StatelessWidget {
                           (LineIcons.linkedin)
                         ]
                             .map((IconData e) => HoverWidget(
-                                  child: (BuildContext context,
+                                  builder: (BuildContext context,
                                           bool isIconHovered) =>
                                       Icon(
                                     e,

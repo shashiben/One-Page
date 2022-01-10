@@ -2,8 +2,13 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class HoverWidget extends StatefulWidget {
-  final Widget Function(BuildContext context, bool isHovered) child;
-  const HoverWidget({Key? key, required this.child}) : super(key: key);
+  final Duration hoverDuration;
+  final Widget Function(BuildContext context, bool isHovered) builder;
+  const HoverWidget(
+      {Key? key,
+      required this.builder,
+      this.hoverDuration = const Duration(seconds: 1)})
+      : super(key: key);
 
   @override
   State<HoverWidget> createState() => _HoverWidgetState();
@@ -20,11 +25,20 @@ class _HoverWidgetState extends State<HoverWidget> {
         });
       },
       onPointerUp: (p) {
-        setState(() {
-          isHovered = false;
+        Future.delayed(widget.hoverDuration).then((value) {
+          setState(() {
+            isHovered = false;
+          });
         });
       },
       child: MouseRegion(
+        onEnter: (event) {
+          if (!isHovered) {
+            setState(() {
+              isHovered = true;
+            });
+          }
+        },
         onExit: (PointerExitEvent event) {
           if (isHovered) {
             setState(() {
@@ -32,7 +46,14 @@ class _HoverWidgetState extends State<HoverWidget> {
             });
           }
         },
-        child: widget.child(context, isHovered),
+        onHover: (p) {
+          if (!isHovered) {
+            setState(() {
+              isHovered = true;
+            });
+          }
+        },
+        child: widget.builder(context, isHovered),
       ),
     );
   }

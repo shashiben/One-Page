@@ -24,7 +24,7 @@ class PricingItem extends StatelessWidget {
         isActive ? context.primaryColor : Colors.white;
     final Color borderColor = isActive ? Colors.white : context.primaryColor;
     return HoverWidget(
-      child: (BuildContext context, bool isItemHovered) => Container(
+      builder: (BuildContext context, bool isItemHovered) => Container(
         alignment: Alignment.center,
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),

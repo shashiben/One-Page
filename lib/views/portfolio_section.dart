@@ -42,7 +42,7 @@ class _PortfolioSectionState extends State<PortfolioSection>
             children: List.generate(
                 tabs.length,
                 (int index) => HoverWidget(
-                      child: (BuildContext context, bool isTabHovered) => Text(
+                      builder: (BuildContext context, bool isTabHovered) => Text(
                         tabs[index].toUpperCase(),
                         style: TextStyle(
                             fontFamily: Fonts.openSans,

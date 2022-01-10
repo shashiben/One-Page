@@ -32,7 +32,7 @@ class BootstrapButton extends StatelessWidget {
     return InkWell(
         onTap: onPressed,
         child: HoverWidget(
-            child: (BuildContext context, bool isHovered) => variant ==
+            builder: (BuildContext context, bool isHovered) => variant ==
                     ButtonVariant.filled
                 ? Container(
                     margin: margin,

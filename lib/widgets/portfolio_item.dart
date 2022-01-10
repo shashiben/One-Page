@@ -32,7 +32,7 @@ class _PortfolioItemState extends State<PortfolioItem>
 
   @override
   Widget build(BuildContext context) {
-    return HoverWidget(child: (BuildContext context, bool isHovered) {
+    return HoverWidget(builder: (BuildContext context, bool isHovered) {
       if (isHovered) {
         scaleController.forward();
       } else {
@@ -79,7 +79,7 @@ class _PortfolioItemState extends State<PortfolioItem>
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              HoverWidget(child:
+                              HoverWidget(builder:
                                   (BuildContext context, bool isHovered) {
                                 return Icon(
                                   Icons.add,
@@ -137,7 +137,7 @@ class _PortfolioItemState extends State<PortfolioItem>
                                                                     .circular(
                                                                         4)),
                                                         child: HoverWidget(
-                                                          child: (_,
+                                                          builder: (_,
                                                                   bool
                                                                       isHovered) =>
                                                               Icon(
@@ -169,7 +169,7 @@ class _PortfolioItemState extends State<PortfolioItem>
                                                                       .circular(
                                                                           4)),
                                                           child: HoverWidget(
-                                                            child: (_,
+                                                            builder: (_,
                                                                     bool
                                                                         isHovered) =>
                                                                 Icon(
@@ -214,7 +214,7 @@ class _PortfolioItemState extends State<PortfolioItem>
                                                                       .circular(
                                                                           4)),
                                                           child: HoverWidget(
-                                                            child: (_,
+                                                            builder: (_,
                                                                     bool
                                                                         isHovered) =>
                                                                 Icon(
@@ -314,7 +314,7 @@ class _PortfolioItemState extends State<PortfolioItem>
                                 });
                               }),
                               HoverWidget(
-                                child: (_, bool isHovered) => Icon(
+                                builder: (_, bool isHovered) => Icon(
                                   Icons.link,
                                   color: isHovered
                                       ? Colors.white

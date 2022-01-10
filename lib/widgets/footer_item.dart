@@ -13,7 +13,7 @@ class FooterItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HoverWidget(
-      child: (BuildContext context, bool isHovered) => Row(
+      builder: (BuildContext context, bool isHovered) => Row(
         children: [
           Icon(
             Icons.arrow_forward_ios,

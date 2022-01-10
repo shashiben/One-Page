@@ -17,7 +17,7 @@ class ContactListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HoverWidget(
-      child: (BuildContext context, bool isHovered) => Row(
+      builder: (BuildContext context, bool isHovered) => Row(
         children: [
           AnimatedContainer(
               duration: const Duration(milliseconds: 400),

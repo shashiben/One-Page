@@ -23,7 +23,7 @@ class _VideoPlayButtonState extends State<VideoPlayButton>
 
   @override
   Widget build(BuildContext context) {
-    return HoverWidget(child: (context, isHovered) {
+    return HoverWidget(builder: (context, isHovered) {
       if (isHovered) {
         scaleController.forward().then((value) {});
       } else {

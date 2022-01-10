@@ -35,7 +35,7 @@ class _FeatureItemState extends State<FeatureItem>
 
   @override
   Widget build(BuildContext context) {
-    return HoverWidget(child: (BuildContext context, bool isHovered) {
+    return HoverWidget(builder: (BuildContext context, bool isHovered) {
       if (isHovered) {
         _controller.forward();
       } else {

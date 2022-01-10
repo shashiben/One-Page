@@ -39,7 +39,7 @@ class FAQSection extends StatelessWidget {
           ),
           ...faqList.entries
               .map((MapEntry<String, String> e) => HoverWidget(
-                    child: (BuildContext context, bool isHovered) => Accordion(
+                    builder: (BuildContext context, bool isHovered) => Accordion(
                       horizontalTitleGap: context.isMobile ? 5 : 10,
                       collapsedBackgroundColor: Colors.white,
                       backgroundColor: Colors.white,
