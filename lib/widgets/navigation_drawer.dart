@@ -76,42 +76,51 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
               ? widget.childrens
               : [
                   const Spacer(),
-                  const Icon(
-                    Icons.menu,
-                    color: textPrimaryColor,
-                  ).onTap(() {
-                    showDialog<void>(
-                        barrierColor: context.primaryColor.withOpacity(0.9),
-                        context: context,
-                        builder: (_) => Material(
-                              color: Colors.transparent,
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.topRight,
-                                    child: const Icon(Icons.close).onTap(() {
-                                      Navigator.pop(context);
-                                    }),
-                                  ),
-                                  Expanded(
-                                      child: SizedBox(
-                                    width: context.width,
-                                    child: Card(
-                                      elevation: 2,
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: widget.childrens,
-                                      ).container(const EdgeInsets.symmetric(
-                                          vertical: 20)),
-                                    ).container(const EdgeInsets.symmetric(
-                                        vertical: 20)),
-                                  ))
-                                ],
-                              ).container(const EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 25)),
-                            ));
-                  }),
+                  IconButton(
+                      onPressed: () {
+                        showDialog<void>(
+                            barrierColor: context.primaryColor.withOpacity(0.9),
+                            context: context,
+                            builder: (_) => Material(
+                                  color: Colors.transparent,
+                                  child: Column(
+                                    children: [
+                                      Align(
+                                        alignment: Alignment.topRight,
+                                        child: IconButton(
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            },
+                                            icon: const Icon(
+                                              Icons.close,
+                                              color: Colors.white,
+                                            )),
+                                      ),
+                                      Expanded(
+                                          child: SizedBox(
+                                        width: context.width,
+                                        child: Card(
+                                          elevation: 2,
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: widget.childrens,
+                                          ).container(
+                                              const EdgeInsets.symmetric(
+                                                  vertical: 20)),
+                                        ).container(const EdgeInsets.symmetric(
+                                            vertical: 20)),
+                                      ))
+                                    ],
+                                  ).container(const EdgeInsets.symmetric(
+                                      horizontal: 20, vertical: 25)),
+                                ));
+                      },
+                      icon: widget.menuIcon ??
+                          const Icon(
+                            Icons.menu,
+                            color: textPrimaryColor,
+                          )),
                 ],
         )),
       ]),
