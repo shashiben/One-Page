@@ -52,7 +52,12 @@ class HeaderSection extends StatelessWidget {
             color: context.primaryColor,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
             margin: const EdgeInsets.only(left: 30),
-            onPressed: () {},
+            onPressed: () {
+              Scrollable.ensureVisible(
+                  keyList["Home"]?.currentContext ?? context,
+                  duration: const Duration(milliseconds: 800),
+                  curve: Curves.linear);
+            },
             child: (bool isHovered) => const Text(
                   'Get started',
                   style: TextStyle(

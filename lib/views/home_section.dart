@@ -6,6 +6,7 @@ import '../bootstrap_button.dart';
 import '../bootstrap_col.dart';
 import '../bootstrap_row.dart';
 import '../extensions/extensions.dart';
+import '../home.dart';
 
 class HomeSection extends StatelessWidget {
   const HomeSection({Key? key}) : super(key: key);
@@ -34,7 +35,12 @@ class HomeSection extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 50, vertical: 14),
                   margin: const EdgeInsets.only(top: 30),
-                  onPressed: () {},
+                  onPressed: () {
+                    Scrollable.ensureVisible(
+                        sectionKeys["About"]?.currentContext ?? context,
+                        duration: const Duration(milliseconds: 800),
+                        curve: Curves.linear);
+                  },
                   child: (bool isHovered) => const Text(
                     'Get started',
                     style: TextStyle(

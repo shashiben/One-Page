@@ -69,14 +69,12 @@ class _PortfolioSectionState extends State<PortfolioSection>
             // horizontalSpacing: 20,
             // verticalSpacing: 20,
             childrens: portfolioItems
-                .map((PortfolioModel e) =>
-                    (e.type == tabs.elementAt(selectedIndex) ||
-                            selectedIndex == 0)
-                        ? PortfolioItem(
-                            portfolioItem: e,
-                            shouldDisplay: true,
-                          )
-                        : const SizedBox())
+                .where((e) => (e.type == tabs.elementAt(selectedIndex) ||
+                    selectedIndex == 0))
+                .map((PortfolioModel e) => PortfolioItem(
+                      portfolioItem: e,
+                      shouldDisplay: true,
+                    ))
                 .toList())
       ]).container(const EdgeInsets.symmetric(horizontal: 20, vertical: 60)),
     );

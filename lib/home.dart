@@ -17,6 +17,16 @@ import 'views/services_section.dart';
 import 'views/team_section.dart';
 import 'views/testimonial_section.dart';
 
+final Map<String, GlobalKey<State<StatefulWidget>>> sectionKeys = {
+  'Home': GlobalKey(debugLabel: 'Home'),
+  'About': GlobalKey(debugLabel: 'About'),
+  'Services': GlobalKey(debugLabel: 'Services'),
+  'Portfolio': GlobalKey(debugLabel: 'Portfolio'),
+  'Team': GlobalKey(debugLabel: 'Team'),
+  'Pricing': GlobalKey(debugLabel: 'Pricing'),
+  'Contact': GlobalKey(debugLabel: 'Contact'),
+};
+
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -27,15 +37,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   ScrollController scrollController = ScrollController();
   double currentHeight = 0.0;
-  final Map<String, GlobalKey<State<StatefulWidget>>> sectionKeys = {
-    'Home': GlobalKey(debugLabel: 'Home'),
-    'About': GlobalKey(debugLabel: 'About'),
-    'Services': GlobalKey(debugLabel: 'Services'),
-    'Portfolio': GlobalKey(debugLabel: 'Portfolio'),
-    'Team': GlobalKey(debugLabel: 'Team'),
-    'Pricing': GlobalKey(debugLabel: 'Pricing'),
-    'Contact': GlobalKey(debugLabel: 'Contact'),
-  };
+
   @override
   void initState() {
     super.initState();
