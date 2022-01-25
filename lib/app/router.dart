@@ -8,13 +8,14 @@ final GoRouter goRouter = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      pageBuilder: (BuildContext context, GoRouterState state) => MaterialPage<void>(
-          key: state.pageKey, child: const Home()),
+      pageBuilder: (BuildContext context, GoRouterState state) =>
+          MaterialPage<void>(key: state.pageKey, child: const Home()),
     ),
     GoRoute(
       path: '/portfolio-details',
-      pageBuilder: (BuildContext context, GoRouterState state) => MaterialPage<void>(
-          key: state.pageKey, child: const PortfolioDetailSection()),
+      pageBuilder: (BuildContext context, GoRouterState state) =>
+          MaterialPage<void>(
+              key: state.pageKey, child: const PortfolioDetailSection()),
     )
   ],
   urlPathStrategy: UrlPathStrategy.path,

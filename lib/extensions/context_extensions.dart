@@ -32,11 +32,11 @@ extension ContextExtension on BuildContext {
   bool get isSmallTablet => shortestSide >= 600;
   bool get isLargeTablet => shortestSide >= 720;
   bool get isTablet => isSmallTablet || isLargeTablet;
-  bool get isXl => size.width > 1200;
-  bool get isLg => size.width > 992 && size.width <= 1200;
-  bool get isMd => size.width > 1200 && size.width <= 992;
-  bool get isSm => size.width > 1200 && size.width <= 768;
-  bool get isXs => size.width > 1200 && size.width <= 576;
+  bool get isXl => size.width >= 1200;
+  bool get isLg => size.width >= 992 && size.width < 1200;
+  bool get isMd => size.width >= 768 && size.width < 992;
+  bool get isSm => size.width >= 576 && size.width < 768;
+  bool get isXs => size.width < 576;
   bool get alwaysUse24HourFormat => MediaQuery.of(this).alwaysUse24HourFormat;
 
   Color get primaryColor => themeData.primaryColor;

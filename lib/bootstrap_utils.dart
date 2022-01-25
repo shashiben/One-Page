@@ -1,6 +1,18 @@
+import 'package:flutter/cupertino.dart';
+import 'extensions/extensions.dart';
 import 'constants.dart';
 
 class BootstrapUtils {
+  ///
+  /// Returns what is the current prefix based on width
+  ///
+  static double getMaxWidth(String sizes, {required BuildContext context}) {
+    double maxWidth = context.width;
+    Map<String, int> sizeMap = getAllColValues(sizes);
+    String getCurrentPrefix = getPrefixByWidth(maxWidth);
+    return maxWidth * ((sizeMap[getCurrentPrefix] ?? 1.0) / 12);
+  }
+
   ///
   /// Returns what is the current prefix based on width
   ///
