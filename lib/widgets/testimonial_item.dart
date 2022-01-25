@@ -57,6 +57,7 @@ class TestimonialItem extends StatelessWidget {
               ],
             )),
         CircleAvatar(
+          backgroundColor: Colors.grey,
           radius: 40,
           backgroundImage: AssetImage(review.image),
         ),

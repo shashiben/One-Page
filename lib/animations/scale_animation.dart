@@ -12,8 +12,8 @@ class ScaleAnimation extends StatelessWidget {
       {Key? key,
       this.animationDuration,
       this.startAfter,
-      this.begin,
-      this.end,
+      this.begin = 0,
+      this.end = 1,
       required this.child,
       this.controller,
       this.startAnimation = true})
@@ -23,13 +23,13 @@ class ScaleAnimation extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimationWrapper(
       itemBuilder: ((context, controller) => ScaleTransition(
-            scale: controller.view,
+            scale: Tween(begin: begin, end: end).animate(controller),
             child: child,
           )),
       controller: controller,
       startAfter: startAfter,
       animationDuration: animationDuration,
-      startAnimation: true,
+      startAnimationAtStart: true,
     );
   }
 }

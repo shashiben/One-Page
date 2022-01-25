@@ -5,7 +5,7 @@ class FadeAnimation extends StatelessWidget {
   final Duration? animationDuration;
   final Duration? startAfter;
   final AnimationController? controller;
-  final bool startAnimation;
+  final bool? startAnimation;
   final Widget child;
   final double? begin, end;
   const FadeAnimation(
@@ -23,13 +23,13 @@ class FadeAnimation extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimationWrapper(
       itemBuilder: ((context, controller) => FadeTransition(
-            opacity: controller.view,
+            opacity: Tween(begin: begin, end: end).animate(controller),
             child: child,
           )),
       controller: controller,
       startAfter: startAfter,
       animationDuration: animationDuration,
-      startAnimation: true,
+      startAnimationAtStart: true,
     );
   }
 }

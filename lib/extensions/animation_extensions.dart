@@ -1,5 +1,8 @@
+import 'package:bootstrap/animations/fade_and_translate.dart';
 import 'package:bootstrap/animations/fade_animation.dart';
 import 'package:bootstrap/animations/translate_animation.dart';
+import 'package:bootstrap/extensions/models/fade_configs.dart';
+import 'package:bootstrap/extensions/models/translate_configs.dart';
 import 'package:flutter/material.dart';
 
 import '../animations/scale_animation.dart';
@@ -10,7 +13,7 @@ extension AnimationExtension on Widget {
     Duration? animationDuration,
     Duration? startAfter,
     AnimationController? controller,
-    bool startAnimation = true,
+    bool startAnimation = false,
     double? begin,
     double? end,
   }) {
@@ -64,5 +67,23 @@ extension AnimationExtension on Widget {
       end: end,
       child: this,
     );
+  }
+
+  Widget fadeAndTranslate(
+      {FadeConfigs fadeConfigs = const FadeConfigs(),
+      Duration startAfter = const Duration(seconds: 0),
+      Duration animationDuration = const Duration(milliseconds: 500),
+      bool? startAnimation,
+       void Function()? onCompleted,
+      onDismissed,
+      TranslateConfigs translateConfigs = const TranslateConfigs()}) {
+    return FadeAndTranslate(
+        key: key,
+        animationDuration: animationDuration,
+        startAfter: startAfter,
+        startAnimation: startAnimation,
+        fadeConfigs: fadeConfigs,
+        translateConfigs: translateConfigs,
+        child: this);
   }
 }

@@ -5,7 +5,7 @@ class TranslateAnimation extends StatelessWidget {
   final Duration? animationDuration;
   final Duration? startAfter;
   final AnimationController? controller;
-  final bool startAnimation;
+  final bool? startAnimation;
   final Widget child;
   final Offset begin, end;
   const TranslateAnimation(
@@ -42,7 +42,7 @@ class TranslateAnimation extends StatelessWidget {
       controller: controller,
       startAfter: startAfter,
       animationDuration: animationDuration,
-      startAnimation: true,
+      startAnimationAtStart: true,
     );
   }
 }
