@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:universal_io/io.dart' as io;
 
 extension ContextExtension on BuildContext {
   MediaQueryData get mediaQuery => MediaQuery.of(this);
@@ -28,10 +29,8 @@ extension ContextExtension on BuildContext {
 
   bool get isLandscape => orientation == Orientation.landscape;
   bool get isPortrait => orientation == Orientation.portrait;
-  bool get isMobile => shortestSide < 600;
-  bool get isSmallTablet => shortestSide >= 600;
-  bool get isLargeTablet => shortestSide >= 720;
-  bool get isTablet => isSmallTablet || isLargeTablet;
+  bool get isMobile =>
+      (io.Platform.isAndroid || io.Platform.isIOS || size.width < 600);
   bool get isXl => size.width >= 1200;
   bool get isLg => size.width >= 992 && size.width < 1200;
   bool get isMd => size.width >= 768 && size.width < 992;

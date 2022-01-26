@@ -137,6 +137,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   ]),
             ),
           ],
-        )).safeArea(top: context.isMobile || context.isTablet);
+        )).safeArea(top: context.isMobile);
   }
 }

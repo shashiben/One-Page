@@ -45,8 +45,6 @@ class _TestimonialSectionState extends State<TestimonialSection> {
             style: SectionTitle.p(context),
             textAlign: TextAlign.center,
           ).container(const EdgeInsets.only(top: 10, bottom: 20)),
-          Text(
-              "View Port would be :${context.isMobile ? 1 : context.isMd ? 1 / 2 : 1 / 3}"),
           ScrollConfiguration(
             behavior: ScrollConfiguration.of(context).copyWith(
               dragDevices: {

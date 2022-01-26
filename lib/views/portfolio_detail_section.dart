@@ -225,7 +225,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
           ),
         ],
       ),
-    ).safeArea(top: context.isMobile || context.isTablet);
+    ).safeArea(top: context.isMobile);
   }
 
   Widget cardBody(String title, String content, {bool hasLink = false}) {

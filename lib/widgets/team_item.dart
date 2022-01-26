@@ -31,9 +31,8 @@ class TeamItem extends StatelessWidget {
             children: [
               Image.asset(
                 member.image,
-                fit: BoxFit.cover,
+                fit: BoxFit.fitHeight,
                 width: context.width,
-                height: 300,
               ),
               Positioned(
                 bottom: 0,
