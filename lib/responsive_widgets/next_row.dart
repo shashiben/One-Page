@@ -34,7 +34,6 @@ class NextRow extends StatelessWidget {
       }
       countRef += 1;
     }
-    print("testing space map is:$spaceMap");
     List<Widget> wrapChildrens = [];
     for (NextCol item in childrens) {
       double childWidth = item.getWidthOfChild(context);
