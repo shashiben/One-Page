@@ -1,12 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
 import '../app/fonts.dart';
 import '../app/text_styles.dart';
 import '../bootstrap_button.dart';
-import '../bootstrap_col.dart';
-import '../bootstrap_row.dart';
-import '../extensions/extensions.dart';
+
+import '../flutter_next/flutter_next.dart';
 import '../widgets/contact_info_list_tile.dart';
 import '../widgets/text_field.dart';
 
@@ -44,8 +42,8 @@ class _ContactSectionState extends State<ContactSection> {
               ).container(const EdgeInsets.only(top: 10, bottom: 20)),
             ],
           ),
-          BootstrapRow(children: [
-            BootstrapCol(
+          NextRow(children: [
+            NextCol(
                 sizes: 'col-12 col-lg-4 col-md-12',
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,7 +62,7 @@ class _ContactSectionState extends State<ContactSection> {
                         leadingIcon: Icons.mobile_friendly_rounded)
                   ],
                 )),
-            BootstrapCol(
+            NextCol(
                 sizes: 'col-12 col-lg-8 col-md-12',
                 child: Column(
                   children: [

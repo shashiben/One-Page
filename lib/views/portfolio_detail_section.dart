@@ -1,12 +1,10 @@
+import 'package:bootstrap/flutter_next/flutter_next.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../app/fonts.dart';
-import '../bootstrap_col.dart';
-import '../bootstrap_row.dart';
-import '../extensions/extensions.dart';
+
 import 'footer_section.dart';
 import 'header_section.dart';
 
@@ -47,16 +45,16 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                           horizontal:
                               context.isMobile ? 20 : context.width * 0.05),
                       width: context.width,
-                      child: BootstrapRow(verticalSpacing: 20, children: [
-                        BootstrapCol(
+                      child: NextRow(verticalSpacing: 20, children: [
+                        const NextCol(
                             sizes: 'col-12 col-lg-6',
-                            child: const Text('Portfolio Details',
+                            child: Text('Portfolio Details',
                                 style: TextStyle(
                                     fontFamily: Fonts.raleway,
                                     color: Color(0xFF444444),
                                     fontSize: 24,
                                     fontWeight: FontWeight.w300))),
-                        BootstrapCol(
+                        NextCol(
                             sizes: 'col-12 col-lg-6',
                             child: Row(
                               mainAxisAlignment: context.width > 992
@@ -98,15 +96,13 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                           horizontal:
                               context.isMobile ? 20 : context.width * 0.05),
                       margin: const EdgeInsets.only(top: 40, bottom: 80),
-                      child: BootstrapRow(
-                        verticalAlignment: MainAxisAlignment.start,
-                        horizontalAlignment: CrossAxisAlignment.start,
-                        gridHorizontalAlignment: MainAxisAlignment.start,
-                        gridVerticalAlignment: CrossAxisAlignment.start,
+                      child: NextRow(
+                        verticalAlignment: WrapAlignment.start,
+                        horizontalAlignment: WrapAlignment.start,
                         verticalSpacing: 20,
                         horizontalSpacing: 20,
                         children: [
-                          BootstrapCol(
+                          NextCol(
                             sizes: 'col-12 col-lg-8',
                             child: Column(
                               children: [
@@ -166,7 +162,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                               ],
                             ),
                           ),
-                          BootstrapCol(
+                          NextCol(
                               sizes: 'col-12 col-lg-4',
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,

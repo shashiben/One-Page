@@ -1,10 +1,7 @@
-import 'package:flutter/material.dart';
-
 import '../app/data.dart';
 import '../app/text_styles.dart';
-import '../bootstrap_col.dart';
-import '../bootstrap_row.dart';
-import '../extensions/extensions.dart';
+
+import '../flutter_next/flutter_next.dart';
 import '../models/team_model.dart';
 import '../widgets/team_item.dart';
 
@@ -34,11 +31,11 @@ class TeamSection extends StatelessWidget {
             margin: EdgeInsets.only(bottom: context.height * 0.1),
             padding: EdgeInsets.symmetric(
                 horizontal: context.isMobile ? 20 : context.width * 0.05),
-            child: BootstrapRow(
+            child: NextRow(
                 verticalSpacing: 20,
                 horizontalSpacing: 20,
                 children: teamList
-                    .map((TeamModel e) => BootstrapCol(
+                    .map((TeamModel e) => NextCol(
                           sizes: 'col-12 col-lg-3 col-md-6 col-sm-12',
                           child: Center(
                             child: TeamItem(

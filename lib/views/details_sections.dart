@@ -1,11 +1,7 @@
 import 'package:bootstrap/widgets/text_counter.dart';
-import 'package:flutter/material.dart';
-
 import '../app/data.dart';
 import '../app/fonts.dart';
-import '../bootstrap_col.dart';
-import '../bootstrap_row.dart';
-import '../extensions/extensions.dart';
+import '../flutter_next/flutter_next.dart';
 
 class DetailsSection extends StatelessWidget {
   const DetailsSection({Key? key}) : super(key: key);
@@ -16,9 +12,9 @@ class DetailsSection extends StatelessWidget {
       width: double.infinity,
       color: const Color(0xFFF8FBFE),
       padding: const EdgeInsets.symmetric(vertical: 60),
-      child: BootstrapRow(
+      child: NextRow(
           children: details.entries
-              .map((MapEntry<String, int> e) => BootstrapCol(
+              .map((MapEntry<String, int> e) => NextCol(
                   sizes: 'col-6 col-md-6 col-lg-3 col-sm-6 col-xs-6',
                   child: Column(
                     children: [

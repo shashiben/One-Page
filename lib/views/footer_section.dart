@@ -1,13 +1,11 @@
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
 import '../app/colors.dart';
 import '../app/fonts.dart';
 import '../bootstrap_button.dart';
-import '../bootstrap_col.dart';
-import '../bootstrap_row.dart';
-import '../extensions/extensions.dart';
+
+import '../flutter_next/flutter_next.dart';
 import '../widgets/footer_item.dart';
 import '../widgets/news_letter.dart';
 
@@ -24,8 +22,8 @@ class FooterSection extends StatelessWidget {
               vertical: 40),
           color: Colors.white,
           width: context.width,
-          child: BootstrapRow(verticalSpacing: 30, children: [
-            BootstrapCol(
+          child: NextRow(verticalSpacing: 30, children: [
+            NextCol(
                 sizes: 'col-12 cik-md-6 col-lg-3',
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -77,7 +75,7 @@ class FooterSection extends StatelessWidget {
                     ]))
                   ],
                 )),
-            BootstrapCol(
+            NextCol(
                 sizes: 'col-12 col-md-6 col-lg-2',
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -97,7 +95,7 @@ class FooterSection extends StatelessWidget {
                     const FooterItem(title: 'Privacy policy'),
                   ],
                 )),
-            BootstrapCol(
+            NextCol(
                 sizes: 'col-12 col-md-6 col-lg-3',
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -117,9 +115,8 @@ class FooterSection extends StatelessWidget {
                     const FooterItem(title: 'Graphic Design'),
                   ],
                 )),
-            BootstrapCol(
-                sizes: 'col-12 col-md-6 col-lg-4',
-                child: const NewsLetterWidget())
+            const NextCol(
+                sizes: 'col-12 col-md-6 col-lg-4', child: NewsLetterWidget())
           ]),
         ),
         Container(
@@ -131,8 +128,8 @@ class FooterSection extends StatelessWidget {
           child: Container(
             color: const Color(0xFFF8FBFE),
             width: context.width,
-            child: BootstrapRow(verticalSpacing: 15, children: [
-              BootstrapCol(
+            child: NextRow(verticalSpacing: 15, children: [
+              NextCol(
                   sizes: 'col-12 col-md-6',
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -168,7 +165,7 @@ class FooterSection extends StatelessWidget {
                           ])),
                     ],
                   )),
-              BootstrapCol(
+              NextCol(
                   sizes: 'col-12 col-lg-6 col-md-6',
                   child: Row(
                     mainAxisAlignment: context.isMobile

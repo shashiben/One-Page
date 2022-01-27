@@ -40,6 +40,10 @@ dependencies:
   visibility_detector: ^0.2.2
   webviewx: ^0.2.1
   animations:
+  # flutter_next:
+  #   git:
+  #     url: git://github.com/shashiben/Will-be-titled-soon-.git
+  #     ref: master
 
 dev_dependencies:
   flutter_lints: ^1.0.0

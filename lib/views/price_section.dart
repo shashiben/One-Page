@@ -1,10 +1,7 @@
-import 'package:flutter/material.dart';
-
 import '../app/data.dart';
 import '../app/text_styles.dart';
-import '../bootstrap_col.dart';
-import '../bootstrap_row.dart';
-import '../extensions/extensions.dart';
+
+import '../flutter_next/flutter_next.dart';
 import '../models/pricing_model.dart';
 import '../widgets/pricing_item.dart';
 
@@ -35,13 +32,13 @@ class PriceSection extends StatelessWidget {
         LayoutBuilder(builder: (context, constraints) {
           return SizedBox(
             width: constraints.maxWidth * 0.8,
-            child: BootstrapRow(
+            child: NextRow(
                 horizontalSpacing: 10,
                 verticalSpacing: 30,
-                verticalAlignment: MainAxisAlignment.start,
+                verticalAlignment: WrapAlignment.start,
                 children: [
                   ...priceList
-                      .map((PricingModel e) => BootstrapCol(
+                      .map((PricingModel e) => NextCol(
                             sizes: 'col-6 col-md-6 col-lg-4 col-xs-12',
                             child: PricingItem(
                               index: priceList.indexOf(e),

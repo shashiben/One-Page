@@ -1,11 +1,8 @@
-import 'package:flutter/material.dart';
-
 import '../app/fonts.dart';
 import '../app/text_styles.dart';
 import '../bootstrap_button.dart';
-import '../bootstrap_col.dart';
-import '../bootstrap_row.dart';
-import '../extensions/extensions.dart';
+
+import '../flutter_next/flutter_next.dart';
 import '../home.dart';
 
 class HomeSection extends StatelessWidget {
@@ -15,8 +12,8 @@ class HomeSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: context.height * 0.8,
-      child: BootstrapRow(children: [
-        BootstrapCol(
+      child: NextRow(verticalAlignment: WrapAlignment.center, children: [
+        NextCol(
             sizes: 'col-12 col-lg-12',
             child: Column(
               children: [

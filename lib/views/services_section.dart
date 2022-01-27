@@ -1,10 +1,7 @@
-import 'package:flutter/material.dart';
-
 import '../app/data.dart';
 import '../app/text_styles.dart';
-import '../bootstrap_col.dart';
-import '../bootstrap_row.dart';
-import '../extensions/extensions.dart';
+
+import '../flutter_next/flutter_next.dart';
 import '../models/service_model.dart';
 import '../widgets/service_item.dart';
 
@@ -35,13 +32,13 @@ class ServicesSection extends StatelessWidget {
         ),
         SizedBox(
           width: context.isMobile ? context.width * 0.92 : context.width * 0.8,
-          child: BootstrapRow(
+          child: NextRow(
               horizontalSpacing: 20,
               verticalSpacing: 30,
-              verticalAlignment: MainAxisAlignment.start,
+              verticalAlignment: WrapAlignment.start,
               children: [
                 ...servicesList
-                    .map((ServiceModel e) => BootstrapCol(
+                    .map((ServiceModel e) => NextCol(
                         sizes: 'col-6 col-lg-4 col-md-6 col-xs-12',
                         child: ServiceItem(
                           serviceModel: e,

@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'extensions/extensions.dart';
-import 'constants.dart';
+import '../flutter_next.dart';
 
 class BootstrapUtils {
   ///

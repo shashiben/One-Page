@@ -1,12 +1,9 @@
+import 'package:bootstrap/flutter_next/flutter_next.dart';
 import 'package:bootstrap/widgets/video_play_button.dart';
 import 'package:bootstrap/widgets/video_player.dart';
-import 'package:flutter/material.dart';
 
 import '../app/colors.dart';
 import '../app/fonts.dart';
-import '../bootstrap_col.dart';
-import '../bootstrap_row.dart';
-import '../extensions/extensions.dart';
 import '../ordered_list.dart';
 
 class VideoSection extends StatelessWidget {
@@ -22,9 +19,8 @@ class VideoSection extends StatelessWidget {
                   ? 60
                   : 40,
           vertical: 50),
-      child:
-          BootstrapRow(verticalSpacing: 20, horizontalSpacing: 20, children: [
-        BootstrapCol(
+      child: NextRow(verticalSpacing: 20, horizontalSpacing: 20, children: [
+        NextCol(
             sizes: 'col-12 col-md-6 col-sm-12',
             child: Stack(
               children: [
@@ -63,7 +59,7 @@ class VideoSection extends StatelessWidget {
                 )
               ],
             )),
-        BootstrapCol(
+        NextCol(
             sizes: 'col-12 col-md-6 col-sm-12',
             child: Column(
               children: [

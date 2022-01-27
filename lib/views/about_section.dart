@@ -1,11 +1,8 @@
-import 'package:flutter/material.dart';
-
 import '../app/fonts.dart';
 import '../app/text_styles.dart';
 import '../bootstrap_button.dart';
-import '../bootstrap_col.dart';
-import '../bootstrap_row.dart';
-import '../extensions/extensions.dart';
+
+import '../flutter_next/flutter_next.dart';
 import '../ordered_list.dart';
 import 'details_sections.dart';
 import 'video_section.dart';
@@ -20,11 +17,11 @@ class AboutSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          BootstrapRow(
+          NextRow(
               padding:
                   EdgeInsets.symmetric(horizontal: context.isMobile ? 20 : 40),
               children: [
-                BootstrapCol(
+                NextCol(
                     sizes: 'col-12 col-lg-12',
                     child: Column(
                       children: [
@@ -38,8 +35,8 @@ class AboutSection extends StatelessWidget {
                           style: SectionTitle.p(context),
                           textAlign: TextAlign.center,
                         ).container(const EdgeInsets.only(top: 10, bottom: 20)),
-                        BootstrapRow(verticalSpacing: 20, children: [
-                          BootstrapCol(
+                        NextRow(verticalSpacing: 20, children: [
+                          NextCol(
                               sizes: 'col-12 col-lg-6 col-md-12',
                               child: Column(
                                 children: [
@@ -47,7 +44,8 @@ class AboutSection extends StatelessWidget {
                                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                                     style: SectionTitle.p(context).copyWith(
                                         color: const Color(0xFF444444)),
-                                  ).container(const EdgeInsets.only(bottom: 15)),
+                                  ).container(
+                                      const EdgeInsets.only(bottom: 15)),
                                   OrderedList(
                                       children: [
                                     'Ullamco laboris nisi ut aliquip ex ea commodo consequat',
@@ -62,7 +60,7 @@ class AboutSection extends StatelessWidget {
                                           .toList())
                                 ],
                               )),
-                          BootstrapCol(
+                          NextCol(
                               sizes: 'col-12 col-lg-6 col-md-12',
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
