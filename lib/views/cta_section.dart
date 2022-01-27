@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-
 import '../app/fonts.dart';
-import '../bootstrap_button.dart';
-import '../extensions/extensions.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 class CTASection extends StatelessWidget {
   const CTASection({Key? key}) : super(key: key);
@@ -35,11 +32,11 @@ class CTASection extends StatelessWidget {
               textAlign: TextAlign.center,
             ).container(const EdgeInsets.only(top: 20, bottom: 20)),
           ),
-          BootstrapButton(
+          NextButton(
               padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 14),
               color: Colors.white,
               outlineColor: context.primaryColor,
-              variant: ButtonVariant.outlined,
+              variant: NextButtonVariant.outlined,
               child: (bool isHovered) => Text(
                     'Call To Action',
                     style: TextStyle(

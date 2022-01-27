@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../extensions/extensions.dart';
-import 'hover_widget.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 class CompanyLogoItem extends StatefulWidget {
   final String image;
@@ -23,7 +20,8 @@ class _CompanyLogoItemState extends State<CompanyLogoItem>
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
+    return LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
       final double width = constraints.maxWidth * 0.45;
       return Center(
         child: SizedBox(

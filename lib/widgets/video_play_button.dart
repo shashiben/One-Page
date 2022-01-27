@@ -1,6 +1,4 @@
-import 'package:bootstrap/widgets/hover_widget.dart';
-import 'package:flutter/material.dart';
-import '../extensions/extensions.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 class VideoPlayButton extends StatefulWidget {
   const VideoPlayButton({

@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import '../extensions/extensions.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 class CommonTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -13,7 +12,6 @@ class CommonTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       maxLines: maxLines,
-    
       decoration: InputDecoration(
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5),

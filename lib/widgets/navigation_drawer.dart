@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 import '../app/colors.dart';
-import '../extensions/extensions.dart';
 
 class NavigationDrawer extends StatefulWidget {
   final Color? color;

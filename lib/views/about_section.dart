@@ -1,8 +1,7 @@
 import '../app/fonts.dart';
 import '../app/text_styles.dart';
-import '../bootstrap_button.dart';
 
-import '../flutter_next/flutter_next.dart';
+import 'package:flutter_next/flutter_next.dart';
 import '../ordered_list.dart';
 import 'details_sections.dart';
 import 'video_section.dart';
@@ -70,7 +69,7 @@ class AboutSection extends StatelessWidget {
                                     style: SectionTitle.p(context).copyWith(
                                         color: const Color(0xFF444444)),
                                   ),
-                                  BootstrapButton(
+                                  NextButton(
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 50, vertical: 14),
                                     margin: const EdgeInsets.only(top: 30),
@@ -84,7 +83,7 @@ class AboutSection extends StatelessWidget {
                                               : context.primaryColor),
                                     ),
                                     onPressed: () {},
-                                    variant: ButtonVariant.outlined,
+                                    variant: NextButtonVariant.outlined,
                                   )
                                 ],
                               ))

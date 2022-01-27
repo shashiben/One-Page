@@ -1,7 +1,7 @@
 import 'package:bootstrap/widgets/text_counter.dart';
 import '../app/data.dart';
 import '../app/fonts.dart';
-import '../flutter_next/flutter_next.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 class DetailsSection extends StatelessWidget {
   const DetailsSection({Key? key}) : super(key: key);

@@ -1,14 +1,10 @@
-import 'package:bootstrap/widgets/responsive_grid.dart';
-import 'package:flutter/material.dart';
-
 import '../app/colors.dart';
 import '../app/data.dart';
 import '../app/fonts.dart';
 import '../app/text_styles.dart';
-import '../extensions/extensions.dart';
 import '../models/portfolio_model.dart';
-import '../widgets/hover_widget.dart';
 import '../widgets/portfolio_item.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 class PortfolioSection extends StatefulWidget {
   const PortfolioSection({Key? key}) : super(key: key);
@@ -64,16 +60,18 @@ class _PortfolioSectionState extends State<PortfolioSection>
                         });
                       }),
                     ))),
-        ResponsiveGrid(
+        NextGridView(
             sizes: 'col-12 col-lg-4 col-md-6',
             // horizontalSpacing: 20,
             // verticalSpacing: 20,
             childrens: portfolioItems
                 .where((e) => (e.type == tabs.elementAt(selectedIndex) ||
                     selectedIndex == 0))
-                .map((PortfolioModel e) => PortfolioItem(
-                      portfolioItem: e,
-                      shouldDisplay: true,
+                .map((PortfolioModel e) => NextGridItem(
+                      child: PortfolioItem(
+                        portfolioItem: e,
+                        shouldDisplay: true,
+                      ),
                     ))
                 .toList())
       ]).container(const EdgeInsets.symmetric(horizontal: 20, vertical: 60)),

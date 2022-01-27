@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 import '../app/fonts.dart';
-import '../bootstrap_button.dart';
-import '../extensions/extensions.dart';
 
 class NewsLetterWidget extends StatelessWidget {
   const NewsLetterWidget({Key? key}) : super(key: key);
@@ -33,7 +31,7 @@ class NewsLetterWidget extends StatelessWidget {
             suffixIcon: SizedBox(
               height: 48,
               width: 100,
-              child: BootstrapButton(
+              child: NextButton(
                 borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(8),
                     bottomRight: Radius.circular(8)),

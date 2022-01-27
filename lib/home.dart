@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 
-import 'bootstrap_container.dart';
-import 'extensions/extensions.dart';
 import 'views/about_section.dart';
 import 'views/client_section.dart';
 import 'views/contact_section.dart';
@@ -87,7 +85,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               keyList: sectionKeys,
             ),
             Expanded(
-              child: BootstrapContainer(
+              child: NextContainer(
                   scrollController: scrollController,
                   fluid: true,
                   alignment: Alignment.center,

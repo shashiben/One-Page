@@ -1,6 +1,6 @@
 import '../app/data.dart';
 
-import '../flutter_next/flutter_next.dart';
+import 'package:flutter_next/flutter_next.dart';
 import '../models/feature_model.dart';
 import '../widgets/feature_item.dart';
 

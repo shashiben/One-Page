@@ -1,9 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
 import '../app/data.dart';
 import '../app/text_styles.dart';
-import '../extensions/extensions.dart';
+import 'package:flutter_next/flutter_next.dart';
 import '../models/testimonial_model.dart';
 import '../widgets/testimonial_item.dart';
 

@@ -223,6 +223,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  flutter_next:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: master
+      resolved-ref: "9e0833ac5bfe0a238b2cec5d5db55ca2fcd846fc"
+      url: "git://github.com/shashiben/Will-be-titled-soon-.git"
+    source: git
+    version: "0.0.1"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -666,5 +675,5 @@ packages:
     source: hosted
     version: "3.1.0"
 sdks:
-  dart: ">=2.16.0-100.0.dev <3.0.0"
+  dart: ">=2.16.0-123.0.dev <3.0.0"
   flutter: ">=2.5.0"

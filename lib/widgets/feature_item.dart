@@ -1,10 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 import '../app/colors.dart';
 import '../app/text_styles.dart';
-import '../extensions/extensions.dart';
 import '../models/feature_model.dart';
-import 'hover_widget.dart';
 
 class FeatureItem extends StatefulWidget {
   final FeatureModel feature;

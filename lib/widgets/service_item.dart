@@ -1,11 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../app/colors.dart';
 import '../app/fonts.dart';
-import '../extensions/extensions.dart';
 import '../models/service_model.dart';
-import 'hover_widget.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 class ServiceItem extends StatelessWidget {
   final ServiceModel serviceModel;

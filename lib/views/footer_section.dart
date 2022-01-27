@@ -3,9 +3,8 @@ import 'package:line_icons/line_icons.dart';
 
 import '../app/colors.dart';
 import '../app/fonts.dart';
-import '../bootstrap_button.dart';
 
-import '../flutter_next/flutter_next.dart';
+import 'package:flutter_next/flutter_next.dart';
 import '../widgets/footer_item.dart';
 import '../widgets/news_letter.dart';
 
@@ -172,7 +171,7 @@ class FooterSection extends StatelessWidget {
                         ? MainAxisAlignment.center
                         : MainAxisAlignment.end,
                     children: [
-                      BootstrapButton(
+                      NextButton(
                           margin: const EdgeInsets.only(right: 10),
                           padding: const EdgeInsets.all(10),
                           child: (bool isHovered) => const Icon(
@@ -181,7 +180,7 @@ class FooterSection extends StatelessWidget {
                                 size: 20,
                               ),
                           onPressed: () {}),
-                      BootstrapButton(
+                      NextButton(
                           margin: const EdgeInsets.only(right: 10),
                           padding: const EdgeInsets.all(10),
                           child: (bool isHovered) => const Icon(
@@ -190,7 +189,7 @@ class FooterSection extends StatelessWidget {
                                 size: 20,
                               ),
                           onPressed: () {}),
-                      BootstrapButton(
+                      NextButton(
                           margin: const EdgeInsets.only(right: 10),
                           padding: const EdgeInsets.all(10),
                           child: (bool isHovered) => const Icon(
@@ -199,7 +198,7 @@ class FooterSection extends StatelessWidget {
                                 size: 20,
                               ),
                           onPressed: () {}),
-                      BootstrapButton(
+                      NextButton(
                           margin: const EdgeInsets.only(right: 10),
                           padding: const EdgeInsets.all(10),
                           child: (bool isHovered) => const Icon(
@@ -208,7 +207,7 @@ class FooterSection extends StatelessWidget {
                                 size: 20,
                               ),
                           onPressed: () {}),
-                      BootstrapButton(
+                      NextButton(
                           margin: const EdgeInsets.only(right: 10),
                           padding: const EdgeInsets.all(10),
                           child: (bool isHovered) => const Icon(

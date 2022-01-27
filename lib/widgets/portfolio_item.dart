@@ -1,12 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../app/data.dart';
 import '../app/fonts.dart';
-import '../extensions/extensions.dart';
 import '../models/portfolio_model.dart';
 import 'custom_dual_tone_border.dart';
-import 'hover_widget.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 class PortfolioItem extends StatefulWidget {
   final PortfolioModel portfolioItem;

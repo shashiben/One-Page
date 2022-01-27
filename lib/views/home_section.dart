@@ -1,8 +1,7 @@
 import '../app/fonts.dart';
 import '../app/text_styles.dart';
-import '../bootstrap_button.dart';
 
-import '../flutter_next/flutter_next.dart';
+import 'package:flutter_next/flutter_next.dart';
 import '../home.dart';
 
 class HomeSection extends StatelessWidget {
@@ -27,7 +26,7 @@ class HomeSection extends StatelessWidget {
                   style: h2(context),
                   textAlign: TextAlign.center,
                 ).container(const EdgeInsets.only(top: 10)),
-                BootstrapButton(
+                NextButton(
                   color: context.primaryColor,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 50, vertical: 14),

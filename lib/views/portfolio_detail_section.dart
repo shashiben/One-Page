@@ -1,6 +1,6 @@
-import 'package:bootstrap/flutter_next/flutter_next.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/gestures.dart';
+import 'package:flutter_next/flutter_next.dart';
 import 'package:go_router/go_router.dart';
 
 import '../app/fonts.dart';

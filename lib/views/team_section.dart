@@ -1,7 +1,7 @@
 import '../app/data.dart';
 import '../app/text_styles.dart';
 
-import '../flutter_next/flutter_next.dart';
+import 'package:flutter_next/flutter_next.dart';
 import '../models/team_model.dart';
 import '../widgets/team_item.dart';
 

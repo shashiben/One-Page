@@ -1,10 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../app/fonts.dart';
-import '../bootstrap_button.dart';
-import '../extensions/extensions.dart';
-import '../widgets/hover_widget.dart';
+import 'package:flutter_next/flutter_next.dart';
+
 import '../widgets/navigation_drawer.dart';
 
 class HeaderSection extends StatelessWidget {
@@ -48,7 +46,7 @@ class HeaderSection extends StatelessWidget {
                 } else {}
               });
             })),
-        BootstrapButton(
+        NextButton(
             color: context.primaryColor,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
             margin: const EdgeInsets.only(left: 30),

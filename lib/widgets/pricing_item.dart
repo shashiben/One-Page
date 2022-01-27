@@ -1,11 +1,8 @@
-import 'package:flutter/material.dart';
-
 import '../app/colors.dart';
 import '../app/fonts.dart';
-import '../bootstrap_button.dart';
-import '../extensions/extensions.dart';
 import '../models/pricing_model.dart';
-import 'hover_widget.dart';
+
+import 'package:flutter_next/flutter_next.dart';
 
 class PricingItem extends StatelessWidget {
   final PricingModel pricingModel;
@@ -98,13 +95,13 @@ class PricingItem extends StatelessWidget {
                   ).container(const EdgeInsets.only(bottom: 16))),
               Padding(
                 padding: const EdgeInsets.all(15.0),
-                child: BootstrapButton(
+                child: NextButton(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 50, vertical: 14),
                     color: !isActive ? context.primaryColor : Colors.white,
                     outlineColor:
                         isActive ? context.primaryColor : Colors.white,
-                    variant: ButtonVariant.outlined,
+                    variant: NextButtonVariant.outlined,
                     child: (bool isHovered) => Text(
                           'Buy now',
                           style: TextStyle(

@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 import '../app/fonts.dart';
-import '../extensions/extensions.dart';
-import 'hover_widget.dart';
 
 class ContactListTile extends StatelessWidget {
   final String title, subtitle;

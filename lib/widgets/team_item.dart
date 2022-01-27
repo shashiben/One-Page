@@ -1,10 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
 import '../app/fonts.dart';
-import '../extensions/extensions.dart';
 import '../models/team_model.dart';
-import 'hover_widget.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 class TeamItem extends StatelessWidget {
   final TeamModel member;

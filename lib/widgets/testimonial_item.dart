@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
 import '../app/fonts.dart';
-import '../extensions/extensions.dart';
+import 'package:flutter_next/flutter_next.dart';
 import '../models/testimonial_model.dart';
 import 'message_clipper.dart';
 

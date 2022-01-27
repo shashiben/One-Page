@@ -1,15 +1,10 @@
-import 'dart:math';
-
-import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
 import '../app/colors.dart';
 import '../app/data.dart';
 import '../app/fonts.dart';
 import '../app/text_styles.dart';
-import '../extensions/extensions.dart';
-import '../widgets/accordion.dart';
-import '../widgets/hover_widget.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 class FAQSection extends StatelessWidget {
   const FAQSection({Key? key}) : super(key: key);
@@ -39,7 +34,8 @@ class FAQSection extends StatelessWidget {
           ),
           ...faqList.entries
               .map((MapEntry<String, String> e) => HoverWidget(
-                    builder: (BuildContext context, bool isHovered) => Accordion(
+                    builder: (BuildContext context, bool isHovered) =>
+                        NextAccordion(
                       horizontalTitleGap: context.isMobile ? 5 : 10,
                       collapsedBackgroundColor: Colors.white,
                       backgroundColor: Colors.white,
