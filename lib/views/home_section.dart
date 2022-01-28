@@ -47,7 +47,11 @@ class HomeSection extends StatelessWidget {
                   ),
                 )
               ],
-            ))
+            ).fadeIn(
+                variant: NextFadeInVariant.fadeInTop,
+                initialPosition: 120,
+                viewPort: 0.05,
+                duration: const Duration(milliseconds: 350)))
       ]),
     );
   }

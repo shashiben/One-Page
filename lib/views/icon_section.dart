@@ -15,12 +15,13 @@ class IconSection extends StatelessWidget {
           horizontal: context.isMobile ? 20 : context.width * 0.05),
       child: NextRow(
           verticalSpacing: 30,
-          horizontalSpacing: 20,
           children: featuresList
               .map((FeatureModel e) => NextCol(
                     sizes: 'col-12 col-lg-3 col-md-6 col-sm-12',
                     child: FeatureItem(
                       feature: e,
+                    ).zoom(
+                      viewPort: 0.3,
                     ),
                   ))
               .toList()),

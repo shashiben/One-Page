@@ -45,7 +45,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                           horizontal:
                               context.isMobile ? 20 : context.width * 0.05),
                       width: context.width,
-                      child: NextRow(verticalSpacing: 20, children: [
+                      child: NextRow(children: [
                         const NextCol(
                             sizes: 'col-12 col-lg-6',
                             child: Text('Portfolio Details',
@@ -97,10 +97,6 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                               context.isMobile ? 20 : context.width * 0.05),
                       margin: const EdgeInsets.only(top: 40, bottom: 80),
                       child: NextRow(
-                        verticalAlignment: WrapAlignment.start,
-                        horizontalAlignment: WrapAlignment.start,
-                        verticalSpacing: 20,
-                        horizontalSpacing: 20,
                         children: [
                           NextCol(
                             sizes: 'col-12 col-lg-8',

@@ -34,7 +34,7 @@ class AboutSection extends StatelessWidget {
                           style: SectionTitle.p(context),
                           textAlign: TextAlign.center,
                         ).container(const EdgeInsets.only(top: 10, bottom: 20)),
-                        NextRow(verticalSpacing: 20, children: [
+                        NextRow(children: [
                           NextCol(
                               sizes: 'col-12 col-lg-6 col-md-12',
                               child: Column(
@@ -89,6 +89,9 @@ class AboutSection extends StatelessWidget {
                               ))
                         ])
                       ],
+                    ).fadeIn(
+                      variant: NextFadeInVariant.fadeInTop,
+                      viewPort: 0.2,
                     )),
               ]),
           const DetailsSection()

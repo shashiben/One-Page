@@ -34,62 +34,79 @@ class _TestimonialSectionState extends State<TestimonialSection> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            'TESTIMONIALS',
-            style: SectionTitle.h2(context),
-            textAlign: TextAlign.center,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'TESTIMONIALS',
+                style: SectionTitle.h2(context),
+                textAlign: TextAlign.center,
+              ),
+              Text(
+                'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.',
+                style: SectionTitle.p(context),
+                textAlign: TextAlign.center,
+              ).container(const EdgeInsets.only(top: 10, bottom: 20)),
+            ],
+          ).fadeIn(
+              variant: NextFadeInVariant.fadeInTop,
+              initialPosition: 80,
+              viewPort: 0.2),
+          Column(
+            children: [
+              ScrollConfiguration(
+                behavior: ScrollConfiguration.of(context).copyWith(
+                  dragDevices: {
+                    PointerDeviceKind.touch,
+                    PointerDeviceKind.mouse,
+                  },
+                ),
+                child: CarouselSlider(
+                  carouselController: pageController,
+                  options: CarouselOptions(
+                      height: 420,
+                      viewportFraction: context.isMobile
+                          ? 1
+                          : context.isMd
+                              ? 1 / 2
+                              : 1 / 3,
+                      autoPlay: true,
+                      onPageChanged: (index, reason) {
+                        setState(() {
+                          currentIndex = index;
+                        });
+                      }),
+                  items: reviewsList
+                      .map((TestimonialModel e) => TestimonialItem(review: e)
+                          .sizedBox(width: 395, height: 420))
+                      .toList(),
+                ),
+              ).container(EdgeInsets.symmetric(
+                  horizontal: context.isMobile ? 20 : context.width * 0.05)),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: List.generate(
+                      reviewsList.length,
+                      (int index) => AnimatedContainer(
+                                  margin:
+                                      const EdgeInsets.symmetric(horizontal: 4),
+                                  height: 15,
+                                  width: 15,
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: index == currentIndex
+                                          ? context.primaryColor
+                                          : context.primaryColor
+                                              .withOpacity(0.4)),
+                                  duration: const Duration(milliseconds: 300))
+                              .onTap(() {
+                            pageController.animateToPage(index);
+                          })))
+            ],
+            mainAxisAlignment: MainAxisAlignment.center,
+          ).fadeIn(
+            variant: NextFadeInVariant.fadeInTop,
           ),
-          Text(
-            'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.',
-            style: SectionTitle.p(context),
-            textAlign: TextAlign.center,
-          ).container(const EdgeInsets.only(top: 10, bottom: 20)),
-          ScrollConfiguration(
-            behavior: ScrollConfiguration.of(context).copyWith(
-              dragDevices: {
-                PointerDeviceKind.touch,
-                PointerDeviceKind.mouse,
-              },
-            ),
-            child: CarouselSlider(
-              carouselController: pageController,
-              options: CarouselOptions(
-                  height: 420,
-                  viewportFraction: context.isMobile
-                      ? 1
-                      : context.isMd
-                          ? 1 / 2
-                          : 1 / 3,
-                  autoPlay: true,
-                  onPageChanged: (index, reason) {
-                    setState(() {
-                      currentIndex = index;
-                    });
-                  }),
-              items: reviewsList
-                  .map((TestimonialModel e) => TestimonialItem(review: e)
-                      .sizedBox(width: 395, height: 420))
-                  .toList(),
-            ),
-          ).container(EdgeInsets.symmetric(
-              horizontal: context.isMobile ? 20 : context.width * 0.05)),
-          Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                  reviewsList.length,
-                  (int index) => AnimatedContainer(
-                              margin: const EdgeInsets.symmetric(horizontal: 4),
-                              height: 15,
-                              width: 15,
-                              decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: index == currentIndex
-                                      ? context.primaryColor
-                                      : context.primaryColor.withOpacity(0.4)),
-                              duration: const Duration(milliseconds: 300))
-                          .onTap(() {
-                        pageController.animateToPage(index);
-                      })))
         ],
       ).container(const EdgeInsets.symmetric(vertical: 60)),
     );

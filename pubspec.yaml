@@ -22,8 +22,9 @@ dependencies:
   visibility_detector: ^0.2.2
   webviewx: ^0.2.1
   animations:
-  flutter_next: ^0.0.1
-    
+  flutter_next:
+    path: ../flutter_next
+
 dev_dependencies:
   flutter_lints: ^1.0.0
   build_runner: ^1.0.0

@@ -226,10 +226,10 @@ packages:
   flutter_next:
     dependency: "direct main"
     description:
-      name: flutter_next
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.1"
+      path: "../flutter_next"
+      relative: true
+    source: path
+    version: "0.0.3"
   flutter_svg:
     dependency: "direct main"
     description:

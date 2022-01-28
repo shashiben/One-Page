@@ -20,9 +20,9 @@ class ServiceItem extends StatelessWidget {
             BoxShadow(
               color: const Color.fromRGBO(18, 66, 101, 0.08),
               blurRadius: 15,
-              spreadRadius: isHovered ? 10 : 5,
+              spreadRadius: isHovered ? 10 : 2,
               offset: Offset(
-                2.0,
+                isHovered ? 2 : 0,
                 isHovered ? 6.0 : 2.0,
               ),
             ),

@@ -22,16 +22,24 @@ class _PortfolioSectionState extends State<PortfolioSection>
   Widget build(BuildContext context) {
     return Container(
       child: Column(children: [
-        Text(
-          'PORTFOLIO',
-          style: SectionTitle.h2(context),
-          textAlign: TextAlign.center,
-        ),
-        Text(
-          'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.',
-          style: SectionTitle.p(context),
-          textAlign: TextAlign.center,
-        ).container(const EdgeInsets.only(top: 10, bottom: 20)),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'PORTFOLIO',
+              style: SectionTitle.h2(context),
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.',
+              style: SectionTitle.p(context),
+              textAlign: TextAlign.center,
+            ).container(const EdgeInsets.only(top: 10, bottom: 20)),
+          ],
+        ).fadeIn(
+            variant: NextFadeInVariant.fadeInTop,
+            initialPosition: 80,
+            viewPort: 0.15),
         Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(
@@ -59,21 +67,25 @@ class _PortfolioSectionState extends State<PortfolioSection>
                           selectedIndex = index;
                         });
                       }),
-                    ))),
+                    ))).fadeIn(
+            initialPosition: 80,
+            viewPort: 0.15,
+            variant: NextFadeInVariant.fadeInTop),
         NextGridView(
-            sizes: 'col-12 col-lg-4 col-md-6',
-            // horizontalSpacing: 20,
-            // verticalSpacing: 20,
-            childrens: portfolioItems
-                .where((e) => (e.type == tabs.elementAt(selectedIndex) ||
-                    selectedIndex == 0))
-                .map((PortfolioModel e) => NextGridItem(
-                      child: PortfolioItem(
-                        portfolioItem: e,
-                        shouldDisplay: true,
-                      ),
-                    ))
-                .toList())
+                sizes: 'col-12 col-lg-4 col-md-6',
+                // horizontalSpacing: 20,
+                // verticalSpacing: 20,
+                childrens: portfolioItems
+                    .where((e) => (e.type == tabs.elementAt(selectedIndex) ||
+                        selectedIndex == 0))
+                    .map((PortfolioModel e) => NextGridItem(
+                          child: PortfolioItem(
+                            portfolioItem: e,
+                            shouldDisplay: true,
+                          ),
+                        ))
+                    .toList())
+            .fadeIn(viewPort: 0.18, variant: NextFadeInVariant.fadeInTop)
       ]).container(const EdgeInsets.symmetric(horizontal: 20, vertical: 60)),
     );
   }

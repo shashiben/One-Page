@@ -21,7 +21,7 @@ class CTASection extends StatelessWidget {
                 fontWeight: FontWeight.bold),
           ),
           SizedBox(
-            width: context.isMobile ? context.width * 0.8 : context.width * 0.6,
+            width: context.width * 0.8,
             child: const Text(
               'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
               style: TextStyle(
@@ -46,7 +46,7 @@ class CTASection extends StatelessWidget {
                   ),
               onPressed: () {})
         ],
-      ),
+      ).zoom(duration: const Duration(milliseconds: 500), viewPort: 0.15),
     );
   }
 }

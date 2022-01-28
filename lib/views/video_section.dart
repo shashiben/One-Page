@@ -19,7 +19,7 @@ class VideoSection extends StatelessWidget {
                   ? 60
                   : 40,
           vertical: 50),
-      child: NextRow(verticalSpacing: 20, horizontalSpacing: 20, children: [
+      child: NextRow(children: [
         NextCol(
             sizes: 'col-12 col-md-6 col-sm-12',
             child: Stack(
@@ -58,7 +58,7 @@ class VideoSection extends StatelessWidget {
                   }).center(),
                 )
               ],
-            )),
+            ).fadeIn(variant: NextFadeInVariant.fadeInRight)),
         NextCol(
             sizes: 'col-12 col-md-6 col-sm-12',
             child: Column(
@@ -103,7 +103,7 @@ class VideoSection extends StatelessWidget {
                             color: Color(0xFF444444)))
                     .container(const EdgeInsets.only(top: 20))
               ],
-            ))
+            ).fadeIn(viewPort: 0.2))
       ]),
     );
   }
