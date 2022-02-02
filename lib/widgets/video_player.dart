@@ -1,4 +1,4 @@
-import 'package:bootstrap/app/text_styles.dart';
+import 'package:one_page/app/text_styles.dart';
 import 'package:universal_platform/universal_platform.dart';
 import 'package:webviewx/webviewx.dart';
 import 'package:flutter_next/flutter_next.dart';

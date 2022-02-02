@@ -18,8 +18,8 @@ class ClientSection extends StatelessWidget {
                 child: CompanyLogoItem(
                   image: 'assets/clients/client-${index + 1}.png',
                 ).container(const EdgeInsets.symmetric(horizontal: 15)).zoom(
-                    duration: const Duration(milliseconds: 300),
-                    viewPort: 0.18))),
+                      duration: const Duration(milliseconds: 300),
+                    ))),
       ),
     );
   }

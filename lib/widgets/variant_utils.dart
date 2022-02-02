@@ -1,4 +1,4 @@
-import 'package:bootstrap/constants.dart';
+import 'package:one_page/constants.dart';
 import 'package:flutter/material.dart';
 
 class NextVariantUtils {

@@ -46,7 +46,9 @@ class CTASection extends StatelessWidget {
                   ),
               onPressed: () {})
         ],
-      ).zoom(duration: const Duration(milliseconds: 500), viewPort: 0.15),
+      ).zoom(
+        duration: const Duration(milliseconds: 250),
+      ),
     );
   }
 }

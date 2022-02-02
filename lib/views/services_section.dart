@@ -35,9 +35,9 @@ class ServicesSection extends StatelessWidget {
             ),
           ],
         ).fadeIn(
-            variant: NextFadeInVariant.fadeInTop,
-            initialPosition: 80,
-            viewPort: 0.2),
+          variant: NextFadeInVariant.fadeInTop,
+          initialPosition: 80,
+        ),
         SizedBox(
           width: context.isMobile ? context.width * 0.92 : context.width * 0.8,
           child: NextRow(verticalSpacing: 30, children: [

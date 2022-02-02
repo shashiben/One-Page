@@ -91,7 +91,6 @@ class AboutSection extends StatelessWidget {
                       ],
                     ).fadeIn(
                       variant: NextFadeInVariant.fadeInTop,
-                      viewPort: 0.2,
                     )),
               ]),
           const DetailsSection()

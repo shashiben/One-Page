@@ -35,8 +35,7 @@ class TeamSection extends StatelessWidget {
           ).fadeIn(
               variant: NextFadeInVariant.fadeInTop,
               initialPosition: 80,
-              viewPort: 0.18,
-              duration: const Duration(milliseconds: 600)),
+              duration: const Duration(milliseconds: 300)),
           Container(
             margin: EdgeInsets.only(bottom: context.height * 0.1),
             padding: EdgeInsets.symmetric(
@@ -52,7 +51,9 @@ class TeamSection extends StatelessWidget {
                           ),
                         ))
                     .toList()),
-          ).fadeIn(variant: NextFadeInVariant.fadeInTop, viewPort: 0.18),
+          ).fadeIn(
+            variant: NextFadeInVariant.fadeInTop,
+          ),
         ],
       ),
     );

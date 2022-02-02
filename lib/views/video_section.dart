@@ -1,5 +1,5 @@
-import 'package:bootstrap/widgets/video_play_button.dart';
-import 'package:bootstrap/widgets/video_player.dart';
+import 'package:one_page/widgets/video_play_button.dart';
+import 'package:one_page/widgets/video_player.dart';
 import 'package:flutter_next/flutter_next.dart';
 
 import '../app/colors.dart';
@@ -103,7 +103,7 @@ class VideoSection extends StatelessWidget {
                             color: Color(0xFF444444)))
                     .container(const EdgeInsets.only(top: 20))
               ],
-            ).fadeIn(viewPort: 0.2))
+            ).fadeIn())
       ]),
     );
   }

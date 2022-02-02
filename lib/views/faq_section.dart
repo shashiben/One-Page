@@ -40,7 +40,7 @@ class FAQSection extends StatelessWidget {
           ).fadeIn(
               variant: NextFadeInVariant.fadeInTop,
               initialPosition: 80,
-              duration: const Duration(milliseconds: 350)),
+              duration: const Duration(milliseconds: 300)),
           Column(
             children: [
               ...faqList.entries
@@ -93,7 +93,6 @@ class FAQSection extends StatelessWidget {
             ],
           ).fadeIn(
               variant: NextFadeInVariant.fadeInTop,
-              viewPort: 0.2,
               duration: const Duration(milliseconds: 400)),
         ],
       ),

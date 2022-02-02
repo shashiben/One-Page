@@ -49,9 +49,9 @@ class _TestimonialSectionState extends State<TestimonialSection> {
               ).container(const EdgeInsets.only(top: 10, bottom: 20)),
             ],
           ).fadeIn(
-              variant: NextFadeInVariant.fadeInTop,
-              initialPosition: 80,
-              viewPort: 0.2),
+            variant: NextFadeInVariant.fadeInTop,
+            initialPosition: 80,
+          ),
           Column(
             children: [
               ScrollConfiguration(
