@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:one_page/services/url_service.dart';
 
 import '../app/colors.dart';
 import '../app/fonts.dart';
@@ -139,24 +140,27 @@ class FooterSection extends StatelessWidget {
                             fontFamily: Fonts.openSans,
                           ),
                           children: [
-                            TextSpan(text: '© Copyright '),
+                            TextSpan(text: '© Created by '),
                             TextSpan(
-                                text: 'OnePage. ',
+                                text: 'Shashi. ',
                                 style: TextStyle(
                                     fontFamily: Fonts.openSans,
                                     fontWeight: FontWeight.bold)),
-                            TextSpan(text: 'All Rights Reserved')
+                            TextSpan(text: 'With help of '),
                           ])).container(const EdgeInsets.only(bottom: 10)),
                       Text.rich(TextSpan(
                           style: const TextStyle(
                             fontFamily: Fonts.openSans,
                           ),
                           children: [
-                            const TextSpan(text: 'Coded by '),
+                            const TextSpan(text: 'With the help of '),
                             TextSpan(
-                                text: 'Shashi Kumar. ',
+                                text: 'Flutter Next ',
                                 recognizer: TapGestureRecognizer()
-                                  ..onTap = () {},
+                                  ..onTap = () {
+                                    UrlService.launchUrl(
+                                        "https://pub.dev/packages/flutter_next");
+                                  },
                                 style: TextStyle(
                                     fontFamily: Fonts.openSans,
                                     color: context.primaryColor,
@@ -179,7 +183,10 @@ class FooterSection extends StatelessWidget {
                                 color: Colors.white,
                                 size: 20,
                               ),
-                          onPressed: () {}),
+                          onPressed: () {
+                            UrlService.launchUrl(
+                                "https://www.facebook.com/shashiben7997");
+                          }),
                       NextButton(
                           margin: const EdgeInsets.only(right: 10),
                           padding: const EdgeInsets.all(10),
@@ -188,7 +195,10 @@ class FooterSection extends StatelessWidget {
                                 color: Colors.white,
                                 size: 20,
                               ),
-                          onPressed: () {}),
+                          onPressed: () {
+                            UrlService.launchUrl(
+                                "https://www.instagram.com/shashikumar7997/");
+                          }),
                       NextButton(
                           margin: const EdgeInsets.only(right: 10),
                           padding: const EdgeInsets.all(10),
@@ -197,7 +207,10 @@ class FooterSection extends StatelessWidget {
                                 color: Colors.white,
                                 size: 20,
                               ),
-                          onPressed: () {}),
+                          onPressed: () {
+                            UrlService.launchUrl(
+                                "https://www.linkedin.com/in/shashi-kumar-58ab1b1a4/");
+                          }),
                       NextButton(
                           margin: const EdgeInsets.only(right: 10),
                           padding: const EdgeInsets.all(10),
@@ -206,16 +219,22 @@ class FooterSection extends StatelessWidget {
                                 color: Colors.white,
                                 size: 20,
                               ),
-                          onPressed: () {}),
+                          onPressed: () {
+                            UrlService.launchUrl(
+                                "https://github.com/shashiben");
+                          }),
                       NextButton(
                           margin: const EdgeInsets.only(right: 10),
                           padding: const EdgeInsets.all(10),
                           child: (bool isHovered) => const Icon(
-                                LineIcons.facebook,
+                                LineIcons.medium,
                                 color: Colors.white,
                                 size: 20,
                               ),
-                          onPressed: () {}),
+                          onPressed: () {
+                            UrlService.launchUrl(
+                                "https://medium.com/@ben75930");
+                          }),
                     ],
                   ))
             ]),

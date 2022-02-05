@@ -20,7 +20,9 @@ class IconSection extends StatelessWidget {
                     sizes: 'col-12 col-lg-3 col-md-6 col-sm-12',
                     child: FeatureItem(
                       feature: e,
-                    ).zoom(viewPort: 0.3),
+                    ).zoom(
+                        viewPort: 0.3,
+                        duration: const Duration(milliseconds: 600)),
                   ))
               .toList()),
     );

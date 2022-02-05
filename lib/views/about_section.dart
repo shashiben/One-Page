@@ -1,3 +1,5 @@
+import 'package:one_page/home.dart';
+
 import '../app/fonts.dart';
 import '../app/text_styles.dart';
 
@@ -82,7 +84,14 @@ class AboutSection extends StatelessWidget {
                                               ? Colors.white
                                               : context.primaryColor),
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Scrollable.ensureVisible(
+                                          sectionKeys["Home"]?.currentContext ??
+                                              context,
+                                          duration:
+                                              const Duration(milliseconds: 800),
+                                          curve: Curves.linear);
+                                    },
                                     variant: NextButtonVariant.outlined,
                                   )
                                 ],
