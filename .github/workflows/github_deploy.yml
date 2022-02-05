@@ -23,9 +23,6 @@ jobs:
     - name: Get dependencies
       run: flutter pub get
     
-    - name: Test project
-      run: flutter test
-    
     - name: Build release project
       run: flutter build web --release
 
