@@ -6,7 +6,7 @@ import 'app/theme.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  GestureBinding.instance.resamplingEnabled = true;
+  GestureBinding.instance?.resamplingEnabled = true;
   runApp(const MyApp());
 }
 
