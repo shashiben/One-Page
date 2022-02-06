@@ -146,7 +146,7 @@ class FooterSection extends StatelessWidget {
                                 style: TextStyle(
                                     fontFamily: Fonts.openSans,
                                     fontWeight: FontWeight.bold)),
-                            TextSpan(text: 'With help of '),
+                            TextSpan(text: 'With Flutter.'),
                           ])).container(const EdgeInsets.only(bottom: 10)),
                       Text.rich(TextSpan(
                           style: const TextStyle(

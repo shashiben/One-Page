@@ -22,7 +22,7 @@ class IconSection extends StatelessWidget {
                       feature: e,
                     ).zoom(
                         viewPort: 0.3,
-                        duration: const Duration(milliseconds: 600)),
+                        duration: const Duration(milliseconds: 450)),
                   ))
               .toList()),
     );
