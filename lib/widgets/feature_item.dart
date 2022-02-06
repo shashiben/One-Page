@@ -33,48 +33,53 @@ class _FeatureItemState extends State<FeatureItem>
 
   @override
   Widget build(BuildContext context) {
-    return HoverWidget(builder: (BuildContext context, bool isHovered) {
-      if (isHovered) {
-        _controller.forward();
-      } else {
-        _controller.reverse();
-      }
-      return ScaleTransition(
-        scale: Tween(begin: 1.0, end: 1.08).animate(_controller),
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 700),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: const Color.fromRGBO(18, 66, 101, 0.08),
-                blurRadius: 15,
-                spreadRadius: isHovered ? 10 : 5,
-                offset: Offset(
-                  2.0,
-                  isHovered ? 6.0 : 2.0,
-                ),
+    return HoverWidget(
+        hoverDuration: Duration.zero,
+        builder: (BuildContext context, bool isHovered) {
+          if (isHovered) {
+            _controller.forward();
+          } else {
+            _controller.reverse();
+          }
+          return ScaleTransition(
+            scale: Tween(begin: 1.0, end: 1.08).animate(_controller),
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 700),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color.fromRGBO(18, 66, 101, 0.08),
+                    blurRadius: 15,
+                    spreadRadius: isHovered ? 10 : 5,
+                    offset: Offset(
+                      2.0,
+                      isHovered ? 6.0 : 2.0,
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Icon(
-              widget.feature.icon,
-              size: 36,
-              color: context.primaryColor,
-            ).container(const EdgeInsets.only(top: 10, bottom: 20)),
-            Text(
-              widget.feature.title,
-              style: a(context).copyWith(
-                  color: isHovered ? context.primaryColor : textPrimaryColor),
-            ).container(const EdgeInsets.only(bottom: 15)),
-            Text(widget.feature.description)
-          ]),
-        ),
-      );
-    });
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(
+                      widget.feature.icon,
+                      size: 36,
+                      color: context.primaryColor,
+                    ).container(const EdgeInsets.only(top: 10, bottom: 20)),
+                    Text(
+                      widget.feature.title,
+                      style: a(context).copyWith(
+                          color: isHovered
+                              ? context.primaryColor
+                              : textPrimaryColor),
+                    ).container(const EdgeInsets.only(bottom: 15)),
+                    Text(widget.feature.description)
+                  ]),
+            ),
+          );
+        });
   }
 }
