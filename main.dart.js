@@ -72831,7 +72831,7 @@ $0(){A.a(this.a.D(t.q0).f.b,"routerDelegate").PS("/",null)},
 $S:0}
 A.JX.prototype={
 E(a,b){var s=null,r=t.w,q=b.D(r).f,p=A.aW("One Page Bootstrap\nWebsite Template",s,s,s,s,s,A.cD(s,s,B.a3,s,s,s,s,s,"Poppins",s,s,b.D(r).f.a.a>=992?56:28,s,B.O,s,s,!0,s,s,s,s,s,s,s,s),B.a_,s,s)
-return new A.be(s,q.a.b*0.8,A.fR(A.b([A.e0(A.fA(A.aR(A.b([p,A.aC(A.aW("We are team of talented designers",s,s,s,s,s,A.cD(s,s,B.nr,s,s,s,s,s,"Raleway",s,s,b.D(r).f.a.a>=992?22:18,s,B.x,s,s,!0,s,s,s,s,s,s,s,s),B.a_,s,s),B.eA,s,!1),A.iI(s,new A.a3b(),A.aa(b).cx,B.eD,new A.a3c(b),s,B.dC,B.bp)],t.p),B.q,B.r,B.m),B.aW,120,B.aN),"col-12 col-lg-12")],t.iL),20,B.B,B.Vd,20),s)}}
+return new A.be(s,q.a.b*0.8,A.fR(A.b([A.e0(A.fA(A.aR(A.b([p,A.aC(A.aW("We are team of talented designers",s,s,s,s,s,A.cD(s,s,B.nr,s,s,s,s,s,"Raleway",s,s,b.D(r).f.a.a>=992?22:18,s,B.x,s,s,!0,s,s,s,s,s,s,s,s),B.a_,s,s),B.eA,s,!1),A.iI(s,new A.a3b(),A.aa(b).cx,B.eD,new A.a3c(b),s,B.dC,B.bp)],t.p),B.q,B.r,B.m),B.aW,40,B.aN),"col-12 col-lg-12")],t.iL),20,B.B,B.Vd,20),s)}}
 A.a3c.prototype={
 $0(){var s=$.anS().h(0,"About")
 s=s==null?null:$.C.B$.Q.h(0,s)
@@ -72847,7 +72847,7 @@ s=$.aBq()
 r=A.a2(s).i("a0<1,dm>")
 return A.aX(q,A.fR(A.U(new A.a0(s,new A.a3C(),r),!0,r.i("aN.E")),20,B.B,B.aB,30),B.k,q,q,q,q,q,new A.W(0,0,0,o.a.b*0.1),new A.W(p,0,p,0),q,q,q)}}
 A.a3C.prototype={
-$1(a){return A.e0(A.GP(new A.ys(a,null),B.F7,0.3),"col-12 col-lg-3 col-md-6 col-sm-12")},
+$1(a){return A.e0(A.GP(new A.ys(a,null),B.F7,0.28),"col-12 col-lg-3 col-md-6 col-sm-12")},
 $S:454}
 A.AI.prototype={
 am(){return new A.To(B.l)}}
