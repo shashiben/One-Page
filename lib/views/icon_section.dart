@@ -21,7 +21,7 @@ class IconSection extends StatelessWidget {
                     child: FeatureItem(
                       feature: e,
                     ).zoom(
-                        viewPort: 0.3,
+                        viewPort: 0.28,
                         duration: const Duration(milliseconds: 450)),
                   ))
               .toList()),

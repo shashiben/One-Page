@@ -47,8 +47,7 @@ class HomeSection extends StatelessWidget {
                   ),
                 )
               ],
-            ).fadeIn(
-                variant: NextFadeInVariant.fadeInTop, initialPosition: 120))
+            ).fadeIn(variant: NextFadeInVariant.fadeInTop, initialPosition: 40))
       ]),
     );
   }
