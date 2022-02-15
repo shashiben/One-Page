@@ -178,9 +178,9 @@ class FooterSection extends StatelessWidget {
                     children: [
                       SizedBox(
                         width: 50,
+                        height: 40,
                         child: NextButton(
                             margin: const EdgeInsets.only(right: 10),
-                            padding: const EdgeInsets.all(15),
                             itemBuilder: (context, bool isHovered) =>
                                 const Icon(
                                   Icons.facebook_outlined,
@@ -194,9 +194,9 @@ class FooterSection extends StatelessWidget {
                       ),
                       SizedBox(
                         width: 50,
+                        height: 40,
                         child: NextButton(
                             margin: const EdgeInsets.only(right: 10),
-                            padding: const EdgeInsets.all(15),
                             itemBuilder: (context, isHovered) => const Icon(
                                   LineIcons.instagram,
                                   color: Colors.white,
@@ -209,9 +209,9 @@ class FooterSection extends StatelessWidget {
                       ),
                       SizedBox(
                         width: 50,
+                        height: 40,
                         child: NextButton(
                             margin: const EdgeInsets.only(right: 10),
-                            padding: const EdgeInsets.all(15),
                             itemBuilder: (context, isHovered) => const Icon(
                                   LineIcons.linkedinIn,
                                   color: Colors.white,
@@ -224,9 +224,9 @@ class FooterSection extends StatelessWidget {
                       ),
                       SizedBox(
                         width: 50,
+                        height: 40,
                         child: NextButton(
                             margin: const EdgeInsets.only(right: 10),
-                            padding: const EdgeInsets.all(15),
                             itemBuilder: (context, bool isHovered) =>
                                 const Icon(
                                   LineIcons.github,
@@ -240,9 +240,9 @@ class FooterSection extends StatelessWidget {
                       ),
                       SizedBox(
                         width: 50,
+                        height: 40,
                         child: NextButton(
                             margin: const EdgeInsets.only(right: 10),
-                            padding: const EdgeInsets.all(15),
                             itemBuilder: (context, bool isHovered) =>
                                 const Icon(
                                   LineIcons.medium,

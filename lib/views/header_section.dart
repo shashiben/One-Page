@@ -50,7 +50,7 @@ class HeaderSection extends StatelessWidget {
         NextButton(
           borderRadius: BorderRadius.circular(4),
           color: context.primaryColor,
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
           margin: const EdgeInsets.only(left: 30),
           onPressed: () {
             Scrollable.ensureVisible(keyList["Home"]?.currentContext ?? context,

@@ -29,7 +29,7 @@ class HomeSection extends StatelessWidget {
                 NextButton(
                   color: context.primaryColor,
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                      const EdgeInsets.symmetric(horizontal: 50, vertical: 12),
                   margin: const EdgeInsets.only(top: 30),
                   onPressed: () {
                     Scrollable.ensureVisible(

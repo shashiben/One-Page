@@ -33,7 +33,7 @@ class CTASection extends StatelessWidget {
             ).container(padding: const EdgeInsets.only(top: 20, bottom: 20)),
           ),
           NextButton(
-              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 18),
+              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 12),
               color: context.primaryColor,
               outlineColor: Colors.white,
               variant: NextButtonVariant.outlined,

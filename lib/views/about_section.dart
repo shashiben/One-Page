@@ -74,7 +74,7 @@ class AboutSection extends StatelessWidget {
                                   ),
                                   NextButton(
                                     padding: const EdgeInsets.symmetric(
-                                        horizontal: 50, vertical: 20),
+                                        horizontal: 50, vertical: 12),
                                     margin: const EdgeInsets.only(top: 30),
                                     title: "Learn More",
                                     style: const TextStyle(
