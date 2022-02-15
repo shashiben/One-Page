@@ -1,8 +1,6 @@
+import 'package:one_page/app/fonts.dart';
 import 'package:one_page/home.dart';
-
-import '../app/fonts.dart';
 import '../app/text_styles.dart';
-
 import 'package:flutter_next/flutter_next.dart';
 import '../ordered_list.dart';
 import 'details_sections.dart';
@@ -35,7 +33,9 @@ class AboutSection extends StatelessWidget {
                           'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.',
                           style: SectionTitle.p(context),
                           textAlign: TextAlign.center,
-                        ).container(const EdgeInsets.only(top: 10, bottom: 20)),
+                        ).container(
+                            padding:
+                                const EdgeInsets.only(top: 10, bottom: 20)),
                         NextRow(children: [
                           NextCol(
                               sizes: 'col-12 col-lg-6 col-md-12',
@@ -46,7 +46,8 @@ class AboutSection extends StatelessWidget {
                                     style: SectionTitle.p(context).copyWith(
                                         color: const Color(0xFF444444)),
                                   ).container(
-                                      const EdgeInsets.only(bottom: 15)),
+                                      padding:
+                                          const EdgeInsets.only(bottom: 15)),
                                   OrderedList(
                                       children: [
                                     'Ullamco laboris nisi ut aliquip ex ea commodo consequat',
@@ -73,16 +74,12 @@ class AboutSection extends StatelessWidget {
                                   ),
                                   NextButton(
                                     padding: const EdgeInsets.symmetric(
-                                        horizontal: 50, vertical: 14),
+                                        horizontal: 50, vertical: 20),
                                     margin: const EdgeInsets.only(top: 30),
-                                    child: (bool isHovered) => Text(
-                                      'Learn More',
-                                      style: TextStyle(
-                                          fontFamily: Fonts.openSans,
-                                          fontWeight: FontWeight.bold,
-                                          color: isHovered
-                                              ? Colors.white
-                                              : context.primaryColor),
+                                    title: "Learn More",
+                                    style: const TextStyle(
+                                      fontFamily: Fonts.openSans,
+                                      fontWeight: FontWeight.bold,
                                     ),
                                     onPressed: () {
                                       Scrollable.ensureVisible(
@@ -103,10 +100,10 @@ class AboutSection extends StatelessWidget {
                     )),
               ]),
           const DetailsSection()
-              .container(const EdgeInsets.symmetric(vertical: 60)),
+              .container(padding: const EdgeInsets.symmetric(vertical: 60)),
           const VideoSection()
         ],
-      ).container(const EdgeInsets.only(top: 60)),
+      ).container(padding: const EdgeInsets.only(top: 60)),
     );
   }
 }

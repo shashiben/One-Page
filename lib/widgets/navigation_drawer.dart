@@ -105,14 +105,17 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                                                 CrossAxisAlignment.start,
                                             children: widget.childrens,
                                           ).container(
-                                              const EdgeInsets.symmetric(
-                                                  vertical: 20)),
-                                        ).container(const EdgeInsets.symmetric(
-                                            vertical: 20)),
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 20)),
+                                        ).container(
+                                            padding: const EdgeInsets.symmetric(
+                                                vertical: 20)),
                                       ))
                                     ],
-                                  ).container(const EdgeInsets.symmetric(
-                                      horizontal: 20, vertical: 25)),
+                                  ).container(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 20, vertical: 25)),
                                 ));
                       },
                       icon: widget.menuIcon ??

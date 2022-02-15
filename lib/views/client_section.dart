@@ -17,7 +17,10 @@ class ClientSection extends StatelessWidget {
                 sizes: 'col-lg-2 col-md-4 col-6 col-sm-6 col-xs-6',
                 child: CompanyLogoItem(
                   image: 'assets/clients/client-${index + 1}.png',
-                ).container(const EdgeInsets.symmetric(horizontal: 15)).zoom(
+                )
+                    .container(
+                        padding: const EdgeInsets.symmetric(horizontal: 15))
+                    .zoom(
                       duration: const Duration(milliseconds: 300),
                     ))),
       ),

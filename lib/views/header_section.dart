@@ -34,7 +34,8 @@ class HeaderSection extends StatelessWidget {
                           color: isHovered
                               ? context.primaryColor
                               : const Color(0xFF16507B)))
-                  .container(const EdgeInsets.symmetric(vertical: 10),
+                  .container(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
                       margin: const EdgeInsets.only(left: 30))
                   .onTap(() {
                 if (keyList[e] != null && keyList[e]?.currentContext != null) {
@@ -47,23 +48,22 @@ class HeaderSection extends StatelessWidget {
               });
             })),
         NextButton(
-            color: context.primaryColor,
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-            margin: const EdgeInsets.only(left: 30),
-            onPressed: () {
-              Scrollable.ensureVisible(
-                  keyList["Home"]?.currentContext ?? context,
-                  duration: const Duration(milliseconds: 800),
-                  curve: Curves.linear);
-            },
-            child: (bool isHovered) => const Text(
-                  'Get started',
-                  style: TextStyle(
-                      fontFamily: Fonts.poppins,
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500),
-                )),
+          borderRadius: BorderRadius.circular(4),
+          color: context.primaryColor,
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 16),
+          margin: const EdgeInsets.only(left: 30),
+          onPressed: () {
+            Scrollable.ensureVisible(keyList["Home"]?.currentContext ?? context,
+                duration: const Duration(milliseconds: 800),
+                curve: Curves.linear);
+          },
+          title: 'Get started',
+          style: const TextStyle(
+              fontFamily: Fonts.poppins,
+              color: Colors.white,
+              fontSize: 14,
+              fontWeight: FontWeight.w300),
+        ),
       ],
       leading: const Text(
         'OnePage',

@@ -20,7 +20,7 @@ class TeamSection extends StatelessWidget {
               Text(
                 'Team',
                 style: SectionTitle.h2(context),
-              ).container(const EdgeInsets.only(bottom: 20)),
+              ).container(padding: const EdgeInsets.only(bottom: 20)),
               SizedBox(
                 width:
                     context.isMobile ? context.width - 40 : context.width * 0.8,
@@ -28,7 +28,7 @@ class TeamSection extends StatelessWidget {
                   'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.',
                   style: SectionTitle.p(context),
                   textAlign: TextAlign.center,
-                ).container(const EdgeInsets.only(bottom: 30)),
+                ).container(padding: const EdgeInsets.only(bottom: 30)),
               ),
             ],
             mainAxisAlignment: MainAxisAlignment.center,

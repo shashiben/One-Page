@@ -34,7 +34,7 @@ class _PortfolioSectionState extends State<PortfolioSection>
               'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.',
               style: SectionTitle.p(context),
               textAlign: TextAlign.center,
-            ).container(const EdgeInsets.only(top: 10, bottom: 20)),
+            ).container(padding: const EdgeInsets.only(top: 10, bottom: 20)),
           ],
         ).fadeIn(
           variant: NextFadeInVariant.fadeInTop,
@@ -56,7 +56,8 @@ class _PortfolioSectionState extends State<PortfolioSection>
                                 fontWeight: FontWeight.w600,
                                 fontSize: 14),
                           )
-                                  .container(const EdgeInsets.fromLTRB(
+                                  .container(
+                                      padding: const EdgeInsets.fromLTRB(
                             10,
                             15,
                             8,
@@ -84,7 +85,8 @@ class _PortfolioSectionState extends State<PortfolioSection>
                         ))
                     .toList())
             .fadeIn(variant: NextFadeInVariant.fadeInTop)
-      ]).container(const EdgeInsets.symmetric(horizontal: 20, vertical: 60)),
+      ]).container(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 60)),
     );
   }
 }

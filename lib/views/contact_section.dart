@@ -38,7 +38,7 @@ class _ContactSectionState extends State<ContactSection> {
                 'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.',
                 style: SectionTitle.p(context),
                 textAlign: TextAlign.center,
-              ).container(const EdgeInsets.only(top: 10, bottom: 20)),
+              ).container(padding: const EdgeInsets.only(top: 10, bottom: 20)),
             ],
           ),
           NextRow(children: [
@@ -89,24 +89,23 @@ class _ContactSectionState extends State<ContactSection> {
                     NextButton(
                       color: context.primaryColor,
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 14),
+                          horizontal: 50, vertical: 20),
                       margin: const EdgeInsets.only(top: 30),
                       onPressed: () {},
-                      child: (bool isHovered) => const Text(
-                        'Send Message',
-                        style: TextStyle(
-                            fontFamily: Fonts.poppins,
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500),
-                      ),
+                      title: "Send Message",
+                      style: const TextStyle(
+                          fontFamily: Fonts.poppins,
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500),
                     )
                   ],
                 ))
           ])
         ],
-      ).container(EdgeInsets.symmetric(
-          vertical: 60, horizontal: context.isMobile ? 20 : 60)),
+      ).container(
+          padding: EdgeInsets.symmetric(
+              vertical: 60, horizontal: context.isMobile ? 20 : 60)),
     );
   }
 }

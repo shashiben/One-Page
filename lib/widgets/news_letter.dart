@@ -16,14 +16,14 @@ class NewsLetterWidget extends StatelessWidget {
               fontFamily: Fonts.raleway,
               fontWeight: FontWeight.bold,
               color: Color(0xFF444444)),
-        ).container(const EdgeInsets.only(bottom: 16)),
+        ).container(padding: const EdgeInsets.only(bottom: 16)),
         const Text(
           'Tamen quem nulla quae legam multos aute sint culpa legam noster magna',
           style: TextStyle(
               fontFamily: Fonts.openSans,
               fontSize: 14,
               color: Color(0xFF777777)),
-        ).container(const EdgeInsets.only(bottom: 15)),
+        ).container(padding: const EdgeInsets.only(bottom: 15)),
         SizedBox(
           height: 48,
           child: TextField(
@@ -35,16 +35,9 @@ class NewsLetterWidget extends StatelessWidget {
                 borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(8),
                     bottomRight: Radius.circular(8)),
-                child: (bool isHovered) => Center(
-                  child: const Text(
-                    'Subscribe',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontFamily: Fonts.openSans,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white),
-                  ).container(const EdgeInsets.symmetric(horizontal: 15)),
-                ),
+                margin: EdgeInsets.zero,
+                style: const TextStyle(color: Colors.white),
+                title: "Subscribe",
                 onPressed: () {},
               ),
             ),

@@ -40,11 +40,13 @@ class _VideoPlayButtonState extends State<VideoPlayButton>
                     color: Colors.white,
                     size: 32,
                   )
-                      .container(EdgeInsets.all(isHovered ? 30 : 18),
+                      .container(
+                          padding: EdgeInsets.all(isHovered ? 30 : 18),
                           shouldAnimate: true)
                       .decoration(BoxDecoration(
                           shape: BoxShape.circle, color: context.primaryColor))
-                      .container(EdgeInsets.all(isHovered ? 0 : 12),
+                      .container(
+                          padding: EdgeInsets.all(isHovered ? 0 : 12),
                           shouldAnimate: true)
                       .decoration(BoxDecoration(
                           shape: BoxShape.circle,

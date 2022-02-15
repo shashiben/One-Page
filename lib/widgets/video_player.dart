@@ -17,7 +17,7 @@ class VideoPlayer extends StatelessWidget {
         UniversalPlatform.isWeb ||
         UniversalPlatform.isIOS);
     return isVideoAvailable
-        ? _webVideo(context).container(const EdgeInsets.only(top: 20))
+        ? _webVideo(context).container(padding: const EdgeInsets.only(top: 20))
         : Center(
             child: Text(
               "Video player is not supported\nfor this platform",

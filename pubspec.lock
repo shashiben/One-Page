@@ -240,9 +240,11 @@ packages:
   flutter_next:
     dependency: "direct main"
     description:
-      name: flutter_next
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: fe7d82e22b625c59fd2c7a61c65f1408b6278611
+      url: "git://github.com/shashiben/flutter_next.git"
+    source: git
     version: "0.0.5"
   flutter_svg:
     dependency: "direct main"
@@ -337,7 +339,7 @@ packages:
       name: js
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.4"
+    version: "0.6.3"
   json_annotation:
     dependency: transitive
     description:
@@ -373,13 +375,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.12.11"
-  material_color_utilities:
-    dependency: transitive
-    description:
-      name: material_color_utilities
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.4"
   meta:
     dependency: transitive
     description:
@@ -428,7 +423,7 @@ packages:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.1"
+    version: "1.8.0"
   path_drawing:
     dependency: transitive
     description:
@@ -538,7 +533,7 @@ packages:
       name: source_span
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.2"
+    version: "1.8.1"
   stack_trace:
     dependency: transitive
     description:
@@ -580,7 +575,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.9"
+    version: "0.4.3"
   timing:
     dependency: transitive
     description:
@@ -664,7 +659,7 @@ packages:
       name: url_launcher_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.8"
+    version: "2.0.6"
   url_launcher_windows:
     dependency: transitive
     description:
@@ -685,7 +680,7 @@ packages:
       name: vector_math
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.2"
+    version: "2.1.1"
   visibility_detector:
     dependency: "direct main"
     description:
@@ -757,5 +752,5 @@ packages:
     source: hosted
     version: "3.1.0"
 sdks:
-  dart: ">=2.16.0-100.0.dev <3.0.0"
-  flutter: ">=2.10.0"
+  dart: ">=2.15.0 <3.0.0"
+  flutter: ">=2.5.0"

@@ -19,7 +19,6 @@ class PricingItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final Color backgroundColor =
         isActive ? context.primaryColor : Colors.white;
-    final Color borderColor = isActive ? Colors.white : context.primaryColor;
     return HoverWidget(
       builder: (BuildContext context, bool isItemHovered) => Container(
         alignment: Alignment.center,
@@ -49,7 +48,7 @@ class PricingItem extends StatelessWidget {
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
                     color: isActive ? Colors.white : textPrimaryColor),
-              ).container(const EdgeInsets.all(15).copyWith(top: 25)),
+              ).container(padding: const EdgeInsets.all(15).copyWith(top: 25)),
               Text.rich(TextSpan(
                   text: '\$',
                   style: TextStyle(
@@ -76,14 +75,14 @@ class PricingItem extends StatelessWidget {
                               ? Colors.white
                               : const Color(0xFFbababa)),
                     ),
-                  ])).container(const EdgeInsets.only(bottom: 20)),
+                  ])).container(padding: const EdgeInsets.only(bottom: 20)),
               ...pricingModel.included.map((String e) => Text(
                     e,
                     style: TextStyle(
                         fontFamily: Fonts.openSans,
                         fontSize: 14,
                         color: isActive ? Colors.white : textPrimaryColor),
-                  ).container(const EdgeInsets.only(bottom: 16))),
+                  ).container(padding: const EdgeInsets.only(bottom: 16))),
               ...pricingModel.notIncluded.map((String e) => Text(
                     e,
                     style: TextStyle(
@@ -92,27 +91,18 @@ class PricingItem extends StatelessWidget {
                         decoration: TextDecoration.lineThrough,
                         color:
                             !isActive ? const Color(0xFFbababa) : Colors.white),
-                  ).container(const EdgeInsets.only(bottom: 16))),
+                  ).container(padding: const EdgeInsets.only(bottom: 16))),
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: NextButton(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 50, vertical: 14),
-                    color: !isActive ? context.primaryColor : Colors.white,
+                        horizontal: 50, vertical: 20),
+                    margin: EdgeInsets.zero,
+                    color: isActive ? context.primaryColor : Colors.white,
                     outlineColor:
-                        isActive ? context.primaryColor : Colors.white,
+                        !isActive ? context.primaryColor : Colors.white,
                     variant: NextButtonVariant.outlined,
-                    child: (bool isHovered) => Text(
-                          'Buy now',
-                          style: TextStyle(
-                              fontFamily: Fonts.openSans,
-                              fontWeight: FontWeight.bold,
-                              color: isActive
-                                  ? (!isHovered ? borderColor : backgroundColor)
-                                  : !isHovered
-                                      ? context.primaryColor
-                                      : Colors.white),
-                        ),
+                    title: "Buy now",
                     onPressed: () {}),
               )
             ],

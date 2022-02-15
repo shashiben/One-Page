@@ -17,7 +17,7 @@ class FooterItem extends StatelessWidget {
             Icons.arrow_forward_ios,
             color: context.primaryColor,
             size: 14,
-          ).container(const EdgeInsets.only(right: 10)),
+          ).container(padding: const EdgeInsets.only(right: 10)),
           InkWell(
             onTap: () {},
             child: Text(
@@ -31,7 +31,7 @@ class FooterItem extends StatelessWidget {
             ),
           ),
         ],
-      ).container(const EdgeInsets.symmetric(vertical: 8)),
+      ).container(padding: const EdgeInsets.symmetric(vertical: 8)),
     );
   }
 }

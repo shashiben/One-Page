@@ -154,7 +154,8 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                                                         .withOpacity(0.4)),
                                             duration: const Duration(
                                                 milliseconds: 300)))).container(
-                                    const EdgeInsets.symmetric(vertical: 40))
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 40))
                               ],
                             ),
                           ),
@@ -178,9 +179,11 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                                               fontSize: 22,
                                               fontWeight: FontWeight.w700),
                                         ).container(
-                                            const EdgeInsets.only(bottom: 20)),
+                                            padding: const EdgeInsets.only(
+                                                bottom: 20)),
                                         const Divider().container(
-                                            const EdgeInsets.only(bottom: 10)),
+                                            padding: const EdgeInsets.only(
+                                                bottom: 10)),
                                         cardBody('Category', 'Web design'),
                                         cardBody('Client', 'ASU Company'),
                                         cardBody(
@@ -198,14 +201,16 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                                         fontSize: 26,
                                         fontWeight: FontWeight.w700,
                                         color: Color(0xFF444444)),
-                                  ).container(const EdgeInsets.only(top: 30)),
+                                  ).container(
+                                      padding: const EdgeInsets.only(top: 30)),
                                   const Text(
                                     'Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.',
                                     style: TextStyle(
                                         fontFamily: Fonts.openSans,
                                         fontSize: 14,
                                         color: Color(0xFF444444)),
-                                  ).container(const EdgeInsets.only(top: 20))
+                                  ).container(
+                                      padding: const EdgeInsets.only(top: 20))
                                 ],
                               ))
                         ],
@@ -240,6 +245,6 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                 color: hasLink ? context.primaryColor : const Color(0xFF444444),
                 fontWeight: FontWeight.w400),
           )
-        ])).container(const EdgeInsets.only(top: 10));
+        ])).container(padding: const EdgeInsets.only(top: 10));
   }
 }

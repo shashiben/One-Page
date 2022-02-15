@@ -34,7 +34,7 @@ class FooterSection extends StatelessWidget {
                           fontFamily: Fonts.raleway,
                           fontSize: 26,
                           color: Color(0xFF444444)),
-                    ).container(const EdgeInsets.only(bottom: 10)),
+                    ).container(padding: const EdgeInsets.only(bottom: 10)),
                     const Text(
                       'A108 Adam Street\nNew York, NY 535022\nUnited States',
                       style: TextStyle(
@@ -42,7 +42,7 @@ class FooterSection extends StatelessWidget {
                           height: 1.5,
                           fontSize: 14,
                           color: Color(0xFF777777)),
-                    ).container(const EdgeInsets.only(bottom: 15)),
+                    ).container(padding: const EdgeInsets.only(bottom: 15)),
                     const Text.rich(TextSpan(children: [
                       TextSpan(
                           text: 'Phone:',
@@ -57,7 +57,7 @@ class FooterSection extends StatelessWidget {
                               fontFamily: Fonts.raleway,
                               fontSize: 14,
                               color: Color(0xFF777777)))
-                    ])).container(const EdgeInsets.only(bottom: 8)),
+                    ])).container(padding: const EdgeInsets.only(bottom: 8)),
                     const Text.rich(TextSpan(children: [
                       TextSpan(
                           text: 'Email:',
@@ -87,7 +87,7 @@ class FooterSection extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                           color: textPrimaryColor),
-                    ).container(const EdgeInsets.only(bottom: 12)),
+                    ).container(padding: const EdgeInsets.only(bottom: 12)),
                     const FooterItem(title: 'Home'),
                     const FooterItem(title: 'About us'),
                     const FooterItem(title: 'Services'),
@@ -107,7 +107,7 @@ class FooterSection extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                           color: textPrimaryColor),
-                    ).container(const EdgeInsets.only(bottom: 12)),
+                    ).container(padding: const EdgeInsets.only(bottom: 12)),
                     const FooterItem(title: 'Web Design'),
                     const FooterItem(title: 'Web Development'),
                     const FooterItem(title: 'Product Management'),
@@ -147,7 +147,8 @@ class FooterSection extends StatelessWidget {
                                     fontFamily: Fonts.openSans,
                                     fontWeight: FontWeight.bold)),
                             TextSpan(text: 'With Flutter.'),
-                          ])).container(const EdgeInsets.only(bottom: 10)),
+                          ])).container(
+                          padding: const EdgeInsets.only(bottom: 10)),
                       Text.rich(TextSpan(
                           style: const TextStyle(
                             fontFamily: Fonts.openSans,
@@ -175,66 +176,84 @@ class FooterSection extends StatelessWidget {
                         ? MainAxisAlignment.center
                         : MainAxisAlignment.end,
                     children: [
-                      NextButton(
-                          margin: const EdgeInsets.only(right: 10),
-                          padding: const EdgeInsets.all(10),
-                          child: (bool isHovered) => const Icon(
-                                Icons.facebook_outlined,
-                                color: Colors.white,
-                                size: 20,
-                              ),
-                          onPressed: () {
-                            UrlService.launchUrl(
-                                "https://www.facebook.com/shashiben7997");
-                          }),
-                      NextButton(
-                          margin: const EdgeInsets.only(right: 10),
-                          padding: const EdgeInsets.all(10),
-                          child: (bool isHovered) => const Icon(
-                                LineIcons.instagram,
-                                color: Colors.white,
-                                size: 20,
-                              ),
-                          onPressed: () {
-                            UrlService.launchUrl(
-                                "https://www.instagram.com/shashikumar7997/");
-                          }),
-                      NextButton(
-                          margin: const EdgeInsets.only(right: 10),
-                          padding: const EdgeInsets.all(10),
-                          child: (bool isHovered) => const Icon(
-                                LineIcons.linkedinIn,
-                                color: Colors.white,
-                                size: 20,
-                              ),
-                          onPressed: () {
-                            UrlService.launchUrl(
-                                "https://www.linkedin.com/in/shashi-kumar-58ab1b1a4/");
-                          }),
-                      NextButton(
-                          margin: const EdgeInsets.only(right: 10),
-                          padding: const EdgeInsets.all(10),
-                          child: (bool isHovered) => const Icon(
-                                LineIcons.github,
-                                color: Colors.white,
-                                size: 20,
-                              ),
-                          onPressed: () {
-                            UrlService.launchUrl(
-                                "https://github.com/shashiben");
-                          }),
-                      NextButton(
-                          margin: const EdgeInsets.only(right: 10),
-                          padding: const EdgeInsets.all(10),
-                          child: (bool isHovered) => const Icon(
-                                LineIcons.medium,
-                                color: Colors.white,
-                                size: 20,
-                              ),
-                          onPressed: () {
-                            UrlService.launchUrl(
-                                "https://medium.com/@ben75930");
-                          }),
+                      SizedBox(
+                        width: 50,
+                        child: NextButton(
+                            margin: const EdgeInsets.only(right: 10),
+                            padding: const EdgeInsets.all(15),
+                            itemBuilder: (context, bool isHovered) =>
+                                const Icon(
+                                  Icons.facebook_outlined,
+                                  color: Colors.white,
+                                  size: 20,
+                                ),
+                            onPressed: () {
+                              UrlService.launchUrl(
+                                  "https://www.facebook.com/shashiben7997");
+                            }),
+                      ),
+                      SizedBox(
+                        width: 50,
+                        child: NextButton(
+                            margin: const EdgeInsets.only(right: 10),
+                            padding: const EdgeInsets.all(15),
+                            itemBuilder: (context, isHovered) => const Icon(
+                                  LineIcons.instagram,
+                                  color: Colors.white,
+                                  size: 20,
+                                ),
+                            onPressed: () {
+                              UrlService.launchUrl(
+                                  "https://www.instagram.com/shashikumar7997/");
+                            }),
+                      ),
+                      SizedBox(
+                        width: 50,
+                        child: NextButton(
+                            margin: const EdgeInsets.only(right: 10),
+                            padding: const EdgeInsets.all(15),
+                            itemBuilder: (context, isHovered) => const Icon(
+                                  LineIcons.linkedinIn,
+                                  color: Colors.white,
+                                  size: 20,
+                                ),
+                            onPressed: () {
+                              UrlService.launchUrl(
+                                  "https://www.linkedin.com/in/shashi-kumar-58ab1b1a4/");
+                            }),
+                      ),
+                      SizedBox(
+                        width: 50,
+                        child: NextButton(
+                            margin: const EdgeInsets.only(right: 10),
+                            padding: const EdgeInsets.all(15),
+                            itemBuilder: (context, bool isHovered) =>
+                                const Icon(
+                                  LineIcons.github,
+                                  color: Colors.white,
+                                  size: 20,
+                                ),
+                            onPressed: () {
+                              UrlService.launchUrl(
+                                  "https://github.com/shashiben");
+                            }),
+                      ),
+                      SizedBox(
+                        width: 50,
+                        child: NextButton(
+                            margin: const EdgeInsets.only(right: 10),
+                            padding: const EdgeInsets.all(15),
+                            itemBuilder: (context, bool isHovered) =>
+                                const Icon(
+                                  LineIcons.medium,
+                                  color: Colors.white,
+                                  size: 20,
+                                ),
+                            onPressed: () {
+                              UrlService.launchUrl(
+                                  "https://medium.com/@ben75930");
+                            }),
+                      ),
                     ],
                   ))
             ]),

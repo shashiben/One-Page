@@ -25,11 +25,11 @@ class HomeSection extends StatelessWidget {
                   'We are team of talented designers',
                   style: h2(context),
                   textAlign: TextAlign.center,
-                ).container(const EdgeInsets.only(top: 10)),
+                ).container(padding: const EdgeInsets.only(top: 10)),
                 NextButton(
                   color: context.primaryColor,
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 50, vertical: 14),
+                      const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
                   margin: const EdgeInsets.only(top: 30),
                   onPressed: () {
                     Scrollable.ensureVisible(
@@ -37,14 +37,12 @@ class HomeSection extends StatelessWidget {
                         duration: const Duration(milliseconds: 800),
                         curve: Curves.linear);
                   },
-                  child: (bool isHovered) => const Text(
-                    'Get started',
-                    style: TextStyle(
-                        fontFamily: Fonts.poppins,
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500),
-                  ),
+                  title: 'Get started',
+                  style: const TextStyle(
+                      fontFamily: Fonts.poppins,
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500),
                 )
               ],
             ).fadeIn(variant: NextFadeInVariant.fadeInTop, initialPosition: 40))

@@ -22,7 +22,6 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
-    # Style rules
     - camel_case_types
     - library_names
     - avoid_catches_without_on_clauses
@@ -31,7 +30,5 @@ linter:
     - unnecessary_brace_in_string_interps
     - avoid_redundant_argument_values
     - leading_newlines_in_multiline_strings
-    # formatting
     - curly_braces_in_flow_control_structures
-    # doc comments
     - slash_for_doc_comments

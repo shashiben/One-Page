@@ -46,7 +46,7 @@ class _TestimonialSectionState extends State<TestimonialSection> {
                 'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.',
                 style: SectionTitle.p(context),
                 textAlign: TextAlign.center,
-              ).container(const EdgeInsets.only(top: 10, bottom: 20)),
+              ).container(padding: const EdgeInsets.only(top: 10, bottom: 20)),
             ],
           ).fadeIn(
             variant: NextFadeInVariant.fadeInTop,
@@ -81,8 +81,10 @@ class _TestimonialSectionState extends State<TestimonialSection> {
                           .sizedBox(width: 395, height: 420))
                       .toList(),
                 ),
-              ).container(EdgeInsets.symmetric(
-                  horizontal: context.isMobile ? 20 : context.width * 0.05)),
+              ).container(
+                  padding: EdgeInsets.symmetric(
+                      horizontal:
+                          context.isMobile ? 20 : context.width * 0.05)),
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(
@@ -108,7 +110,7 @@ class _TestimonialSectionState extends State<TestimonialSection> {
             variant: NextFadeInVariant.fadeInTop,
           ),
         ],
-      ).container(const EdgeInsets.symmetric(vertical: 60)),
+      ).container(padding: const EdgeInsets.symmetric(vertical: 60)),
     );
   }
 }

@@ -77,7 +77,8 @@ class _PortfolioItemState extends State<PortfolioItem>
                                     fontWeight: FontWeight.w400,
                                     color: Colors.white),
                               ).container(
-                                  const EdgeInsets.symmetric(vertical: 12)),
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 12)),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -91,7 +92,8 @@ class _PortfolioItemState extends State<PortfolioItem>
                                               255, 255, 255, 0.6),
                                     )
                                         .container(
-                                            const EdgeInsets.only(right: 10))
+                                            padding: const EdgeInsets.only(
+                                                right: 10))
                                         .onTap(() {
                                       setState(() {
                                         currentPage = portfolioItems
@@ -298,7 +300,7 @@ class _PortfolioItemState extends State<PortfolioItem>
                                                                               fontSize: 20,
                                                                               fontWeight: FontWeight.bold,
                                                                               color: Colors.white),
-                                                                        ).container(const EdgeInsets.symmetric(horizontal: 20).copyWith(bottom: 25)),
+                                                                        ).container(padding: const EdgeInsets.symmetric(horizontal: 20).copyWith(bottom: 25)),
                                                                       ),
                                                                       Row(
                                                                           mainAxisAlignment: MainAxisAlignment

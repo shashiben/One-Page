@@ -51,9 +51,9 @@ class ContactListTile extends StatelessWidget {
                     fontWeight: FontWeight.w400),
               )
             ],
-          ).container(const EdgeInsets.only(left: 15)),
+          ).container(padding: const EdgeInsets.only(left: 15)),
         ],
       ),
-    ).container(const EdgeInsets.only(bottom: 40));
+    ).container(padding: const EdgeInsets.only(bottom: 40));
   }
 }

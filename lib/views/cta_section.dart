@@ -30,20 +30,18 @@ class CTASection extends StatelessWidget {
                   color: Colors.white,
                   fontWeight: FontWeight.w300),
               textAlign: TextAlign.center,
-            ).container(const EdgeInsets.only(top: 20, bottom: 20)),
+            ).container(padding: const EdgeInsets.only(top: 20, bottom: 20)),
           ),
           NextButton(
-              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 14),
-              color: Colors.white,
-              outlineColor: context.primaryColor,
+              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 18),
+              color: context.primaryColor,
+              outlineColor: Colors.white,
               variant: NextButtonVariant.outlined,
-              child: (bool isHovered) => Text(
-                    'Call To Action',
-                    style: TextStyle(
-                        fontFamily: Fonts.openSans,
-                        fontWeight: FontWeight.bold,
-                        color: isHovered ? context.primaryColor : Colors.white),
-                  ),
+              title: "Call To Action",
+              style: const TextStyle(
+                fontFamily: Fonts.openSans,
+                fontWeight: FontWeight.w500,
+              ),
               onPressed: () {})
         ],
       ).zoom(
