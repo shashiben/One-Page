@@ -1,5 +1,5 @@
 import 'package:flutter/gestures.dart';
-import 'package:line_icons/line_icons.dart';
+import 'package:one_page/app/data.dart';
 import 'package:one_page/services/url_service.dart';
 
 import '../app/colors.dart';
@@ -172,90 +172,28 @@ class FooterSection extends StatelessWidget {
               NextCol(
                   sizes: 'col-12 col-lg-6 col-md-6',
                   child: Row(
-                    mainAxisAlignment: context.isMobile
-                        ? MainAxisAlignment.center
-                        : MainAxisAlignment.end,
-                    children: [
-                      SizedBox(
-                        width: 50,
-                        height: 40,
-                        child: NextButton(
+                      mainAxisAlignment: context.isMobile
+                          ? MainAxisAlignment.center
+                          : MainAxisAlignment.end,
+                      children: List.generate(
+                        socialLinks.length,
+                        (index) => NextButton(
                             margin: const EdgeInsets.only(right: 10),
-                            itemBuilder: (context, bool isHovered) =>
-                                const Icon(
-                                  Icons.facebook_outlined,
-                                  color: Colors.white,
-                                  size: 20,
+                            itemBuilder: (context, bool isHovered) => Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(4),
+                                      color: context.primaryColor),
+                                  padding: const EdgeInsets.all(10),
+                                  child: Icon(
+                                    socialLinks[index].icon,
+                                    color: Colors.white,
+                                    size: 20,
+                                  ),
                                 ),
                             onPressed: () {
-                              UrlService.launchUrl(
-                                  "https://www.facebook.com/shashiben7997");
+                              UrlService.launchUrl(socialLinks[index].url);
                             }),
-                      ),
-                      SizedBox(
-                        width: 50,
-                        height: 40,
-                        child: NextButton(
-                            margin: const EdgeInsets.only(right: 10),
-                            itemBuilder: (context, isHovered) => const Icon(
-                                  LineIcons.instagram,
-                                  color: Colors.white,
-                                  size: 20,
-                                ),
-                            onPressed: () {
-                              UrlService.launchUrl(
-                                  "https://www.instagram.com/shashikumar7997/");
-                            }),
-                      ),
-                      SizedBox(
-                        width: 50,
-                        height: 40,
-                        child: NextButton(
-                            margin: const EdgeInsets.only(right: 10),
-                            itemBuilder: (context, isHovered) => const Icon(
-                                  LineIcons.linkedinIn,
-                                  color: Colors.white,
-                                  size: 20,
-                                ),
-                            onPressed: () {
-                              UrlService.launchUrl(
-                                  "https://www.linkedin.com/in/shashi-kumar-58ab1b1a4/");
-                            }),
-                      ),
-                      SizedBox(
-                        width: 50,
-                        height: 40,
-                        child: NextButton(
-                            margin: const EdgeInsets.only(right: 10),
-                            itemBuilder: (context, bool isHovered) =>
-                                const Icon(
-                                  LineIcons.github,
-                                  color: Colors.white,
-                                  size: 20,
-                                ),
-                            onPressed: () {
-                              UrlService.launchUrl(
-                                  "https://github.com/shashiben");
-                            }),
-                      ),
-                      SizedBox(
-                        width: 50,
-                        height: 40,
-                        child: NextButton(
-                            margin: const EdgeInsets.only(right: 10),
-                            itemBuilder: (context, bool isHovered) =>
-                                const Icon(
-                                  LineIcons.medium,
-                                  color: Colors.white,
-                                  size: 20,
-                                ),
-                            onPressed: () {
-                              UrlService.launchUrl(
-                                  "https://medium.com/@ben75930");
-                            }),
-                      ),
-                    ],
-                  ))
+                      )))
             ]),
           ),
         ),

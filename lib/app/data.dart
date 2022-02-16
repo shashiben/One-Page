@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter_next/flutter_next.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:one_page/models/social_links.dart';
 
 import '../models/feature_model.dart';
 import '../models/portfolio_model.dart';
@@ -202,4 +203,17 @@ List<PortfolioModel> portfolioItems = [
       name: 'Card3', type: 'Card', image: 'assets/portfolio/portfolio-8.jpg'),
   PortfolioModel(
       name: 'Web3', type: 'Web', image: 'assets/portfolio/portfolio-9.jpg'),
+];
+List<SocialLinks> socialLinks = [
+  SocialLinks(
+      icon: Icons.facebook_outlined,
+      url: "https://www.facebook.com/shashiben7997"),
+  SocialLinks(
+      icon: LineIcons.instagram,
+      url: "https://www.instagram.com/shashikumar7997/"),
+  SocialLinks(
+      icon: LineIcons.linkedinIn,
+      url: "https://www.linkedin.com/in/shashi-kumar-58ab1b1a4/"),
+  SocialLinks(icon: LineIcons.github, url: "https://github.com/shashiben"),
+  SocialLinks(icon: LineIcons.medium, url: "https://medium.com/@ben75930"),
 ];
