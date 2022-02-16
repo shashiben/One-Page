@@ -95,8 +95,9 @@ class PricingItem extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: NextButton(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 50, vertical: 12),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: context.width < 340 ? 30 : 50,
+                        vertical: 12),
                     margin: EdgeInsets.zero,
                     color: isActive ? context.primaryColor : Colors.white,
                     outlineColor:
