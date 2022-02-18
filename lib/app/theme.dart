@@ -6,6 +6,9 @@ import 'fonts.dart';
 ThemeData themeData(BuildContext context) => ThemeData(
     primaryColor: primaryColor,
     backgroundColor: Colors.white,
+    buttonTheme: const ButtonThemeData(
+      textTheme: ButtonTextTheme.primary,
+    ),
     textTheme: Theme.of(context)
         .textTheme
         .apply(

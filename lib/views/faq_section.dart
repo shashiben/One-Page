@@ -5,6 +5,7 @@ import '../app/data.dart';
 import '../app/fonts.dart';
 import '../app/text_styles.dart';
 import 'package:flutter_next/flutter_next.dart';
+import 'package:flutter/material.dart';
 import 'dart:math';
 
 class FAQSection extends StatelessWidget {

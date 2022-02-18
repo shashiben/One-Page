@@ -4,6 +4,7 @@ import '../app/fonts.dart';
 import '../app/text_styles.dart';
 
 import 'package:flutter_next/flutter_next.dart';
+import 'package:flutter/material.dart';
 import '../widgets/contact_info_list_tile.dart';
 import '../widgets/text_field.dart';
 
@@ -92,7 +93,7 @@ class _ContactSectionState extends State<ContactSection> {
                           horizontal: 50, vertical: 12),
                       margin: const EdgeInsets.only(top: 30),
                       onPressed: () {},
-                      title: "Send Message",
+                      child: const Text("Send Message"),
                       style: const TextStyle(
                           fontFamily: Fonts.poppins,
                           color: Colors.white,

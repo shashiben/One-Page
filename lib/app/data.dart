@@ -1,7 +1,6 @@
-import 'package:flutter_next/flutter_next.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:one_page/models/social_links.dart';
-
+import 'package:flutter/material.dart';
 import '../models/feature_model.dart';
 import '../models/portfolio_model.dart';
 import '../models/pricing_model.dart';

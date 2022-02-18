@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_next/flutter_next.dart';
 
 import 'views/about_section.dart';

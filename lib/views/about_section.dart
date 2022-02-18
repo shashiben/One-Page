@@ -2,6 +2,7 @@ import 'package:one_page/app/fonts.dart';
 import 'package:one_page/home.dart';
 import '../app/text_styles.dart';
 import 'package:flutter_next/flutter_next.dart';
+import 'package:flutter/material.dart';
 import '../ordered_list.dart';
 import 'details_sections.dart';
 import 'video_section.dart';
@@ -76,7 +77,7 @@ class AboutSection extends StatelessWidget {
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 50, vertical: 12),
                                     margin: const EdgeInsets.only(top: 30),
-                                    title: "Learn More",
+                                    child: const Text("Learn More"),
                                     style: const TextStyle(
                                       fontFamily: Fonts.openSans,
                                       fontWeight: FontWeight.bold,

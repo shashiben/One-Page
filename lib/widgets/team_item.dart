@@ -3,6 +3,7 @@ import 'package:line_icons/line_icons.dart';
 import '../app/fonts.dart';
 import '../models/team_model.dart';
 import 'package:flutter_next/flutter_next.dart';
+import 'package:flutter/material.dart';
 
 class TeamItem extends StatelessWidget {
   final TeamModel member;

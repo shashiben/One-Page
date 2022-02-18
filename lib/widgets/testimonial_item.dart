@@ -2,6 +2,7 @@ import 'package:line_icons/line_icons.dart';
 
 import '../app/fonts.dart';
 import 'package:flutter_next/flutter_next.dart';
+import 'package:flutter/material.dart';
 import '../models/testimonial_model.dart';
 import 'message_clipper.dart';
 

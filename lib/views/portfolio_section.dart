@@ -5,6 +5,7 @@ import '../app/text_styles.dart';
 import '../models/portfolio_model.dart';
 import '../widgets/portfolio_item.dart';
 import 'package:flutter_next/flutter_next.dart';
+import 'package:flutter/material.dart';
 
 class PortfolioSection extends StatefulWidget {
   const PortfolioSection({Key? key}) : super(key: key);

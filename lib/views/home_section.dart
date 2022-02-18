@@ -2,6 +2,7 @@ import '../app/fonts.dart';
 import '../app/text_styles.dart';
 
 import 'package:flutter_next/flutter_next.dart';
+import 'package:flutter/material.dart';
 import '../home.dart';
 
 class HomeSection extends StatelessWidget {
@@ -29,7 +30,7 @@ class HomeSection extends StatelessWidget {
                 NextButton(
                   color: context.primaryColor,
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 50, vertical: 12),
+                      const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                   margin: const EdgeInsets.only(top: 30),
                   onPressed: () {
                     Scrollable.ensureVisible(
@@ -37,7 +38,7 @@ class HomeSection extends StatelessWidget {
                         duration: const Duration(milliseconds: 800),
                         curve: Curves.linear);
                   },
-                  title: 'Get started',
+                  child: const Text('Get started'),
                   style: const TextStyle(
                       fontFamily: Fonts.poppins,
                       color: Colors.white,

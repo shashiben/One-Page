@@ -1,4 +1,5 @@
 import 'package:flutter_next/flutter_next.dart';
+import 'package:flutter/material.dart';
 import '../widgets/company_logo_item.dart';
 
 class ClientSection extends StatelessWidget {

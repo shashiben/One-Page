@@ -3,6 +3,7 @@ import '../app/fonts.dart';
 import '../models/pricing_model.dart';
 
 import 'package:flutter_next/flutter_next.dart';
+import 'package:flutter/material.dart';
 
 class PricingItem extends StatelessWidget {
   final PricingModel pricingModel;
@@ -103,7 +104,7 @@ class PricingItem extends StatelessWidget {
                     outlineColor:
                         !isActive ? context.primaryColor : Colors.white,
                     variant: NextButtonVariant.outlined,
-                    title: "Buy now",
+                    child: const Text("Buy now"),
                     onPressed: () {}),
               )
             ],

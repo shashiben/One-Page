@@ -1,4 +1,5 @@
 import 'package:flutter_next/flutter_next.dart';
+import 'package:flutter/material.dart';
 
 import '../app/fonts.dart';
 
@@ -37,7 +38,7 @@ class NewsLetterWidget extends StatelessWidget {
                     bottomRight: Radius.circular(8)),
                 margin: EdgeInsets.zero,
                 style: const TextStyle(color: Colors.white),
-                title: "Subscribe",
+                child: const Text("Subscribe"),
                 onPressed: () {},
               ),
             ),

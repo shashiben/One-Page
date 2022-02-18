@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 
 import '../app/fonts.dart';
 import 'package:flutter_next/flutter_next.dart';
+import 'package:flutter/material.dart';
 
 import '../widgets/navigation_drawer.dart';
 
@@ -50,14 +51,14 @@ class HeaderSection extends StatelessWidget {
         NextButton(
           borderRadius: BorderRadius.circular(4),
           color: context.primaryColor,
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
           margin: const EdgeInsets.only(left: 30),
           onPressed: () {
             Scrollable.ensureVisible(keyList["Home"]?.currentContext ?? context,
                 duration: const Duration(milliseconds: 800),
                 curve: Curves.linear);
           },
-          title: 'Get started',
+          child: const Text('Get started'),
           style: const TextStyle(
               fontFamily: Fonts.poppins,
               color: Colors.white,

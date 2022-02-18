@@ -4,6 +4,7 @@ import '../app/colors.dart';
 import '../app/fonts.dart';
 import '../models/service_model.dart';
 import 'package:flutter_next/flutter_next.dart';
+import 'package:flutter/material.dart';
 
 class ServiceItem extends StatelessWidget {
   final ServiceModel serviceModel;

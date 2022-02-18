@@ -1,5 +1,6 @@
 import '../app/fonts.dart';
 import 'package:flutter_next/flutter_next.dart';
+import 'package:flutter/material.dart';
 
 class CTASection extends StatelessWidget {
   const CTASection({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ class CTASection extends StatelessWidget {
               color: context.primaryColor,
               outlineColor: Colors.white,
               variant: NextButtonVariant.outlined,
-              title: "Call To Action",
+              child: const Text("Call To Action"),
               style: const TextStyle(
                 fontFamily: Fonts.openSans,
                 fontWeight: FontWeight.w500,

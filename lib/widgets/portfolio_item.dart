@@ -5,6 +5,7 @@ import '../app/fonts.dart';
 import '../models/portfolio_model.dart';
 import 'custom_dual_tone_border.dart';
 import 'package:flutter_next/flutter_next.dart';
+import 'package:flutter/material.dart';
 
 class PortfolioItem extends StatefulWidget {
   final PortfolioModel portfolioItem;

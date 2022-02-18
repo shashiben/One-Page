@@ -1,6 +1,7 @@
 import 'package:one_page/widgets/video_play_button.dart';
 import 'package:one_page/widgets/video_player.dart';
 import 'package:flutter_next/flutter_next.dart';
+import 'package:flutter/material.dart';
 
 import '../app/colors.dart';
 import '../app/fonts.dart';

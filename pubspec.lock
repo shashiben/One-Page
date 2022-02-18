@@ -242,7 +242,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "92ea63814eb7e8c36e6b582ee60d9c5a86f7e669"
+      resolved-ref: b8f76f06865d19d46683eb814807f8227b7faed2
       url: "git://github.com/shashiben/flutter_next.git"
     source: git
     version: "0.0.5"
@@ -396,13 +396,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
-  nil:
-    dependency: transitive
-    description:
-      name: nil
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.1"
   node_interop:
     dependency: transitive
     description:

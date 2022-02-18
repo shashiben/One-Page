@@ -6,6 +6,7 @@ import '../app/colors.dart';
 import '../app/fonts.dart';
 
 import 'package:flutter_next/flutter_next.dart';
+import 'package:flutter/material.dart';
 import '../widgets/footer_item.dart';
 import '../widgets/news_letter.dart';
 
@@ -179,7 +180,8 @@ class FooterSection extends StatelessWidget {
                         socialLinks.length,
                         (index) => NextButton(
                             margin: const EdgeInsets.only(right: 10),
-                            itemBuilder: (context, bool isHovered) => Container(
+                            itemBuilder: (context, bool isHovered, color) =>
+                                Container(
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(4),
                                       color: context.primaryColor),
