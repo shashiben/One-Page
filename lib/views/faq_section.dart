@@ -41,7 +41,7 @@ class FAQSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
           ).fadeIn(
               variant: NextFadeInVariant.fadeInTop,
-              initialPosition: 80,
+              initialPosition: 50,
               duration: const Duration(milliseconds: 300)),
           Column(
             children: [
@@ -93,9 +93,7 @@ class FAQSection extends StatelessWidget {
                       ).container(padding: const EdgeInsets.only(top: 20)))
                   .toList()
             ],
-          ).fadeIn(
-              variant: NextFadeInVariant.fadeInTop,
-              duration: const Duration(milliseconds: 400)),
+          ).fadeIn(variant: NextFadeInVariant.fadeInTop),
         ],
       ),
     );

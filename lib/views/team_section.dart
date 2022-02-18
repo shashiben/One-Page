@@ -35,7 +35,7 @@ class TeamSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
           ).fadeIn(
               variant: NextFadeInVariant.fadeInTop,
-              initialPosition: 80,
+              initialPosition: 50,
               duration: const Duration(milliseconds: 300)),
           Container(
             margin: EdgeInsets.only(bottom: context.height * 0.1),

@@ -97,6 +97,7 @@ class AboutSection extends StatelessWidget {
                         ])
                       ],
                     ).fadeIn(
+                      initialPosition: 50,
                       variant: NextFadeInVariant.fadeInTop,
                     )),
               ]),

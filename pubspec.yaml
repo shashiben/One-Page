@@ -20,11 +20,9 @@ dependencies:
   flutter_svg: ^1.0.0
   go_router: ^3.0.1
   line_icons: ^2.0.1
-  simple_animations: ^4.0.1
   universal_html: ^2.0.8
   universal_platform: ^1.0.0+1
   url_launcher: ^6.0.18
-  visibility_detector: ^0.2.2
   webviewx: ^0.2.1
 
 dev_dependencies:

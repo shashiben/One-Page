@@ -1,16 +1,15 @@
 # One Page
 
-A new Flutter project.
+Clone of bootstrap template made in flutter
 
-## Getting Started
+Bootstrap Template Link:[Template Link](https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/)
 
-This project is a starting point for a Flutter application.
+Demo Link: [Click here](https://one-page-with-flutter.netlify.app/)
 
-A few resources to get you started if this is your first Flutter project:
+## Packages used:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [Flutter Next](https://pub.dev/packages/flutter_next)
+- [Svg](https://pub.dev/packages/flutter_svg)
+- [Carousel slider](https://pub.dev/packages/carousel_slider)
+- [universal_platform](https://pub.dev/packages/universal_platform)
+- [webviewx](https://pub.dev/packages/webviewx)

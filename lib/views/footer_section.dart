@@ -136,18 +136,23 @@ class FooterSection extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text.rich(TextSpan(
-                          style: TextStyle(
+                      Text.rich(TextSpan(
+                          style: const TextStyle(
                             fontFamily: Fonts.openSans,
                           ),
                           children: [
-                            TextSpan(text: '© Created by '),
+                            const TextSpan(text: '© Created by '),
                             TextSpan(
                                 text: 'Shashi. ',
-                                style: TextStyle(
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    UrlService.launchUrl(
+                                        "https://github.com/shashiben");
+                                  },
+                                style: const TextStyle(
                                     fontFamily: Fonts.openSans,
                                     fontWeight: FontWeight.bold)),
-                            TextSpan(text: 'With Flutter.'),
+                            const TextSpan(text: 'With Flutter.'),
                           ])).container(
                           padding: const EdgeInsets.only(bottom: 10)),
                       Text.rich(TextSpan(

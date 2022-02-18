@@ -37,8 +37,8 @@ class PriceSection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
         ).fadeIn(
             variant: NextFadeInVariant.fadeInTop,
-            initialPosition: 80,
-            duration: const Duration(milliseconds: 600)),
+            initialPosition: 50,
+            duration: const Duration(milliseconds: 300)),
         LayoutBuilder(builder: (context, constraints) {
           return SizedBox(
             width: constraints.maxWidth * 0.8,
@@ -52,7 +52,7 @@ class PriceSection extends StatelessWidget {
                           pricingModel: e,
                           isActive: priceList.indexOf(e) == 1,
                         ).zoom(
-                          duration: const Duration(milliseconds: 600),
+                          duration: const Duration(milliseconds: 400),
                         ),
                       ))
                   .toList()
