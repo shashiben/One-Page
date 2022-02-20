@@ -86,54 +86,52 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               keyList: sectionKeys,
             ),
             Expanded(
-              child: NextContainer(
-                  scrollController: scrollController,
-                  fluid: true,
-                  alignment: Alignment.center,
-                  decoration: const BoxDecoration(color: Colors.white),
-                  children: [
-                    Container(
-                      decoration: const BoxDecoration(
-                          color: Colors.white,
-                          image: DecorationImage(
-                              colorFilter: ColorFilter.mode(
-                                  Color.fromRGBO(255, 255, 255, 0.8),
-                                  BlendMode.lighten),
-                              image: AssetImage('assets/hero-bg.jpg'),
-                              fit: BoxFit.fill)),
-                      child: Column(
-                        children: [
-                          HomeSection(
-                            key: sectionKeys['Home'],
-                          ),
-                          const IconSection(),
-                        ],
-                      ),
+              child: SingleChildScrollView(
+                controller: scrollController,
+                child: Column(children: [
+                  Container(
+                    decoration: const BoxDecoration(
+                        color: Colors.white,
+                        image: DecorationImage(
+                            colorFilter: ColorFilter.mode(
+                                Color.fromRGBO(255, 255, 255, 0.8),
+                                BlendMode.lighten),
+                            image: AssetImage('assets/hero-bg.jpg'),
+                            fit: BoxFit.fill)),
+                    child: Column(
+                      children: [
+                        HomeSection(
+                          key: sectionKeys['Home'],
+                        ),
+                        const IconSection(),
+                      ],
                     ),
-                    AboutSection(
-                      key: sectionKeys['About'],
-                    ),
-                    const ClientSection(),
-                    const TestimonialSection(),
-                    ServicesSection(
-                      key: sectionKeys['Services'],
-                    ),
-                    const CTASection(),
-                    PortfolioSection(
-                      key: sectionKeys['Portfolio'],
-                    ),
-                    TeamSection(
-                      key: sectionKeys['Team'],
-                    ),
-                    PriceSection(
-                      key: sectionKeys['Pricing'],
-                    ),
-                    const FAQSection(),
-                    ContactSection(
-                      key: sectionKeys['Contact'],
-                    ),
-                    const FooterSection()
-                  ]),
+                  ),
+                  AboutSection(
+                    key: sectionKeys['About'],
+                  ),
+                  const ClientSection(),
+                  const TestimonialSection(),
+                  ServicesSection(
+                    key: sectionKeys['Services'],
+                  ),
+                  const CTASection(),
+                  PortfolioSection(
+                    key: sectionKeys['Portfolio'],
+                  ),
+                  TeamSection(
+                    key: sectionKeys['Team'],
+                  ),
+                  PriceSection(
+                    key: sectionKeys['Pricing'],
+                  ),
+                  const FAQSection(),
+                  ContactSection(
+                    key: sectionKeys['Contact'],
+                  ),
+                  const FooterSection()
+                ]),
+              ),
             ),
           ],
         )).safeArea(top: context.isMobile);

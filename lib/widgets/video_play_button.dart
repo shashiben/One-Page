@@ -44,12 +44,12 @@ class _VideoPlayButtonState extends State<VideoPlayButton>
                       .container(
                           padding: EdgeInsets.all(isHovered ? 30 : 18),
                           shouldAnimate: true)
-                      .decoration(BoxDecoration(
+                      .addDecoration(BoxDecoration(
                           shape: BoxShape.circle, color: context.primaryColor))
                       .container(
                           padding: EdgeInsets.all(isHovered ? 0 : 12),
                           shouldAnimate: true)
-                      .decoration(BoxDecoration(
+                      .addDecoration(BoxDecoration(
                           shape: BoxShape.circle,
                           color: context.primaryColor.withOpacity(0.3)))
                       .center(),
