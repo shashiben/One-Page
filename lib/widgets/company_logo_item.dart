@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class CompanyLogoItem extends StatefulWidget {
   final String image;
-  const CompanyLogoItem({Key? key, required this.image}) : super(key: key);
+  const CompanyLogoItem({super.key, required this.image});
 
   @override
   State<CompanyLogoItem> createState() => _CompanyLogoItemState();
@@ -27,7 +27,8 @@ class _CompanyLogoItemState extends State<CompanyLogoItem>
       return Center(
         child: SizedBox(
           width: width,
-          child: HoverWidget(builder: (BuildContext context, bool isHovered) {
+          child: HoverableWidget(
+              hoverBuilder: (BuildContext context, bool isHovered) {
             if (isHovered) {
               scaleController.forward();
             } else {

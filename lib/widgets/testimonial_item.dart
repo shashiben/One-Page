@@ -8,7 +8,7 @@ import 'message_clipper.dart';
 
 class TestimonialItem extends StatelessWidget {
   final TestimonialModel review;
-  const TestimonialItem({Key? key, required this.review}) : super(key: key);
+  const TestimonialItem({super.key, required this.review});
 
   @override
   Widget build(BuildContext context) {

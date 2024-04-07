@@ -11,7 +11,7 @@ import '../widgets/footer_item.dart';
 import '../widgets/news_letter.dart';
 
 class FooterSection extends StatelessWidget {
-  const FooterSection({Key? key}) : super(key: key);
+  const FooterSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,13 @@ class FooterSection extends StatelessWidget {
           width: context.width,
           child: NextRow(verticalSpacing: 30, children: [
             NextCol(
-                sizes: 'col-12 cik-md-6 col-lg-3',
+                widthPercentages: const {
+                  GridPrefix.xs: 100,
+                  GridPrefix.sm: 100,
+                  GridPrefix.md: 50,
+                  GridPrefix.lg: 25,
+                  GridPrefix.xl: 25
+                },
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -77,7 +83,13 @@ class FooterSection extends StatelessWidget {
                   ],
                 )),
             NextCol(
-                sizes: 'col-12 col-md-6 col-lg-2',
+                widthPercentages: const {
+                  GridPrefix.xs: 100,
+                  GridPrefix.sm: 100,
+                  GridPrefix.md: 50,
+                  GridPrefix.lg: 16.66,
+                  GridPrefix.xl: 16.66
+                },
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -97,7 +109,13 @@ class FooterSection extends StatelessWidget {
                   ],
                 )),
             NextCol(
-                sizes: 'col-12 col-md-6 col-lg-3',
+                widthPercentages: const {
+                  GridPrefix.xs: 100,
+                  GridPrefix.sm: 100,
+                  GridPrefix.md: 50,
+                  GridPrefix.lg: 25,
+                  GridPrefix.xl: 25
+                },
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -116,8 +134,13 @@ class FooterSection extends StatelessWidget {
                     const FooterItem(title: 'Graphic Design'),
                   ],
                 )),
-            const NextCol(
-                sizes: 'col-12 col-md-6 col-lg-4', child: NewsLetterWidget())
+            const NextCol(widthPercentages: {
+              GridPrefix.xs: 100,
+              GridPrefix.sm: 100,
+              GridPrefix.md: 50,
+              GridPrefix.lg: 25,
+              GridPrefix.xl: 25
+            }, child: NewsLetterWidget())
           ]),
         ),
         Container(
@@ -131,7 +154,13 @@ class FooterSection extends StatelessWidget {
             width: context.width,
             child: NextRow(verticalSpacing: 15, children: [
               NextCol(
-                  sizes: 'col-12 col-md-6',
+                  widthPercentages: const {
+                    GridPrefix.xs: 100,
+                    GridPrefix.sm: 100,
+                    GridPrefix.md: 50,
+                    GridPrefix.lg: 50,
+                    GridPrefix.xl: 50
+                  },
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -176,7 +205,13 @@ class FooterSection extends StatelessWidget {
                     ],
                   )),
               NextCol(
-                  sizes: 'col-12 col-lg-6 col-md-6',
+                  widthPercentages: const {
+                    GridPrefix.xs: 100,
+                    GridPrefix.sm: 100,
+                    GridPrefix.md: 50,
+                    GridPrefix.lg: 50,
+                    GridPrefix.xl: 50
+                  },
                   child: Row(
                       mainAxisAlignment: context.isMobile
                           ? MainAxisAlignment.center

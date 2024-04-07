@@ -7,16 +7,15 @@ class ContactListTile extends StatelessWidget {
   final String title, subtitle;
   final IconData leadingIcon;
   const ContactListTile(
-      {Key? key,
+      {super.key,
       required this.title,
       required this.subtitle,
-      required this.leadingIcon})
-      : super(key: key);
+      required this.leadingIcon});
 
   @override
   Widget build(BuildContext context) {
-    return HoverWidget(
-      builder: (BuildContext context, bool isHovered) => Row(
+    return HoverableWidget(
+      hoverBuilder: (BuildContext context, bool isHovered) => Row(
         children: [
           AnimatedContainer(
               duration: const Duration(milliseconds: 400),

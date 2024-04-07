@@ -4,30 +4,29 @@ import '../app/fonts.dart';
 import 'package:flutter_next/flutter_next.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/navigation_drawer.dart';
+import '../widgets/navigation_drawer.dart' as cnd;
 
 class HeaderSection extends StatelessWidget {
   final ScrollController? scrollController;
   final List<String> titles;
   final Map<String, GlobalKey> keyList;
   const HeaderSection(
-      {Key? key,
+      {super.key,
       this.scrollController,
       this.keyList = const {},
-      required this.titles})
-      : super(key: key);
+      required this.titles});
 
   @override
   Widget build(BuildContext context) {
-    return NavigationDrawer(
+    return cnd.NavigationDrawer(
       padding: EdgeInsets.symmetric(
           vertical: 15,
           horizontal: context.isMobile ? 20 : context.width * 0.05),
       scrollController: scrollController,
       color: Colors.white,
       childrens: [
-        ...titles.map((String e) =>
-            HoverWidget(builder: (BuildContext context, bool isHovered) {
+        ...titles.map((String e) => HoverableWidget(
+                hoverBuilder: (BuildContext context, bool isHovered) {
               return Text(e,
                       style: TextStyle(
                           fontFamily: Fonts.openSans,
@@ -58,12 +57,12 @@ class HeaderSection extends StatelessWidget {
                 duration: const Duration(milliseconds: 800),
                 curve: Curves.linear);
           },
-          child: const Text('Get started'),
           style: const TextStyle(
               fontFamily: Fonts.poppins,
               color: Colors.white,
               fontSize: 14,
               fontWeight: FontWeight.w300),
+          child: const Text('Get started'),
         ),
       ],
       leading: const Text(

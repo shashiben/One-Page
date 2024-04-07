@@ -7,12 +7,12 @@ import 'package:flutter/material.dart';
 
 class TeamItem extends StatelessWidget {
   final TeamModel member;
-  const TeamItem({Key? key, required this.member}) : super(key: key);
+  const TeamItem({super.key, required this.member});
 
   @override
   Widget build(BuildContext context) {
-    return HoverWidget(
-      builder: (BuildContext context, bool isHovered) => Container(
+    return HoverableWidget(
+      hoverBuilder: (BuildContext context, bool isHovered) => Container(
         width: context.width,
         decoration: BoxDecoration(boxShadow: [
           BoxShadow(
@@ -53,8 +53,8 @@ class TeamItem extends StatelessWidget {
                           (LineIcons.instagram),
                           (LineIcons.linkedin)
                         ]
-                            .map((IconData e) => HoverWidget(
-                                  builder: (BuildContext context,
+                            .map((IconData e) => HoverableWidget(
+                                  hoverBuilder: (BuildContext context,
                                           bool isIconHovered) =>
                                       Icon(
                                     e,

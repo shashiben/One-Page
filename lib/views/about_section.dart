@@ -8,7 +8,7 @@ import 'details_sections.dart';
 import 'video_section.dart';
 
 class AboutSection extends StatelessWidget {
-  const AboutSection({Key? key}) : super(key: key);
+  const AboutSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,13 @@ class AboutSection extends StatelessWidget {
                   EdgeInsets.symmetric(horizontal: context.isMobile ? 20 : 40),
               children: [
                 NextCol(
-                    sizes: 'col-12 col-lg-12',
+                    widthPercentages: const {
+                      GridPrefix.xs: 100,
+                      GridPrefix.sm: 100,
+                      GridPrefix.md: 100,
+                      GridPrefix.lg: 100,
+                      GridPrefix.xl: 100
+                    },
                     child: Column(
                       children: [
                         Text(
@@ -39,7 +45,13 @@ class AboutSection extends StatelessWidget {
                                 const EdgeInsets.only(top: 10, bottom: 20)),
                         NextRow(children: [
                           NextCol(
-                              sizes: 'col-12 col-lg-6 col-md-12',
+                              widthPercentages: const {
+                                GridPrefix.xs: 100,
+                                GridPrefix.sm: 100,
+                                GridPrefix.md: 100,
+                                GridPrefix.lg: 50,
+                                GridPrefix.xl: 50
+                              },
                               child: Column(
                                 children: [
                                   Text(
@@ -64,7 +76,13 @@ class AboutSection extends StatelessWidget {
                                 ],
                               )),
                           NextCol(
-                              sizes: 'col-12 col-lg-6 col-md-12',
+                              widthPercentages: const {
+                                GridPrefix.xs: 100,
+                                GridPrefix.sm: 100,
+                                GridPrefix.md: 100,
+                                GridPrefix.lg: 50,
+                                GridPrefix.xl: 50
+                              },
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -77,7 +95,6 @@ class AboutSection extends StatelessWidget {
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 50, vertical: 12),
                                     margin: const EdgeInsets.only(top: 30),
-                                    child: const Text("Learn More"),
                                     style: const TextStyle(
                                       fontFamily: Fonts.openSans,
                                       fontWeight: FontWeight.bold,
@@ -91,6 +108,7 @@ class AboutSection extends StatelessWidget {
                                           curve: Curves.linear);
                                     },
                                     variant: NextButtonVariant.outlined,
+                                    child: const Text("Learn More"),
                                   )
                                 ],
                               ))

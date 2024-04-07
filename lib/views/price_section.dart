@@ -7,7 +7,7 @@ import '../models/pricing_model.dart';
 import '../widgets/pricing_item.dart';
 
 class PriceSection extends StatelessWidget {
-  const PriceSection({Key? key}) : super(key: key);
+  const PriceSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +19,7 @@ class PriceSection extends StatelessWidget {
       ),
       child: Column(children: [
         Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               'PRICING',
@@ -34,7 +35,6 @@ class PriceSection extends StatelessWidget {
               ).container(padding: const EdgeInsets.only(bottom: 30)),
             ),
           ],
-          mainAxisAlignment: MainAxisAlignment.center,
         ).fadeIn(
             variant: NextFadeInVariant.fadeInTop,
             initialPosition: 50,
@@ -44,18 +44,22 @@ class PriceSection extends StatelessWidget {
             width: constraints.maxWidth * 0.8,
             child:
                 NextRow(horizontalSpacing: 10, verticalSpacing: 30, children: [
-              ...priceList
-                  .map((PricingModel e) => NextCol(
-                        sizes: 'col-6 col-md-6 col-lg-4 col-xs-12',
-                        child: PricingItem(
-                          index: priceList.indexOf(e),
-                          pricingModel: e,
-                          isActive: priceList.indexOf(e) == 1,
-                        ).zoom(
-                          duration: const Duration(milliseconds: 400),
-                        ),
-                      ))
-                  .toList()
+              ...priceList.map((PricingModel e) => NextCol(
+                    widthPercentages: const {
+                      GridPrefix.xs: 100,
+                      GridPrefix.sm: 100,
+                      GridPrefix.md: 50,
+                      GridPrefix.lg: 25,
+                      GridPrefix.xl: 25
+                    },
+                    child: PricingItem(
+                      index: priceList.indexOf(e),
+                      pricingModel: e,
+                      isActive: priceList.indexOf(e) == 1,
+                    ).zoom(
+                      duration: const Duration(milliseconds: 400),
+                    ),
+                  ))
             ]),
           );
         }),

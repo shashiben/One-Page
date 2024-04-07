@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import '../widgets/service_item.dart';
 
 class ServicesSection extends StatelessWidget {
-  const ServicesSection({Key? key}) : super(key: key);
+  const ServicesSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,12 +45,18 @@ class ServicesSection extends StatelessWidget {
             ...List.generate(
                 servicesList.length,
                 (index) => NextCol(
-                    sizes: 'col-6 col-lg-4 col-md-6 col-xs-12',
-                    child: ServiceItem(
-                      serviceModel: servicesList[index],
-                    ).zoom(
-                      viewPort: index > 2 ? 0.05 : 0.2,
-                    ))),
+                        widthPercentages: const {
+                          GridPrefix.xs: 100,
+                          GridPrefix.sm: 100,
+                          GridPrefix.md: 50,
+                          GridPrefix.lg: 33.33,
+                          GridPrefix.xl: 33.33
+                        },
+                        child: ServiceItem(
+                          serviceModel: servicesList[index],
+                        ).zoom(
+                          viewPort: index > 2 ? 0.05 : 0.2,
+                        ))),
           ]),
         ),
       ]),

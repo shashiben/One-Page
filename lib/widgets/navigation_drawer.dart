@@ -15,7 +15,7 @@ class NavigationDrawer extends StatefulWidget {
   final MainAxisAlignment mainAxisAlignment;
   final CrossAxisAlignment crossAxisAlignment;
   const NavigationDrawer(
-      {Key? key,
+      {super.key,
       this.color,
       this.scrollController,
       this.mainAxisAlignment = MainAxisAlignment.end,
@@ -30,11 +30,10 @@ class NavigationDrawer extends StatefulWidget {
           color == null || decoration == null,
           'Cannot provide both a color and a decoration\n'
           'To provide both, use "decoration: BoxDecoration(color: color)".',
-        ),
-        super(key: key);
+        );
 
   @override
-  _NavigationDrawerState createState() => _NavigationDrawerState();
+  State<NavigationDrawer> createState() => _NavigationDrawerState();
 }
 
 class _NavigationDrawerState extends State<NavigationDrawer> {

@@ -8,7 +8,7 @@ import '../app/fonts.dart';
 import '../ordered_list.dart';
 
 class VideoSection extends StatelessWidget {
-  const VideoSection({Key? key}) : super(key: key);
+  const VideoSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,13 @@ class VideoSection extends StatelessWidget {
           vertical: 50),
       child: NextRow(children: [
         NextCol(
-            sizes: 'col-12 col-md-6 col-sm-12',
+            widthPercentages: const {
+              GridPrefix.xs: 100,
+              GridPrefix.sm: 100,
+              GridPrefix.md: 50,
+              GridPrefix.lg: 50,
+              GridPrefix.xl: 50
+            },
             child: Stack(
               children: [
                 Image.asset(
@@ -61,7 +67,13 @@ class VideoSection extends StatelessWidget {
               ],
             ).fadeIn(variant: NextFadeInVariant.fadeInRight)),
         NextCol(
-            sizes: 'col-12 col-md-6 col-sm-12',
+            widthPercentages: const {
+              GridPrefix.xs: 100,
+              GridPrefix.sm: 100,
+              GridPrefix.md: 50,
+              GridPrefix.lg: 50,
+              GridPrefix.xl: 50
+            },
             child: Column(
               children: [
                 const Text(

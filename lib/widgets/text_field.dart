@@ -6,8 +6,7 @@ class CommonTextField extends StatelessWidget {
   final String hint;
   final int? maxLines;
   const CommonTextField(
-      {Key? key, required this.controller, required this.hint, this.maxLines})
-      : super(key: key);
+      {super.key, required this.controller, required this.hint, this.maxLines});
 
   @override
   Widget build(BuildContext context) {

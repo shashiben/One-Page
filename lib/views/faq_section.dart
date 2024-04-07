@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 class FAQSection extends StatelessWidget {
-  const FAQSection({Key? key}) : super(key: key);
+  const FAQSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +22,7 @@ class FAQSection extends StatelessWidget {
       child: Column(
         children: [
           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 'FREQUENTLY ASKED QUESTIONS',
@@ -38,7 +39,6 @@ class FAQSection extends StatelessWidget {
                 ).container(padding: const EdgeInsets.only(bottom: 30)),
               ),
             ],
-            mainAxisAlignment: MainAxisAlignment.center,
           ).fadeIn(
               variant: NextFadeInVariant.fadeInTop,
               initialPosition: 50,
@@ -46,8 +46,8 @@ class FAQSection extends StatelessWidget {
           Column(
             children: [
               ...faqList.entries
-                  .map((MapEntry<String, String> e) => HoverWidget(
-                        builder: (BuildContext context, bool isHovered) =>
+                  .map((MapEntry<String, String> e) => HoverableWidget(
+                        hoverBuilder: (BuildContext context, bool isHovered) =>
                             NextAccordion(
                           horizontalTitleGap: context.isMobile ? 5 : 10,
                           collapsedBackgroundColor: Colors.white,
@@ -91,7 +91,6 @@ class FAQSection extends StatelessWidget {
                           ],
                         ),
                       ).container(padding: const EdgeInsets.only(top: 20)))
-                  .toList()
             ],
           ).fadeIn(variant: NextFadeInVariant.fadeInTop),
         ],

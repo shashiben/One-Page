@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 class VideoPlayer extends StatelessWidget {
   final String? url;
-  const VideoPlayer({Key? key, this.url}) : super(key: key);
+  const VideoPlayer({super.key, this.url});
 
   @override
   Widget build(BuildContext context) {

@@ -10,18 +10,17 @@ class PricingItem extends StatelessWidget {
   final bool isActive;
   final int index;
   const PricingItem(
-      {Key? key,
+      {super.key,
       required this.pricingModel,
       this.isActive = false,
-      required this.index})
-      : super(key: key);
+      required this.index});
 
   @override
   Widget build(BuildContext context) {
     final Color backgroundColor =
         isActive ? context.primaryColor : Colors.white;
-    return HoverWidget(
-      builder: (BuildContext context, bool isItemHovered) => Container(
+    return HoverableWidget(
+      hoverBuilder: (BuildContext context, bool isItemHovered) => Container(
         alignment: Alignment.center,
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),

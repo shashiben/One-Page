@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../app/fonts.dart';
 
 class NewsLetterWidget extends StatelessWidget {
-  const NewsLetterWidget({Key? key}) : super(key: key);
+  const NewsLetterWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

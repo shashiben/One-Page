@@ -3,7 +3,7 @@ import 'package:flutter_next/flutter_next.dart';
 import 'package:flutter/material.dart';
 
 class CTASection extends StatelessWidget {
-  const CTASection({Key? key}) : super(key: key);
+  const CTASection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,12 +38,12 @@ class CTASection extends StatelessWidget {
               color: context.primaryColor,
               outlineColor: Colors.white,
               variant: NextButtonVariant.outlined,
-              child: const Text("Call To Action"),
               style: const TextStyle(
                 fontFamily: Fonts.openSans,
                 fontWeight: FontWeight.w500,
               ),
-              onPressed: () {})
+              onPressed: () {},
+              child: const Text("Call To Action"))
         ],
       ).zoom(
         duration: const Duration(milliseconds: 250),

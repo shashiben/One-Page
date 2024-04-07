@@ -18,5 +18,4 @@ final GoRouter goRouter = GoRouter(
               key: state.pageKey, child: const PortfolioDetailSection()),
     )
   ],
-  urlPathStrategy: UrlPathStrategy.path,
 );

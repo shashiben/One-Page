@@ -8,12 +8,12 @@ import 'package:flutter/material.dart';
 
 class ServiceItem extends StatelessWidget {
   final ServiceModel serviceModel;
-  const ServiceItem({Key? key, required this.serviceModel}) : super(key: key);
+  const ServiceItem({super.key, required this.serviceModel});
 
   @override
   Widget build(BuildContext context) {
-    return HoverWidget(
-      builder: (BuildContext context, bool isHovered) => Container(
+    return HoverableWidget(
+      hoverBuilder: (BuildContext context, bool isHovered) => Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           color: Colors.white,
@@ -41,7 +41,10 @@ class ServiceItem extends StatelessWidget {
                       serviceModel.background,
                       height: 100,
                       width: 100,
-                      color: isHovered ? serviceModel.color : null,
+                      colorFilter: isHovered
+                          ? ColorFilter.mode(
+                              serviceModel.color, BlendMode.srcIn)
+                          : null,
                     ),
                   ),
                   Align(

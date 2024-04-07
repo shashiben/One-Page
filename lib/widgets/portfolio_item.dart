@@ -11,8 +11,7 @@ class PortfolioItem extends StatefulWidget {
   final PortfolioModel portfolioItem;
   final bool shouldDisplay;
   const PortfolioItem(
-      {Key? key, required this.portfolioItem, required this.shouldDisplay})
-      : super(key: key);
+      {super.key, required this.portfolioItem, required this.shouldDisplay});
 
   @override
   State<PortfolioItem> createState() => _PortfolioItemState();
@@ -31,9 +30,9 @@ class _PortfolioItemState extends State<PortfolioItem>
 
   @override
   Widget build(BuildContext context) {
-    return HoverWidget(
-        hoverDuration: const Duration(milliseconds: 1000),
-        builder: (BuildContext context, bool isHovered) {
+    return HoverableWidget(
+        hoverTransitionDuration: const Duration(milliseconds: 1000),
+        hoverBuilder: (BuildContext context, bool isHovered) {
           if (isHovered) {
             scaleController.forward();
           } else {
@@ -41,11 +40,10 @@ class _PortfolioItemState extends State<PortfolioItem>
           }
           return Stack(
             children: [
-              Image.asset(
-                widget.portfolioItem.image,
-                width: double.infinity,
-                fit: BoxFit.fill,
-              ),
+              Image.asset(widget.portfolioItem.image,
+                  width: double.infinity,
+                  fit: BoxFit.fill,
+                  height: double.infinity),
               Positioned.fill(
                 child: ScaleTransition(
                   scale: Tween(begin: 0.0, end: 1.0).animate(scaleController),
@@ -83,7 +81,7 @@ class _PortfolioItemState extends State<PortfolioItem>
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  HoverWidget(builder:
+                                  HoverableWidget(hoverBuilder:
                                       (BuildContext context, bool isHovered) {
                                     return Icon(
                                       Icons.add,
@@ -151,11 +149,10 @@ class _PortfolioItemState extends State<PortfolioItem>
                                                                         BorderRadius.circular(
                                                                             4)),
                                                                 child:
-                                                                    HoverWidget(
-                                                                  builder: (_,
-                                                                          bool
-                                                                              isHovered) =>
-                                                                      Icon(
+                                                                    HoverableWidget(
+                                                                  hoverBuilder:
+                                                                      (_, bool isHovered) =>
+                                                                          Icon(
                                                                     Icons.close,
                                                                     color: isHovered
                                                                         ? Colors
@@ -178,7 +175,7 @@ class _PortfolioItemState extends State<PortfolioItem>
                                                                 child:
                                                                     Container(
                                                                   padding: const EdgeInsets
-                                                                          .symmetric(
+                                                                      .symmetric(
                                                                       horizontal:
                                                                           8,
                                                                       vertical:
@@ -190,11 +187,10 @@ class _PortfolioItemState extends State<PortfolioItem>
                                                                           BorderRadius.circular(
                                                                               4)),
                                                                   child:
-                                                                      HoverWidget(
-                                                                    builder: (_,
-                                                                            bool
-                                                                                isHovered) =>
-                                                                        Icon(
+                                                                      HoverableWidget(
+                                                                    hoverBuilder:
+                                                                        (_, bool isHovered) =>
+                                                                            Icon(
                                                                       Icons
                                                                           .arrow_forward_ios,
                                                                       color: isHovered
@@ -227,7 +223,7 @@ class _PortfolioItemState extends State<PortfolioItem>
                                                                 child:
                                                                     Container(
                                                                   padding: const EdgeInsets
-                                                                              .symmetric(
+                                                                          .symmetric(
                                                                           horizontal:
                                                                               8,
                                                                           vertical:
@@ -242,11 +238,10 @@ class _PortfolioItemState extends State<PortfolioItem>
                                                                           BorderRadius.circular(
                                                                               4)),
                                                                   child:
-                                                                      HoverWidget(
-                                                                    builder: (_,
-                                                                            bool
-                                                                                isHovered) =>
-                                                                        Icon(
+                                                                      HoverableWidget(
+                                                                    hoverBuilder:
+                                                                        (_, bool isHovered) =>
+                                                                            Icon(
                                                                       Icons
                                                                           .arrow_back_ios,
                                                                       color: isHovered
@@ -274,10 +269,11 @@ class _PortfolioItemState extends State<PortfolioItem>
                                                               right: 0,
                                                               left: 0,
                                                               child: Container(
-                                                                padding: const EdgeInsets
+                                                                padding:
+                                                                    const EdgeInsets
                                                                         .symmetric(
-                                                                    vertical:
-                                                                        20),
+                                                                        vertical:
+                                                                            20),
                                                                 decoration: BoxDecoration(
                                                                     color: Colors
                                                                         .black
@@ -317,8 +313,8 @@ class _PortfolioItemState extends State<PortfolioItem>
                                                   }));
                                     });
                                   }),
-                                  HoverWidget(
-                                    builder: (_, bool isHovered) => Icon(
+                                  HoverableWidget(
+                                    hoverBuilder: (_, bool isHovered) => Icon(
                                       Icons.link,
                                       color: isHovered
                                           ? Colors.white

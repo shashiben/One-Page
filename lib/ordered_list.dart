@@ -6,8 +6,7 @@ class OrderedList extends StatelessWidget {
   final double spacing;
   final Widget? leadingIcon;
   const OrderedList(
-      {Key? key, required this.children, this.spacing = 15, this.leadingIcon})
-      : super(key: key);
+      {super.key, required this.children, this.spacing = 15, this.leadingIcon});
 
   @override
   Widget build(BuildContext context) {

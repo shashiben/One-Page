@@ -6,7 +6,7 @@ import '../models/feature_model.dart';
 import '../widgets/feature_item.dart';
 
 class IconSection extends StatelessWidget {
-  const IconSection({Key? key}) : super(key: key);
+  const IconSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,13 @@ class IconSection extends StatelessWidget {
           verticalSpacing: 30,
           children: featuresList
               .map((FeatureModel e) => NextCol(
-                    sizes: 'col-12 col-lg-3 col-md-6 col-sm-12',
+                    widthPercentages: const {
+                      GridPrefix.xs: 100,
+                      GridPrefix.sm: 100,
+                      GridPrefix.md: 50,
+                      GridPrefix.lg: 25,
+                      GridPrefix.xl: 25
+                    },
                     child: FeatureItem(
                       feature: e,
                     ).zoom(

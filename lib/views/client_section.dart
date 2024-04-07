@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../widgets/company_logo_item.dart';
 
 class ClientSection extends StatelessWidget {
-  const ClientSection({Key? key}) : super(key: key);
+  const ClientSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +15,21 @@ class ClientSection extends StatelessWidget {
         children: List.generate(
             6,
             (int index) => NextCol(
-                sizes: 'col-lg-2 col-md-4 col-6 col-sm-6 col-xs-6',
-                child: CompanyLogoItem(
-                  image: 'assets/clients/client-${index + 1}.png',
-                )
-                    .container(
-                        padding: const EdgeInsets.symmetric(horizontal: 15))
-                    .zoom(
-                      duration: const Duration(milliseconds: 300),
-                    ))),
+                    widthPercentages: const {
+                      GridPrefix.xs: 6,
+                      GridPrefix.sm: 6,
+                      GridPrefix.md: 4,
+                      GridPrefix.lg: 2,
+                      GridPrefix.xl: 2
+                    },
+                    child: CompanyLogoItem(
+                      image: 'assets/clients/client-${index + 1}.png',
+                    )
+                        .container(
+                            padding: const EdgeInsets.symmetric(horizontal: 15))
+                        .zoom(
+                          duration: const Duration(milliseconds: 300),
+                        ))),
       ),
     );
   }

@@ -9,7 +9,7 @@ import '../widgets/contact_info_list_tile.dart';
 import '../widgets/text_field.dart';
 
 class ContactSection extends StatefulWidget {
-  const ContactSection({Key? key}) : super(key: key);
+  const ContactSection({super.key});
 
   @override
   State<ContactSection> createState() => _ContactSectionState();
@@ -43,11 +43,17 @@ class _ContactSectionState extends State<ContactSection> {
             ],
           ),
           NextRow(children: [
-            NextCol(
-                sizes: 'col-12 col-lg-4 col-md-12',
+            const NextCol(
+                widthPercentages: {
+                  GridPrefix.xs: 100,
+                  GridPrefix.sm: 100,
+                  GridPrefix.md: 100,
+                  GridPrefix.lg: 33.33,
+                  GridPrefix.xl: 33.33
+                },
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     ContactListTile(
                         title: 'Location:',
                         subtitle: 'Kurnool,Andhra Pradesh,518001',
@@ -63,7 +69,13 @@ class _ContactSectionState extends State<ContactSection> {
                   ],
                 )),
             NextCol(
-                sizes: 'col-12 col-lg-8 col-md-12',
+                widthPercentages: const {
+                  GridPrefix.xs: 100,
+                  GridPrefix.sm: 100,
+                  GridPrefix.md: 100,
+                  GridPrefix.lg: 66.66,
+                  GridPrefix.xl: 66.66
+                },
                 child: Column(
                   children: [
                     Row(
@@ -93,12 +105,12 @@ class _ContactSectionState extends State<ContactSection> {
                           horizontal: 50, vertical: 12),
                       margin: const EdgeInsets.only(top: 30),
                       onPressed: () {},
-                      child: const Text("Send Message"),
                       style: const TextStyle(
                           fontFamily: Fonts.poppins,
                           color: Colors.white,
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
+                      child: const Text("Send Message"),
                     )
                   ],
                 ))

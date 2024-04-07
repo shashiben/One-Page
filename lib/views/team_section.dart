@@ -7,7 +7,7 @@ import '../models/team_model.dart';
 import '../widgets/team_item.dart';
 
 class TeamSection extends StatelessWidget {
-  const TeamSection({Key? key}) : super(key: key);
+  const TeamSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +17,7 @@ class TeamSection extends StatelessWidget {
       child: Column(
         children: [
           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 'Team',
@@ -32,7 +33,6 @@ class TeamSection extends StatelessWidget {
                 ).container(padding: const EdgeInsets.only(bottom: 30)),
               ),
             ],
-            mainAxisAlignment: MainAxisAlignment.center,
           ).fadeIn(
               variant: NextFadeInVariant.fadeInTop,
               initialPosition: 50,
@@ -44,7 +44,13 @@ class TeamSection extends StatelessWidget {
             child: NextRow(
                 children: teamList
                     .map((TeamModel e) => NextCol(
-                          sizes: 'col-12 col-lg-3 col-md-6 col-sm-12',
+                          widthPercentages: const {
+                            GridPrefix.xs: 100,
+                            GridPrefix.sm: 100,
+                            GridPrefix.md: 50,
+                            GridPrefix.lg: 25,
+                            GridPrefix.xl: 25
+                          },
                           child: Center(
                             child: TeamItem(
                               member: e,

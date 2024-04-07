@@ -20,7 +20,7 @@ class AnimatedCounter extends StatefulWidget {
   final String suffix;
 
   const AnimatedCounter({
-    Key? key,
+    super.key,
     required this.begin,
     required this.end,
     this.precision = 0,
@@ -38,10 +38,10 @@ class AnimatedCounter extends StatefulWidget {
     this.separator,
     this.prefix = '',
     this.suffix = '',
-  }) : super(key: key);
+  });
 
   @override
-  _AnimatedCounterState createState() => _AnimatedCounterState();
+  State<AnimatedCounter> createState() => _AnimatedCounterState();
 }
 
 class _AnimatedCounterState extends State<AnimatedCounter>
@@ -119,7 +119,7 @@ class _CountupAnimatedText extends AnimatedWidget {
   final String? suffix;
 
   _CountupAnimatedText({
-    Key? key,
+    super.key,
     required this.animation,
     required this.precision,
     this.style,
@@ -134,23 +134,19 @@ class _CountupAnimatedText extends AnimatedWidget {
     this.separator,
     this.prefix,
     this.suffix,
-  }) : super(key: key, listenable: animation);
+  }) : super(listenable: animation);
 
   @override
   Widget build(BuildContext context) => Text(
         separator != null
-            ? '$prefix' +
-                animation.value.toInt().toString().replaceAllMapped(
-                    reg, (Match match) => '${match[1]}$separator') +
-                '$suffix'
-            : '$prefix' + animation.value.toInt().toString() + '$suffix',
+            ? '$prefix${animation.value.toInt().toString().replaceAllMapped(reg, (Match match) => '${match[1]}$separator')}$suffix'
+            : '$prefix${animation.value.toInt()}$suffix',
         style: style,
         textAlign: textAlign,
         textDirection: textDirection,
         locale: locale,
         softWrap: softWrap,
         overflow: overflow,
-        textScaleFactor: textScaleFactor,
         maxLines: maxLines,
         semanticsLabel: semanticsLabel,
       );

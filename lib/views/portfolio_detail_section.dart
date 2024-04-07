@@ -10,10 +10,10 @@ import 'footer_section.dart';
 import 'header_section.dart';
 
 class PortfolioDetailSection extends StatefulWidget {
-  const PortfolioDetailSection({Key? key}) : super(key: key);
+  const PortfolioDetailSection({super.key});
 
   @override
-  _PortfolioDetailSectionState createState() => _PortfolioDetailSectionState();
+  State<PortfolioDetailSection> createState() => _PortfolioDetailSectionState();
 }
 
 class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
@@ -48,7 +48,13 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                       width: context.width,
                       child: NextRow(children: [
                         const NextCol(
-                            sizes: 'col-12 col-lg-6',
+                            widthPercentages: {
+                              GridPrefix.xs: 100,
+                              GridPrefix.sm: 100,
+                              GridPrefix.md: 100,
+                              GridPrefix.lg: 50,
+                              GridPrefix.xl: 50
+                            },
                             child: Text('Portfolio Details',
                                 style: TextStyle(
                                     fontFamily: Fonts.raleway,
@@ -56,7 +62,13 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                                     fontSize: 24,
                                     fontWeight: FontWeight.w300))),
                         NextCol(
-                            sizes: 'col-12 col-lg-6',
+                            widthPercentages: const {
+                              GridPrefix.xs: 100,
+                              GridPrefix.sm: 100,
+                              GridPrefix.md: 100,
+                              GridPrefix.lg: 50,
+                              GridPrefix.xl: 50
+                            },
                             child: Row(
                               mainAxisAlignment: context.width > 992
                                   ? MainAxisAlignment.end
@@ -100,7 +112,13 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                       child: NextRow(
                         children: [
                           NextCol(
-                            sizes: 'col-12 col-lg-8',
+                            widthPercentages: const {
+                              GridPrefix.xs: 12,
+                              GridPrefix.sm: 12,
+                              GridPrefix.md: 12,
+                              GridPrefix.lg: 66.66,
+                              GridPrefix.xl: 66.66
+                            },
                             child: Column(
                               children: [
                                 SizedBox(
@@ -161,7 +179,13 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                             ),
                           ),
                           NextCol(
-                              sizes: 'col-12 col-lg-4',
+                              widthPercentages: const {
+                                GridPrefix.xs: 12,
+                                GridPrefix.sm: 12,
+                                GridPrefix.md: 12,
+                                GridPrefix.lg: 33.33,
+                                GridPrefix.xl: 33.33
+                              },
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import '../home.dart';
 
 class HomeSection extends StatelessWidget {
-  const HomeSection({Key? key}) : super(key: key);
+  const HomeSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,13 @@ class HomeSection extends StatelessWidget {
       height: context.height * 0.8,
       child: NextRow(verticalAlignment: WrapAlignment.center, children: [
         NextCol(
-            sizes: 'col-12 col-lg-12',
+            widthPercentages: const {
+              GridPrefix.xs: 100,
+              GridPrefix.sm: 100,
+              GridPrefix.md: 100,
+              GridPrefix.lg: 100,
+              GridPrefix.xl: 100
+            },
             child: Column(
               children: [
                 Text(
@@ -38,12 +44,12 @@ class HomeSection extends StatelessWidget {
                         duration: const Duration(milliseconds: 800),
                         curve: Curves.linear);
                   },
-                  child: const Text('Get started'),
                   style: const TextStyle(
                       fontFamily: Fonts.poppins,
                       color: Colors.white,
                       fontSize: 14,
                       fontWeight: FontWeight.w500),
+                  child: const Text('Get started'),
                 )
               ],
             ).fadeIn(variant: NextFadeInVariant.fadeInTop, initialPosition: 40))

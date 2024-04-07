@@ -8,7 +8,7 @@ import '../models/testimonial_model.dart';
 import '../widgets/testimonial_item.dart';
 
 class TestimonialSection extends StatefulWidget {
-  const TestimonialSection({Key? key}) : super(key: key);
+  const TestimonialSection({super.key});
 
   @override
   State<TestimonialSection> createState() => _TestimonialSectionState();
@@ -54,6 +54,7 @@ class _TestimonialSectionState extends State<TestimonialSection> {
             initialPosition: 80,
           ),
           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ScrollConfiguration(
                 behavior: ScrollConfiguration.of(context).copyWith(
@@ -106,7 +107,6 @@ class _TestimonialSectionState extends State<TestimonialSection> {
                             pageController.animateToPage(index);
                           })))
             ],
-            mainAxisAlignment: MainAxisAlignment.center,
           ).fadeIn(
             variant: NextFadeInVariant.fadeInTop,
           ),

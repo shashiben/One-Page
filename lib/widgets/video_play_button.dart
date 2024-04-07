@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 class VideoPlayButton extends StatefulWidget {
   const VideoPlayButton({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<VideoPlayButton> createState() => _VideoPlayButtonState();
@@ -22,9 +22,9 @@ class _VideoPlayButtonState extends State<VideoPlayButton>
 
   @override
   Widget build(BuildContext context) {
-    return HoverWidget(
-        hoverDuration: const Duration(milliseconds: 500),
-        builder: (context, isHovered) {
+    return HoverableWidget(
+        hoverTransitionDuration: const Duration(milliseconds: 500),
+        hoverBuilder: (context, isHovered) {
           if (isHovered) {
             scaleController.forward().then((value) {});
           } else {
@@ -61,13 +61,13 @@ class _VideoPlayButtonState extends State<VideoPlayButton>
                       opacity:
                           Tween(begin: 1.0, end: 0.0).animate(scaleController),
                       child: ScaleTransition(
+                        scale: Tween(begin: 1.0, end: 20.0)
+                            .animate(scaleController),
                         child: const Icon(
                           Icons.play_arrow,
                           color: Colors.white,
                           size: 32,
                         ),
-                        scale: Tween(begin: 1.0, end: 20.0)
-                            .animate(scaleController),
                       )),
                 ))
               ],

@@ -8,7 +8,7 @@ import 'package:flutter_next/flutter_next.dart';
 import 'package:flutter/material.dart';
 
 class PortfolioSection extends StatefulWidget {
-  const PortfolioSection({Key? key}) : super(key: key);
+  const PortfolioSection({super.key});
 
   @override
   State<PortfolioSection> createState() => _PortfolioSectionState();
@@ -45,9 +45,9 @@ class _PortfolioSectionState extends State<PortfolioSection>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(
                     tabs.length,
-                    (int index) => HoverWidget(
-                          builder: (BuildContext context, bool isTabHovered) =>
-                              Text(
+                    (int index) => HoverableWidget(
+                          hoverBuilder:
+                              (BuildContext context, bool isTabHovered) => Text(
                             tabs[index].toUpperCase(),
                             style: TextStyle(
                                 fontFamily: Fonts.openSans,
@@ -72,17 +72,19 @@ class _PortfolioSectionState extends State<PortfolioSection>
                         )))
             .fadeIn(initialPosition: 80, variant: NextFadeInVariant.fadeInTop),
         NextGridView(
-                sizes: 'col-12 col-lg-4 col-md-6',
-                // horizontalSpacing: 20,
-                // verticalSpacing: 20,
-                childrens: portfolioItems
+                widthPercentages: const {
+              GridPrefix.xs: 100,
+              GridPrefix.sm: 100,
+              GridPrefix.md: 50,
+              GridPrefix.lg: 33.33,
+              GridPrefix.xl: 33.33
+            },
+                children: portfolioItems
                     .where((e) => (e.type == tabs.elementAt(selectedIndex) ||
                         selectedIndex == 0))
-                    .map((PortfolioModel e) => NextGridItem(
-                          child: PortfolioItem(
-                            portfolioItem: e,
-                            shouldDisplay: true,
-                          ),
+                    .map((PortfolioModel e) => PortfolioItem(
+                          portfolioItem: e,
+                          shouldDisplay: true,
                         ))
                     .toList())
             .fadeIn(variant: NextFadeInVariant.fadeInTop)

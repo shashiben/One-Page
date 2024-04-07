@@ -7,7 +7,7 @@ import '../models/feature_model.dart';
 
 class FeatureItem extends StatefulWidget {
   final FeatureModel feature;
-  const FeatureItem({Key? key, required this.feature}) : super(key: key);
+  const FeatureItem({super.key, required this.feature});
 
   @override
   State<FeatureItem> createState() => _FeatureItemState();
@@ -34,9 +34,9 @@ class _FeatureItemState extends State<FeatureItem>
 
   @override
   Widget build(BuildContext context) {
-    return HoverWidget(
-        hoverDuration: Duration.zero,
-        builder: (BuildContext context, bool isHovered) {
+    return HoverableWidget(
+        hoverTransitionDuration: Duration.zero,
+        hoverBuilder: (BuildContext context, bool isHovered) {
           if (isHovered) {
             _controller.forward();
           } else {

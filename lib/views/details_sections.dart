@@ -5,7 +5,7 @@ import 'package:flutter_next/flutter_next.dart';
 import 'package:flutter/material.dart';
 
 class DetailsSection extends StatelessWidget {
-  const DetailsSection({Key? key}) : super(key: key);
+  const DetailsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,27 +16,33 @@ class DetailsSection extends StatelessWidget {
       child: NextRow(
           children: details.entries
               .map((MapEntry<String, int> e) => NextCol(
-                  sizes: 'col-6 col-md-6 col-lg-3 col-sm-6 col-xs-6',
-                  child: Column(
-                    children: [
-                      AnimatedCounter(
-                          begin: 0,
-                          duration: const Duration(seconds: 5),
-                          end: e.value.toDouble(),
-                          style: const TextStyle(
-                              fontFamily: Fonts.openSans,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 48,
-                              color: Color(0xFF124265))),
-                      Text(
-                        e.key,
-                        style: const TextStyle(
-                            fontFamily: Fonts.raleway,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 14),
-                      ).container(padding: const EdgeInsets.only(top: 8))
-                    ],
-                  )))
+                      widthPercentages: const {
+                        GridPrefix.xs: 50,
+                        GridPrefix.sm: 50,
+                        GridPrefix.md: 50,
+                        GridPrefix.lg: 25,
+                        GridPrefix.xl: 25
+                      },
+                      child: Column(
+                        children: [
+                          AnimatedCounter(
+                              begin: 0,
+                              duration: const Duration(seconds: 5),
+                              end: e.value.toDouble(),
+                              style: const TextStyle(
+                                  fontFamily: Fonts.openSans,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 48,
+                                  color: Color(0xFF124265))),
+                          Text(
+                            e.key,
+                            style: const TextStyle(
+                                fontFamily: Fonts.raleway,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 14),
+                          ).container(padding: const EdgeInsets.only(top: 8))
+                        ],
+                      )))
               .toList()),
     );
   }
