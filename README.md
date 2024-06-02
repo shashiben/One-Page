@@ -1,6 +1,6 @@
 # 🚀 One Page
 
-🏷️ **Tags:** `Flutter`, `Bootstrap`, `Web Development`, `One Page`, `Template`
+🏷️ **Tags:** `Flutter`, `Bootstrap`, `Web Development`, `One Page`, `Template`, `Flutter Next`
 
 🎨 Clone of a Bootstrap template made in Flutter
 
