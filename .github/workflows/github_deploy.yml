@@ -13,8 +13,8 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: subosito/flutter-action@v1
+    - uses: actions/checkout@v4
+    - uses: subosito/flutter-action@v4
       with:
         channel: beta
     - run: flutter config --enable-web
@@ -27,7 +27,7 @@ jobs:
       run: flutter build web --release
 
     - name: Upload production-ready build files
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: production-files
         path: ./build/web
@@ -46,7 +46,7 @@ jobs:
         path: ./build
 
     - name: Deploy to gh-pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.MY_GITHUB_SECRET }}
         publish_dir: ./build
