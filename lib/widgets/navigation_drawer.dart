@@ -1,19 +1,9 @@
-import 'package:flutter_next/flutter_next.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 import '../app/colors.dart';
 
 class NavigationDrawer extends StatefulWidget {
-  final Color? color;
-  final BoxDecoration? decoration;
-  final Widget leading;
-  final EdgeInsets? padding;
-  final ScrollController? scrollController;
-  final Widget? menuIcon;
-  final List<Widget> childrens;
-  final double minWidth;
-  final MainAxisAlignment mainAxisAlignment;
-  final CrossAxisAlignment crossAxisAlignment;
   const NavigationDrawer(
       {super.key,
       this.color,
@@ -31,6 +21,16 @@ class NavigationDrawer extends StatefulWidget {
           'Cannot provide both a color and a decoration\n'
           'To provide both, use "decoration: BoxDecoration(color: color)".',
         );
+  final Color? color;
+  final BoxDecoration? decoration;
+  final Widget leading;
+  final EdgeInsets? padding;
+  final ScrollController? scrollController;
+  final Widget? menuIcon;
+  final List<Widget> childrens;
+  final double minWidth;
+  final MainAxisAlignment mainAxisAlignment;
+  final CrossAxisAlignment crossAxisAlignment;
 
   @override
   State<NavigationDrawer> createState() => _NavigationDrawerState();
@@ -48,9 +48,9 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
             boxShadow: (widget.scrollController == null ||
                     (widget.scrollController?.offset ?? 0) < 250)
                 ? null
-                : [
+                : <BoxShadow>[
                     BoxShadow(
-                      color: Colors.white.withOpacity(0.8),
+                      color: Colors.white.withValues(alpha: 0.8),
                       spreadRadius: 20,
                       blurRadius: 5,
                       offset: const Offset(10, 7),
@@ -66,24 +66,25 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                   color: Colors.grey[300]!),
             ),
           ),
-      child: Row(children: [
+      child: Row(children: <Widget>[
         widget.leading,
         Expanded(
             child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: context.width > widget.minWidth
               ? widget.childrens
-              : [
+              : <Widget>[
                   const Spacer(),
                   IconButton(
                       onPressed: () {
                         showDialog<void>(
-                            barrierColor: context.primaryColor.withOpacity(0.9),
+                            barrierColor:
+                                context.primaryColor.withValues(alpha: .9),
                             context: context,
                             builder: (_) => Material(
                                   color: Colors.transparent,
                                   child: Column(
-                                    children: [
+                                    children: <Widget>[
                                       Align(
                                         alignment: Alignment.topRight,
                                         child: IconButton(

@@ -1,8 +1,9 @@
-import 'package:one_page/app/fonts.dart';
-import 'package:one_page/home.dart';
-import '../app/text_styles.dart';
-import 'package:flutter_next/flutter_next.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
+
+import '../app/fonts.dart';
+import '../app/text_styles.dart';
+import '../home.dart';
 import '../ordered_list.dart';
 import 'details_sections.dart';
 import 'video_section.dart';
@@ -12,25 +13,25 @@ class AboutSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ColoredBox(
       color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        children: <Widget>[
           NextRow(
               padding:
                   EdgeInsets.symmetric(horizontal: context.isMobile ? 20 : 40),
-              children: [
+              children: <NextCol>[
                 NextCol(
-                    widthPercentages: const {
+                    widthPercentages: const <GridPrefix, double>{
                       GridPrefix.xs: 100,
                       GridPrefix.sm: 100,
                       GridPrefix.md: 100,
                       GridPrefix.lg: 100,
-                      GridPrefix.xl: 100
+                      GridPrefix.xl: 100,
                     },
                     child: Column(
-                      children: [
+                      children: <Widget>[
                         Text(
                           'ABOUT US',
                           style: SectionTitle.h2(context),
@@ -43,9 +44,9 @@ class AboutSection extends StatelessWidget {
                         ).container(
                             padding:
                                 const EdgeInsets.only(top: 10, bottom: 20)),
-                        NextRow(children: [
+                        NextRow(children: <NextCol>[
                           NextCol(
-                              widthPercentages: const {
+                              widthPercentages: const <GridPrefix, double>{
                                 GridPrefix.xs: 100,
                                 GridPrefix.sm: 100,
                                 GridPrefix.md: 100,
@@ -53,7 +54,7 @@ class AboutSection extends StatelessWidget {
                                 GridPrefix.xl: 50
                               },
                               child: Column(
-                                children: [
+                                children: <Widget>[
                                   Text(
                                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                                     style: SectionTitle.p(context).copyWith(
@@ -62,7 +63,7 @@ class AboutSection extends StatelessWidget {
                                       padding:
                                           const EdgeInsets.only(bottom: 15)),
                                   OrderedList(
-                                      children: [
+                                      children: <String>[
                                     'Ullamco laboris nisi ut aliquip ex ea commodo consequat',
                                     'Duis aute irure dolor in reprehenderit in voluptate velit',
                                     'Ullamco laboris nisi ut aliquip ex ea commodo consequat'
@@ -76,7 +77,7 @@ class AboutSection extends StatelessWidget {
                                 ],
                               )),
                           NextCol(
-                              widthPercentages: const {
+                              widthPercentages: const <GridPrefix, double>{
                                 GridPrefix.xs: 100,
                                 GridPrefix.sm: 100,
                                 GridPrefix.md: 100,
@@ -85,7 +86,7 @@ class AboutSection extends StatelessWidget {
                               },
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
+                                children: <Widget>[
                                   Text(
                                     'Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                                     style: SectionTitle.p(context).copyWith(
@@ -101,14 +102,14 @@ class AboutSection extends StatelessWidget {
                                     ),
                                     onPressed: () {
                                       Scrollable.ensureVisible(
-                                          sectionKeys["Home"]?.currentContext ??
+                                          sectionKeys['Home']?.currentContext ??
                                               context,
                                           duration:
                                               const Duration(milliseconds: 800),
                                           curve: Curves.linear);
                                     },
                                     variant: NextButtonVariant.outlined,
-                                    child: const Text("Learn More"),
+                                    child: const Text('Learn More'),
                                   )
                                 ],
                               ))

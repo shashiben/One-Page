@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
+
 import '../app/data.dart';
 import '../app/text_styles.dart';
-
-import 'package:flutter_next/flutter_next.dart';
-import 'package:flutter/material.dart';
 import '../models/team_model.dart';
 import '../widgets/team_item.dart';
 
@@ -15,10 +15,10 @@ class TeamSection extends StatelessWidget {
       color: const Color(0xFFF8FBFE),
       padding: const EdgeInsets.symmetric(vertical: 50),
       child: Column(
-        children: [
+        children: <Widget>[
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: <Widget>[
               Text(
                 'Team',
                 style: SectionTitle.h2(context),
@@ -44,7 +44,7 @@ class TeamSection extends StatelessWidget {
             child: NextRow(
                 children: teamList
                     .map((TeamModel e) => NextCol(
-                          widthPercentages: const {
+                          widthPercentages: const <GridPrefix, double>{
                             GridPrefix.xs: 100,
                             GridPrefix.sm: 100,
                             GridPrefix.md: 50,

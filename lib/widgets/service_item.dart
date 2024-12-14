@@ -1,23 +1,30 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../app/colors.dart';
 import '../app/fonts.dart';
 import '../models/service_model.dart';
-import 'package:flutter_next/flutter_next.dart';
-import 'package:flutter/material.dart';
 
-class ServiceItem extends StatelessWidget {
-  final ServiceModel serviceModel;
+class ServiceItem extends StatefulWidget {
   const ServiceItem({super.key, required this.serviceModel});
+  final ServiceModel serviceModel;
 
   @override
+  State<ServiceItem> createState() => _ServiceItemState();
+}
+
+class _ServiceItemState extends State<ServiceItem>
+    with AutomaticKeepAliveClientMixin {
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return HoverableWidget(
       hoverBuilder: (BuildContext context, bool isHovered) => Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           color: Colors.white,
-          boxShadow: [
+          boxShadow: <BoxShadow>[
             BoxShadow(
               color: const Color.fromRGBO(18, 66, 101, 0.08),
               blurRadius: 15,
@@ -30,35 +37,36 @@ class ServiceItem extends StatelessWidget {
           ],
         ),
         child: Column(
-          children: [
+          children: <Widget>[
             SizedBox(
               height: 100,
               width: 100,
               child: Stack(
-                children: [
+                children: <Widget>[
                   Align(
                     child: SvgPicture.string(
-                      serviceModel.background,
+                      widget.serviceModel.background,
                       height: 100,
                       width: 100,
                       colorFilter: isHovered
                           ? ColorFilter.mode(
-                              serviceModel.color, BlendMode.srcIn)
+                              widget.serviceModel.color, BlendMode.srcIn)
                           : null,
                     ),
                   ),
                   Align(
                     child: Icon(
-                      serviceModel.icon,
+                      widget.serviceModel.icon,
                       size: 30,
-                      color: isHovered ? Colors.white : serviceModel.color,
+                      color:
+                          isHovered ? Colors.white : widget.serviceModel.color,
                     ),
                   )
                 ],
               ),
             ),
             Text(
-              serviceModel.title,
+              widget.serviceModel.title,
               style: const TextStyle(
                   fontFamily: Fonts.raleway,
                   color: textPrimaryColor,
@@ -67,7 +75,7 @@ class ServiceItem extends StatelessWidget {
               textAlign: TextAlign.center,
             ).container(padding: const EdgeInsets.only(top: 10, bottom: 15)),
             Text(
-              serviceModel.description,
+              widget.serviceModel.description,
               style: const TextStyle(
                   fontFamily: Fonts.openSans,
                   color: textPrimaryColor,
@@ -81,4 +89,7 @@ class ServiceItem extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

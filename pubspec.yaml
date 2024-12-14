@@ -6,32 +6,33 @@ publish_to: "none"
 version: 1.0.0+2
 
 environment:
-  sdk: '>=3.3.3 <4.0.0'
+  sdk: ^3.6.0
 
 dependencies:
-  animations: 
-  carousel_slider: 
-  cupertino_icons: 
+  animations: null
+  carousel_slider: null
+  cupertino_icons: null
   flutter:
     sdk: flutter
   flutter_next:
     git:
       url: https://github.com/shashiben/flutter_next.git
-  flutter_svg: 
-  go_router: 
-  line_icons: 
-  universal_html: 
-  universal_platform: 
-  url_launcher: 
-  webviewx: 
+  flutter_svg: null
+  go_router: null
+  line_icons: null
+  smooth_scroll_multiplatform: ^1.0.8
+  universal_html: null
+  universal_platform: null
+  url_launcher: null
+  webviewx: null
 
 dev_dependencies:
-  build_runner: 
-  flutter_launcher_icons:
-  flutter_lints: 
+  build_runner: null
+  flutter_launcher_icons: null
+  flutter_lints: null
   flutter_test:
     sdk: flutter
-  preload: 
+  preload: null
 
 flutter_launcher_icons:
   android: "launcher_icon"

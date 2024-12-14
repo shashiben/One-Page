@@ -1,5 +1,6 @@
-import 'package:flutter_next/flutter_next.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
+
 import 'colors.dart';
 import 'fonts.dart';
 

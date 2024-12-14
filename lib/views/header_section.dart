@@ -1,20 +1,19 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 import 'package:go_router/go_router.dart';
 
 import '../app/fonts.dart';
-import 'package:flutter_next/flutter_next.dart';
-import 'package:flutter/material.dart';
-
 import '../widgets/navigation_drawer.dart' as cnd;
 
 class HeaderSection extends StatelessWidget {
-  final ScrollController? scrollController;
-  final List<String> titles;
-  final Map<String, GlobalKey> keyList;
   const HeaderSection(
       {super.key,
       this.scrollController,
-      this.keyList = const {},
+      this.keyList = const <String, GlobalKey<State<StatefulWidget>>>{},
       required this.titles});
+  final ScrollController? scrollController;
+  final List<String> titles;
+  final Map<String, GlobalKey> keyList;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +23,7 @@ class HeaderSection extends StatelessWidget {
           horizontal: context.isMobile ? 20 : context.width * 0.05),
       scrollController: scrollController,
       color: Colors.white,
-      childrens: [
+      childrens: <Widget>[
         ...titles.map((String e) => HoverableWidget(
                 hoverBuilder: (BuildContext context, bool isHovered) {
               return Text(e,
@@ -53,7 +52,7 @@ class HeaderSection extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
           margin: const EdgeInsets.only(left: 30),
           onPressed: () {
-            Scrollable.ensureVisible(keyList["Home"]?.currentContext ?? context,
+            Scrollable.ensureVisible(keyList['Home']?.currentContext ?? context,
                 duration: const Duration(milliseconds: 800),
                 curve: Curves.linear);
           },
@@ -70,7 +69,7 @@ class HeaderSection extends StatelessWidget {
         style: TextStyle(
             fontFamily: Fonts.poppins, fontSize: 28, color: Color(0xFF16507B)),
       ).onTap(() {
-        GoRouter.of(context).push('/');
+        context.go('/');
       }),
     );
   }

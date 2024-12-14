@@ -1,9 +1,9 @@
-import 'package:flutter_next/flutter_next.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 class CompanyLogoItem extends StatefulWidget {
-  final String image;
   const CompanyLogoItem({super.key, required this.image});
+  final String image;
 
   @override
   State<CompanyLogoItem> createState() => _CompanyLogoItemState();
@@ -35,7 +35,8 @@ class _CompanyLogoItemState extends State<CompanyLogoItem>
               scaleController.reverse();
             }
             return ScaleTransition(
-                scale: Tween(begin: 1.0, end: 1.15).animate(scaleController),
+                scale: Tween<double>(begin: 1.0, end: 1.15)
+                    .animate(scaleController),
                 child: Image.asset(
                   widget.image,
                   width: width,

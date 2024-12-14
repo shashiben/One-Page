@@ -5,7 +5,7 @@ import '../home.dart';
 import '../views/portfolio_detail_section.dart';
 
 final GoRouter goRouter = GoRouter(
-  routes: [
+  routes: <RouteBase>[
     GoRoute(
       path: '/',
       pageBuilder: (BuildContext context, GoRouterState state) =>

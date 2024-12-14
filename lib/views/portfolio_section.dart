@@ -1,11 +1,12 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
+
 import '../app/colors.dart';
 import '../app/data.dart';
 import '../app/fonts.dart';
 import '../app/text_styles.dart';
 import '../models/portfolio_model.dart';
 import '../widgets/portfolio_item.dart';
-import 'package:flutter_next/flutter_next.dart';
-import 'package:flutter/material.dart';
 
 class PortfolioSection extends StatefulWidget {
   const PortfolioSection({super.key});
@@ -17,15 +18,15 @@ class PortfolioSection extends StatefulWidget {
 class _PortfolioSectionState extends State<PortfolioSection>
     with SingleTickerProviderStateMixin {
   int selectedIndex = 0;
-  List<String> tabs = ['All', 'App', 'Card', 'Web'];
+  List<String> tabs = <String>['All', 'App', 'Card', 'Web'];
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(children: [
+      child: Column(children: <Widget>[
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: <Widget>[
             Text(
               'PORTFOLIO',
               style: SectionTitle.h2(context),
@@ -43,7 +44,7 @@ class _PortfolioSectionState extends State<PortfolioSection>
         ),
         Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(
+                children: List<Widget>.generate(
                     tabs.length,
                     (int index) => HoverableWidget(
                           hoverBuilder:
@@ -72,16 +73,18 @@ class _PortfolioSectionState extends State<PortfolioSection>
                         )))
             .fadeIn(initialPosition: 80, variant: NextFadeInVariant.fadeInTop),
         NextGridView(
-                widthPercentages: const {
+                widthPercentages: const <GridPrefix, double>{
               GridPrefix.xs: 100,
               GridPrefix.sm: 100,
               GridPrefix.md: 50,
               GridPrefix.lg: 33.33,
-              GridPrefix.xl: 33.33
+              GridPrefix.xl: 33.33,
+              GridPrefix.xxl: 33.33
             },
                 children: portfolioItems
-                    .where((e) => (e.type == tabs.elementAt(selectedIndex) ||
-                        selectedIndex == 0))
+                    .where((PortfolioModel e) =>
+                        e.type == tabs.elementAt(selectedIndex) ||
+                        selectedIndex == 0)
                     .map((PortfolioModel e) => PortfolioItem(
                           portfolioItem: e,
                           shouldDisplay: true,

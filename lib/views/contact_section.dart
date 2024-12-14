@@ -1,10 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 import 'package:line_icons/line_icons.dart';
 
 import '../app/fonts.dart';
 import '../app/text_styles.dart';
-
-import 'package:flutter_next/flutter_next.dart';
-import 'package:flutter/material.dart';
 import '../widgets/contact_info_list_tile.dart';
 import '../widgets/text_field.dart';
 
@@ -23,13 +22,13 @@ class _ContactSectionState extends State<ContactSection> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ColoredBox(
       color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        children: <Widget>[
           Column(
-            children: [
+            children: <Widget>[
               Text(
                 'CONTACT',
                 style: SectionTitle.h2(context),
@@ -42,9 +41,9 @@ class _ContactSectionState extends State<ContactSection> {
               ).container(padding: const EdgeInsets.only(top: 10, bottom: 20)),
             ],
           ),
-          NextRow(children: [
+          NextRow(children: <NextCol>[
             const NextCol(
-                widthPercentages: {
+                widthPercentages: <GridPrefix, double>{
                   GridPrefix.xs: 100,
                   GridPrefix.sm: 100,
                   GridPrefix.md: 100,
@@ -53,7 +52,7 @@ class _ContactSectionState extends State<ContactSection> {
                 },
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: <Widget>[
                     ContactListTile(
                         title: 'Location:',
                         subtitle: 'Kurnool,Andhra Pradesh,518001',
@@ -69,7 +68,7 @@ class _ContactSectionState extends State<ContactSection> {
                   ],
                 )),
             NextCol(
-                widthPercentages: const {
+                widthPercentages: const <GridPrefix, double>{
                   GridPrefix.xs: 100,
                   GridPrefix.sm: 100,
                   GridPrefix.md: 100,
@@ -77,9 +76,9 @@ class _ContactSectionState extends State<ContactSection> {
                   GridPrefix.xl: 66.66
                 },
                 child: Column(
-                  children: [
+                  children: <Widget>[
                     Row(
-                      children: [
+                      children: <Widget>[
                         Expanded(
                           child: CommonTextField(
                               controller: nameController, hint: 'Your name'),
@@ -110,7 +109,7 @@ class _ContactSectionState extends State<ContactSection> {
                           color: Colors.white,
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
-                      child: const Text("Send Message"),
+                      child: const Text('Send Message'),
                     )
                   ],
                 ))

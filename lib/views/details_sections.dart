@@ -1,8 +1,9 @@
-import 'package:one_page/widgets/text_counter.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
+
 import '../app/data.dart';
 import '../app/fonts.dart';
-import 'package:flutter_next/flutter_next.dart';
-import 'package:flutter/material.dart';
+import '../widgets/text_counter.dart';
 
 class DetailsSection extends StatelessWidget {
   const DetailsSection({super.key});
@@ -16,15 +17,16 @@ class DetailsSection extends StatelessWidget {
       child: NextRow(
           children: details.entries
               .map((MapEntry<String, int> e) => NextCol(
-                      widthPercentages: const {
+                      widthPercentages: const <GridPrefix, double>{
                         GridPrefix.xs: 50,
                         GridPrefix.sm: 50,
                         GridPrefix.md: 50,
                         GridPrefix.lg: 25,
-                        GridPrefix.xl: 25
+                        GridPrefix.xl: 25,
+                        GridPrefix.xxl: 25,
                       },
                       child: Column(
-                        children: [
+                        children: <Widget>[
                           AnimatedCounter(
                               begin: 0,
                               duration: const Duration(seconds: 5),

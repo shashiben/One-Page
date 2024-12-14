@@ -1,7 +1,7 @@
-import '../app/data.dart';
-
-import 'package:flutter_next/flutter_next.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
+
+import '../app/data.dart';
 import '../models/feature_model.dart';
 import '../widgets/feature_item.dart';
 
@@ -18,7 +18,7 @@ class IconSection extends StatelessWidget {
           verticalSpacing: 30,
           children: featuresList
               .map((FeatureModel e) => NextCol(
-                    widthPercentages: const {
+                    widthPercentages: const <GridPrefix, double>{
                       GridPrefix.xs: 100,
                       GridPrefix.sm: 100,
                       GridPrefix.md: 50,

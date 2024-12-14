@@ -1,11 +1,11 @@
-import 'package:one_page/widgets/video_play_button.dart';
-import 'package:one_page/widgets/video_player.dart';
-import 'package:flutter_next/flutter_next.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 import '../app/colors.dart';
 import '../app/fonts.dart';
 import '../ordered_list.dart';
+import '../widgets/video_play_button.dart';
+import '../widgets/video_player.dart';
 
 class VideoSection extends StatelessWidget {
   const VideoSection({super.key});
@@ -20,9 +20,9 @@ class VideoSection extends StatelessWidget {
                   ? 60
                   : 40,
           vertical: 50),
-      child: NextRow(children: [
+      child: NextRow(children: <NextCol>[
         NextCol(
-            widthPercentages: const {
+            widthPercentages: const <GridPrefix, double>{
               GridPrefix.xs: 100,
               GridPrefix.sm: 100,
               GridPrefix.md: 50,
@@ -30,7 +30,7 @@ class VideoSection extends StatelessWidget {
               GridPrefix.xl: 50
             },
             child: Stack(
-              children: [
+              children: <Widget>[
                 Image.asset(
                   'assets/about-video.jpg',
                   fit: BoxFit.fitWidth,
@@ -44,7 +44,7 @@ class VideoSection extends StatelessWidget {
                               child: SizedBox(
                                 width: context.width * 0.95,
                                 height: context.height * 0.95,
-                                child: Stack(children: [
+                                child: Stack(children: <Widget>[
                                   Positioned(
                                       top: 15,
                                       right: 15,
@@ -67,7 +67,7 @@ class VideoSection extends StatelessWidget {
               ],
             ).fadeIn(variant: NextFadeInVariant.fadeInRight)),
         NextCol(
-            widthPercentages: const {
+            widthPercentages: const <GridPrefix, double>{
               GridPrefix.xs: 100,
               GridPrefix.sm: 100,
               GridPrefix.md: 50,
@@ -75,7 +75,7 @@ class VideoSection extends StatelessWidget {
               GridPrefix.xl: 50
             },
             child: Column(
-              children: [
+              children: <Widget>[
                 const Text(
                   'Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.',
                   style: TextStyle(
@@ -94,7 +94,7 @@ class VideoSection extends StatelessWidget {
                       color: Color(0xFF444444)),
                 ).container(padding: const EdgeInsets.only(bottom: 16)),
                 OrderedList(
-                    children: [
+                    children: <String>[
                   'Ullamco laboris nisi ut aliquip ex ea commodo consequat.',
                   'Duis aute irure dolor in reprehenderit in voluptate velit.',
                   'Voluptate repellendus pariatur reprehenderit corporis sint.',

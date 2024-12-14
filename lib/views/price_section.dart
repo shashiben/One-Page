@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
+
 import '../app/data.dart';
 import '../app/text_styles.dart';
-
-import 'package:flutter_next/flutter_next.dart';
-import 'package:flutter/material.dart';
 import '../models/pricing_model.dart';
 import '../widgets/pricing_item.dart';
 
@@ -17,10 +17,10 @@ class PriceSection extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Color(0xFFFDFDFD),
       ),
-      child: Column(children: [
+      child: Column(children: <Widget>[
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: <Widget>[
             Text(
               'PRICING',
               style: SectionTitle.h2(context),
@@ -39,28 +39,31 @@ class PriceSection extends StatelessWidget {
             variant: NextFadeInVariant.fadeInTop,
             initialPosition: 50,
             duration: const Duration(milliseconds: 300)),
-        LayoutBuilder(builder: (context, constraints) {
+        LayoutBuilder(
+            builder: (BuildContext context, BoxConstraints constraints) {
           return SizedBox(
             width: constraints.maxWidth * 0.8,
-            child:
-                NextRow(horizontalSpacing: 10, verticalSpacing: 30, children: [
-              ...priceList.map((PricingModel e) => NextCol(
-                    widthPercentages: const {
-                      GridPrefix.xs: 100,
-                      GridPrefix.sm: 100,
-                      GridPrefix.md: 50,
-                      GridPrefix.lg: 25,
-                      GridPrefix.xl: 25
-                    },
-                    child: PricingItem(
-                      index: priceList.indexOf(e),
-                      pricingModel: e,
-                      isActive: priceList.indexOf(e) == 1,
-                    ).zoom(
-                      duration: const Duration(milliseconds: 400),
-                    ),
-                  ))
-            ]),
+            child: NextRow(
+                horizontalSpacing: 10,
+                verticalSpacing: 30,
+                children: <NextCol>[
+                  ...priceList.map((PricingModel e) => NextCol(
+                        widthPercentages: const <GridPrefix, double>{
+                          GridPrefix.xs: 100,
+                          GridPrefix.sm: 100,
+                          GridPrefix.md: 50,
+                          GridPrefix.lg: 25,
+                          GridPrefix.xl: 25
+                        },
+                        child: PricingItem(
+                          index: priceList.indexOf(e),
+                          pricingModel: e,
+                          isActive: priceList.indexOf(e) == 1,
+                        ).zoom(
+                          duration: const Duration(milliseconds: 400),
+                        ),
+                      ))
+                ]),
           );
         }),
       ]),

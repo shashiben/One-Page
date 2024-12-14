@@ -1,14 +1,15 @@
-import 'package:line_icons/line_icons.dart';
-import 'package:one_page/models/social_links.dart';
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
+
 import '../models/feature_model.dart';
 import '../models/portfolio_model.dart';
 import '../models/pricing_model.dart';
 import '../models/service_model.dart';
+import '../models/social_links.dart';
 import '../models/team_model.dart';
 import '../models/testimonial_model.dart';
 
-List<FeatureModel> featuresList = [
+List<FeatureModel> featuresList = <FeatureModel>[
   FeatureModel(
       icon: LineIcons.layerGroup,
       title: 'Lorem Ipsum',
@@ -30,7 +31,7 @@ List<FeatureModel> featuresList = [
       description:
           'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis')
 ];
-List<TeamModel> teamList = [
+List<TeamModel> teamList = <TeamModel>[
   TeamModel(
       name: 'Walter White',
       image: 'assets/team/team-1.jpg',
@@ -46,13 +47,13 @@ List<TeamModel> teamList = [
       image: 'assets/team/team-4.jpg',
       role: 'Accountant')
 ];
-Map<String, int> details = {
+Map<String, int> details = <String, int>{
   'Happy Clients': 65,
   'Projects': 85,
   'Years of experience': 30,
   'Awards': 20
 };
-Map<String, String> faqList = {
+Map<String, String> faqList = <String, String>{
   'Non consectetur a erat nam at lectus urna duis?':
       'Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.',
   'Feugiat scelerisque varius morbi enim nunc?':
@@ -64,32 +65,32 @@ Map<String, String> faqList = {
   'Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor?':
       'Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.'
 };
-List<PricingModel> priceList = [
-  PricingModel(name: 'FREE', price: 0, included: [
+List<PricingModel> priceList = <PricingModel>[
+  PricingModel(name: 'FREE', price: 0, included: <String>[
     'Aida dere',
     'Nec feugiat nisl',
     'Nulla at volutpat dola',
-  ], notIncluded: [
+  ], notIncluded: <String>[
     'Pharetra massa',
     'Massa ultricies mi'
   ]),
-  PricingModel(name: 'BUSINESS', price: 19, included: [
+  PricingModel(name: 'BUSINESS', price: 19, included: <String>[
     'Aida dere',
     'Nec feugiat nisl',
     'Nulla at volutpat dola',
     'Pharetra massa',
-  ], notIncluded: [
+  ], notIncluded: <String>[
     'Massa ultricies mi'
   ]),
-  PricingModel(name: 'DEVELOPER', price: 029, included: [
+  PricingModel(name: 'DEVELOPER', price: 029, included: <String>[
     'Aida dere',
     'Nec feugiat nisl',
     'Nulla at volutpat dola',
     'Pharetra massa',
     'Massa ultricies mi'
-  ], notIncluded: [])
+  ], notIncluded: <String>[])
 ];
-List<ServiceModel> servicesList = [
+List<ServiceModel> servicesList = <ServiceModel>[
   ServiceModel(
       title: 'Lorem Ipsum',
       background: '''
@@ -151,7 +152,7 @@ List<ServiceModel> servicesList = [
       color: const Color(0xFF11dbcf),
       icon: LineIcons.tableTennis),
 ];
-List<TestimonialModel> reviewsList = [
+List<TestimonialModel> reviewsList = <TestimonialModel>[
   const TestimonialModel(
       name: 'Saul Goodman',
       image: 'assets/testimonials/testimonials-1.jpg',
@@ -183,7 +184,7 @@ List<TestimonialModel> reviewsList = [
       review:
           'Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.'),
 ];
-List<PortfolioModel> portfolioItems = [
+List<PortfolioModel> portfolioItems = <PortfolioModel>[
   PortfolioModel(
       name: 'App 1', type: 'App', image: 'assets/portfolio/portfolio-1.jpg'),
   PortfolioModel(
@@ -203,16 +204,16 @@ List<PortfolioModel> portfolioItems = [
   PortfolioModel(
       name: 'Web3', type: 'Web', image: 'assets/portfolio/portfolio-9.jpg'),
 ];
-List<SocialLinks> socialLinks = [
+List<SocialLinks> socialLinks = <SocialLinks>[
   SocialLinks(
       icon: Icons.facebook_outlined,
-      url: "https://www.facebook.com/shashiben7997"),
+      url: 'https://www.facebook.com/shashiben7997'),
   SocialLinks(
       icon: LineIcons.instagram,
-      url: "https://www.instagram.com/shashikumar7997/"),
+      url: 'https://www.instagram.com/shashikumar7997/'),
   SocialLinks(
       icon: LineIcons.linkedinIn,
-      url: "https://www.linkedin.com/in/shashi-kumar-58ab1b1a4/"),
-  SocialLinks(icon: LineIcons.github, url: "https://github.com/shashiben"),
-  SocialLinks(icon: LineIcons.medium, url: "https://medium.com/@ben75930"),
+      url: 'https://www.linkedin.com/in/shashi-kumar-58ab1b1a4/'),
+  SocialLinks(icon: LineIcons.github, url: 'https://github.com/shashiben'),
+  SocialLinks(icon: LineIcons.medium, url: 'https://medium.com/@ben75930'),
 ];

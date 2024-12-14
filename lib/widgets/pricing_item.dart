@@ -1,19 +1,19 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
+
 import '../app/colors.dart';
 import '../app/fonts.dart';
 import '../models/pricing_model.dart';
 
-import 'package:flutter_next/flutter_next.dart';
-import 'package:flutter/material.dart';
-
 class PricingItem extends StatelessWidget {
-  final PricingModel pricingModel;
-  final bool isActive;
-  final int index;
   const PricingItem(
       {super.key,
       required this.pricingModel,
       this.isActive = false,
       required this.index});
+  final PricingModel pricingModel;
+  final bool isActive;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class PricingItem extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(4),
-            boxShadow: [
+            boxShadow: <BoxShadow>[
               BoxShadow(
                 color: const Color.fromRGBO(18, 66, 101, 0.08),
                 blurRadius: 10,
@@ -40,7 +40,7 @@ class PricingItem extends StatelessWidget {
             color: backgroundColor,
           ),
           child: Column(
-            children: [
+            children: <Widget>[
               Text(
                 pricingModel.name,
                 style: TextStyle(
@@ -50,13 +50,13 @@ class PricingItem extends StatelessWidget {
                     color: isActive ? Colors.white : textPrimaryColor),
               ).container(padding: const EdgeInsets.all(15).copyWith(top: 25)),
               Text.rich(TextSpan(
-                  text: '\$',
+                  text: r'$',
                   style: TextStyle(
                       fontFamily: Fonts.openSans,
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
                       color: isActive ? Colors.white : textPrimaryColor),
-                  children: [
+                  children: <InlineSpan>[
                     TextSpan(
                       text: '${pricingModel.price}',
                       style: TextStyle(
@@ -103,7 +103,7 @@ class PricingItem extends StatelessWidget {
                     outlineColor:
                         !isActive ? context.primaryColor : Colors.white,
                     variant: NextButtonVariant.outlined,
-                    child: const Text("Buy now"),
+                    child: const Text('Buy now'),
                     onPressed: () {}),
               )
             ],

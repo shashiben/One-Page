@@ -1,24 +1,6 @@
 import 'package:flutter/widgets.dart';
 
 class AnimatedCounter extends StatefulWidget {
-  final double begin;
-  final double end;
-  final int precision;
-  final Curve curve;
-  final Duration duration;
-  final TextStyle? style;
-  final TextAlign? textAlign;
-  final TextDirection? textDirection;
-  final Locale? locale;
-  final bool? softWrap;
-  final TextOverflow? overflow;
-  final double? textScaleFactor;
-  final int? maxLines;
-  final String? semanticsLabel;
-  final String? separator;
-  final String prefix;
-  final String suffix;
-
   const AnimatedCounter({
     super.key,
     required this.begin,
@@ -39,6 +21,23 @@ class AnimatedCounter extends StatefulWidget {
     this.prefix = '',
     this.suffix = '',
   });
+  final double begin;
+  final double end;
+  final int precision;
+  final Curve curve;
+  final Duration duration;
+  final TextStyle? style;
+  final TextAlign? textAlign;
+  final TextDirection? textDirection;
+  final Locale? locale;
+  final bool? softWrap;
+  final TextOverflow? overflow;
+  final double? textScaleFactor;
+  final int? maxLines;
+  final String? semanticsLabel;
+  final String? separator;
+  final String prefix;
+  final String suffix;
 
   @override
   State<AnimatedCounter> createState() => _AnimatedCounterState();
@@ -67,7 +66,7 @@ class _AnimatedCounterState extends State<AnimatedCounter>
 
   @override
   Widget build(BuildContext context) {
-    CurvedAnimation curvedAnimation =
+    final CurvedAnimation curvedAnimation =
         CurvedAnimation(parent: _controller, curve: widget.curve);
     _animation = Tween<double>(begin: widget.begin, end: widget.end)
         .animate(curvedAnimation);
@@ -101,23 +100,6 @@ class _AnimatedCounterState extends State<AnimatedCounter>
 }
 
 class _CountupAnimatedText extends AnimatedWidget {
-  final RegExp reg = RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))');
-
-  final Animation<double> animation;
-  final int precision;
-  final TextStyle? style;
-  final TextAlign? textAlign;
-  final TextDirection? textDirection;
-  final Locale? locale;
-  final bool? softWrap;
-  final TextOverflow? overflow;
-  final double? textScaleFactor;
-  final int? maxLines;
-  final String? semanticsLabel;
-  final String? separator;
-  final String? prefix;
-  final String? suffix;
-
   _CountupAnimatedText({
     super.key,
     required this.animation,
@@ -135,6 +117,22 @@ class _CountupAnimatedText extends AnimatedWidget {
     this.prefix,
     this.suffix,
   }) : super(listenable: animation);
+  final RegExp reg = RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))');
+
+  final Animation<double> animation;
+  final int precision;
+  final TextStyle? style;
+  final TextAlign? textAlign;
+  final TextDirection? textDirection;
+  final Locale? locale;
+  final bool? softWrap;
+  final TextOverflow? overflow;
+  final double? textScaleFactor;
+  final int? maxLines;
+  final String? semanticsLabel;
+  final String? separator;
+  final String? prefix;
+  final String? suffix;
 
   @override
   Widget build(BuildContext context) => Text(

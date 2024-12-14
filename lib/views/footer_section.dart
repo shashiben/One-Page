@@ -1,12 +1,11 @@
 import 'package:flutter/gestures.dart';
-import 'package:one_page/app/data.dart';
-import 'package:one_page/services/url_service.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 import '../app/colors.dart';
+import '../app/data.dart';
 import '../app/fonts.dart';
-
-import 'package:flutter_next/flutter_next.dart';
-import 'package:flutter/material.dart';
+import '../services/url_service.dart';
 import '../widgets/footer_item.dart';
 import '../widgets/news_letter.dart';
 
@@ -16,16 +15,16 @@ class FooterSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
+      children: <Widget>[
         Container(
           padding: EdgeInsets.symmetric(
               horizontal: context.isMobile ? 20 : context.width * 0.05,
               vertical: 40),
           color: Colors.white,
           width: context.width,
-          child: NextRow(verticalSpacing: 30, children: [
+          child: NextRow(verticalSpacing: 30, children: <NextCol>[
             NextCol(
-                widthPercentages: const {
+                widthPercentages: const <GridPrefix, double>{
                   GridPrefix.xs: 100,
                   GridPrefix.sm: 100,
                   GridPrefix.md: 50,
@@ -34,7 +33,7 @@ class FooterSection extends StatelessWidget {
                 },
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: <Widget>[
                     const Text(
                       'OnePage',
                       style: TextStyle(
@@ -50,7 +49,7 @@ class FooterSection extends StatelessWidget {
                           fontSize: 14,
                           color: Color(0xFF777777)),
                     ).container(padding: const EdgeInsets.only(bottom: 15)),
-                    const Text.rich(TextSpan(children: [
+                    const Text.rich(TextSpan(children: <InlineSpan>[
                       TextSpan(
                           text: 'Phone:',
                           style: TextStyle(
@@ -65,7 +64,7 @@ class FooterSection extends StatelessWidget {
                               fontSize: 14,
                               color: Color(0xFF777777)))
                     ])).container(padding: const EdgeInsets.only(bottom: 8)),
-                    const Text.rich(TextSpan(children: [
+                    const Text.rich(TextSpan(children: <InlineSpan>[
                       TextSpan(
                           text: 'Email:',
                           style: TextStyle(
@@ -83,7 +82,7 @@ class FooterSection extends StatelessWidget {
                   ],
                 )),
             NextCol(
-                widthPercentages: const {
+                widthPercentages: const <GridPrefix, double>{
                   GridPrefix.xs: 100,
                   GridPrefix.sm: 100,
                   GridPrefix.md: 50,
@@ -92,7 +91,7 @@ class FooterSection extends StatelessWidget {
                 },
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: <Widget>[
                     const Text(
                       'Useful Links',
                       style: TextStyle(
@@ -109,7 +108,7 @@ class FooterSection extends StatelessWidget {
                   ],
                 )),
             NextCol(
-                widthPercentages: const {
+                widthPercentages: const <GridPrefix, double>{
                   GridPrefix.xs: 100,
                   GridPrefix.sm: 100,
                   GridPrefix.md: 50,
@@ -118,7 +117,7 @@ class FooterSection extends StatelessWidget {
                 },
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: <Widget>[
                     const Text(
                       'Our Services',
                       style: TextStyle(
@@ -134,7 +133,7 @@ class FooterSection extends StatelessWidget {
                     const FooterItem(title: 'Graphic Design'),
                   ],
                 )),
-            const NextCol(widthPercentages: {
+            const NextCol(widthPercentages: <GridPrefix, double>{
               GridPrefix.xs: 100,
               GridPrefix.sm: 100,
               GridPrefix.md: 50,
@@ -152,9 +151,9 @@ class FooterSection extends StatelessWidget {
           child: Container(
             color: const Color(0xFFF8FBFE),
             width: context.width,
-            child: NextRow(verticalSpacing: 15, children: [
+            child: NextRow(verticalSpacing: 15, children: <NextCol>[
               NextCol(
-                  widthPercentages: const {
+                  widthPercentages: const <GridPrefix, double>{
                     GridPrefix.xs: 100,
                     GridPrefix.sm: 100,
                     GridPrefix.md: 50,
@@ -164,19 +163,19 @@ class FooterSection extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                    children: <Widget>[
                       Text.rich(TextSpan(
                           style: const TextStyle(
                             fontFamily: Fonts.openSans,
                           ),
-                          children: [
+                          children: <InlineSpan>[
                             const TextSpan(text: '© Created by '),
                             TextSpan(
                                 text: 'Shashi. ',
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
                                     UrlService.launchUrl(
-                                        "https://github.com/shashiben");
+                                        'https://github.com/shashiben');
                                   },
                                 style: const TextStyle(
                                     fontFamily: Fonts.openSans,
@@ -188,14 +187,14 @@ class FooterSection extends StatelessWidget {
                           style: const TextStyle(
                             fontFamily: Fonts.openSans,
                           ),
-                          children: [
+                          children: <InlineSpan>[
                             const TextSpan(text: 'With the help of '),
                             TextSpan(
                                 text: 'Flutter Next ',
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
                                     UrlService.launchUrl(
-                                        "https://pub.dev/packages/flutter_next");
+                                        'https://pub.dev/packages/flutter_next');
                                   },
                                 style: TextStyle(
                                     fontFamily: Fonts.openSans,
@@ -205,7 +204,7 @@ class FooterSection extends StatelessWidget {
                     ],
                   )),
               NextCol(
-                  widthPercentages: const {
+                  widthPercentages: const <GridPrefix, double>{
                     GridPrefix.xs: 100,
                     GridPrefix.sm: 100,
                     GridPrefix.md: 50,
@@ -216,11 +215,12 @@ class FooterSection extends StatelessWidget {
                       mainAxisAlignment: context.isMobile
                           ? MainAxisAlignment.center
                           : MainAxisAlignment.end,
-                      children: List.generate(
+                      children: List<Widget>.generate(
                         socialLinks.length,
-                        (index) => NextButton(
+                        (int index) => NextButton(
                             margin: const EdgeInsets.only(right: 10),
-                            itemBuilder: (context, bool isHovered, color) =>
+                            itemBuilder: (BuildContext context, bool isHovered,
+                                    Color? color) =>
                                 Container(
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(4),

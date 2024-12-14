@@ -1,11 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter_next/flutter_next.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 import 'package:go_router/go_router.dart';
 
 import '../app/fonts.dart';
-
 import 'footer_section.dart';
 import 'header_section.dart';
 
@@ -18,27 +17,27 @@ class PortfolioDetailSection extends StatefulWidget {
 
 class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
   int currentIndex = 0;
-  late CarouselController pageController;
+  late CarouselSliderController pageController;
   @override
   void initState() {
     super.initState();
-    pageController = CarouselController();
+    pageController = CarouselSliderController();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: [
+        children: <Widget>[
           const HeaderSection(
-            titles: [],
+            titles: <String>[],
           ),
           Expanded(
             child: SingleChildScrollView(
               physics: const AlwaysScrollableScrollPhysics(),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: <Widget>[
                     Container(
                       color: const Color(0xFFF8FBFE),
                       padding: EdgeInsets.symmetric(
@@ -46,9 +45,9 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                           horizontal:
                               context.isMobile ? 20 : context.width * 0.05),
                       width: context.width,
-                      child: NextRow(children: [
+                      child: NextRow(children: <NextCol>[
                         const NextCol(
-                            widthPercentages: {
+                            widthPercentages: <GridPrefix, double>{
                               GridPrefix.xs: 100,
                               GridPrefix.sm: 100,
                               GridPrefix.md: 100,
@@ -62,7 +61,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                                     fontSize: 24,
                                     fontWeight: FontWeight.w300))),
                         NextCol(
-                            widthPercentages: const {
+                            widthPercentages: const <GridPrefix, double>{
                               GridPrefix.xs: 100,
                               GridPrefix.sm: 100,
                               GridPrefix.md: 100,
@@ -73,7 +72,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                               mainAxisAlignment: context.width > 992
                                   ? MainAxisAlignment.end
                                   : MainAxisAlignment.start,
-                              children: [
+                              children: <Widget>[
                                 Text.rich(TextSpan(
                                     text: 'Home   ',
                                     style: TextStyle(
@@ -84,7 +83,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                                       ..onTap = () {
                                         GoRouter.of(context).pop();
                                       },
-                                    children: const [
+                                    children: const <InlineSpan>[
                                       TextSpan(
                                         text: '/   ',
                                         style: TextStyle(
@@ -110,9 +109,9 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                               context.isMobile ? 20 : context.width * 0.05),
                       margin: const EdgeInsets.only(top: 40, bottom: 80),
                       child: NextRow(
-                        children: [
+                        children: <NextCol>[
                           NextCol(
-                            widthPercentages: const {
+                            widthPercentages: const <GridPrefix, double>{
                               GridPrefix.xs: 12,
                               GridPrefix.sm: 12,
                               GridPrefix.md: 12,
@@ -120,7 +119,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                               GridPrefix.xl: 66.66
                             },
                             child: Column(
-                              children: [
+                              children: <Widget>[
                                 SizedBox(
                                     height:
                                         context.isMobile ? 250 : context.height,
@@ -128,7 +127,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                                     child: ScrollConfiguration(
                                       behavior: ScrollConfiguration.of(context)
                                           .copyWith(
-                                        dragDevices: {
+                                        dragDevices: <PointerDeviceKind>{
                                           PointerDeviceKind.touch,
                                           PointerDeviceKind.mouse,
                                         },
@@ -144,7 +143,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                                               });
                                             },
                                             viewportFraction: 1),
-                                        items: List.generate(
+                                        items: List<Widget>.generate(
                                             3,
                                             (int index) => Image.asset(
                                                   'assets/portfolio/portfolio-${index + 1}.jpg',
@@ -158,7 +157,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                                     )),
                                 Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    children: List.generate(
+                                    children: List<Widget>.generate(
                                         3,
                                         (int index) => AnimatedContainer(
                                             margin: const EdgeInsets.symmetric(
@@ -170,7 +169,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                                                 color: index == currentIndex
                                                     ? context.primaryColor
                                                     : context.primaryColor
-                                                        .withOpacity(0.4)),
+                                                        .withValues(alpha: .4)),
                                             duration: const Duration(
                                                 milliseconds: 300)))).container(
                                     padding: const EdgeInsets.symmetric(
@@ -179,7 +178,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                             ),
                           ),
                           NextCol(
-                              widthPercentages: const {
+                              widthPercentages: const <GridPrefix, double>{
                                 GridPrefix.xs: 12,
                                 GridPrefix.sm: 12,
                                 GridPrefix.md: 12,
@@ -188,7 +187,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                               },
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
+                                children: <Widget>[
                                   Container(
                                     padding: const EdgeInsets.all(30),
                                     decoration: const BoxDecoration(
@@ -196,7 +195,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
-                                      children: [
+                                      children: <Widget>[
                                         const Text(
                                           'Project Information',
                                           style: TextStyle(
@@ -260,7 +259,7 @@ class _PortfolioDetailSectionState extends State<PortfolioDetailSection> {
             fontSize: 15,
             color: Color(0xFF444444),
             fontWeight: FontWeight.bold),
-        children: [
+        children: <InlineSpan>[
           TextSpan(
             text: content,
             recognizer: hasLink ? tapGestureRecognizer : null,

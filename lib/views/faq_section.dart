@@ -1,12 +1,13 @@
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 import 'package:line_icons/line_icons.dart';
 
 import '../app/colors.dart';
 import '../app/data.dart';
 import '../app/fonts.dart';
 import '../app/text_styles.dart';
-import 'package:flutter_next/flutter_next.dart';
-import 'package:flutter/material.dart';
-import 'dart:math';
 
 class FAQSection extends StatelessWidget {
   const FAQSection({super.key});
@@ -20,10 +21,10 @@ class FAQSection extends StatelessWidget {
       color: const Color.fromRGBO(248, 251, 254, 1),
       width: double.infinity,
       child: Column(
-        children: [
+        children: <Widget>[
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: <Widget>[
               Text(
                 'FREQUENTLY ASKED QUESTIONS',
                 textAlign: TextAlign.center,
@@ -44,7 +45,7 @@ class FAQSection extends StatelessWidget {
               initialPosition: 50,
               duration: const Duration(milliseconds: 300)),
           Column(
-            children: [
+            children: <Widget>[
               ...faqList.entries
                   .map((MapEntry<String, String> e) => HoverableWidget(
                         hoverBuilder: (BuildContext context, bool isHovered) =>
@@ -83,7 +84,7 @@ class FAQSection extends StatelessWidget {
                           ),
                           initiallyExpanded:
                               faqList.keys.toList().indexOf(e.key) == 0,
-                          children: [
+                          children: <Widget>[
                             Text(
                               e.value,
                               textAlign: TextAlign.start,

@@ -1,9 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
+
 import '../app/data.dart';
 import '../app/text_styles.dart';
-import 'package:flutter_next/flutter_next.dart';
-import 'package:flutter/material.dart';
 import '../models/testimonial_model.dart';
 import '../widgets/testimonial_item.dart';
 
@@ -16,11 +17,11 @@ class TestimonialSection extends StatefulWidget {
 
 class _TestimonialSectionState extends State<TestimonialSection> {
   int currentIndex = 0;
-  late CarouselController pageController;
+  late CarouselSliderController pageController;
   @override
   void initState() {
     super.initState();
-    pageController = CarouselController();
+    pageController = CarouselSliderController();
   }
 
   @override
@@ -30,14 +31,14 @@ class _TestimonialSectionState extends State<TestimonialSection> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ColoredBox(
       color: Colors.white,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
+        children: <Widget>[
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: <Widget>[
               Text(
                 'TESTIMONIALS',
                 style: SectionTitle.h2(context),
@@ -55,10 +56,10 @@ class _TestimonialSectionState extends State<TestimonialSection> {
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: <Widget>[
               ScrollConfiguration(
                 behavior: ScrollConfiguration.of(context).copyWith(
-                  dragDevices: {
+                  dragDevices: <PointerDeviceKind>{
                     PointerDeviceKind.touch,
                     PointerDeviceKind.mouse,
                   },
@@ -73,7 +74,8 @@ class _TestimonialSectionState extends State<TestimonialSection> {
                               ? 1 / 2
                               : 1 / 3,
                       autoPlay: true,
-                      onPageChanged: (index, reason) {
+                      onPageChanged:
+                          (int index, CarouselPageChangedReason reason) {
                         setState(() {
                           currentIndex = index;
                         });
@@ -89,7 +91,7 @@ class _TestimonialSectionState extends State<TestimonialSection> {
                           context.isMobile ? 20 : context.width * 0.05)),
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
+                  children: List<Widget>.generate(
                       reviewsList.length,
                       (int index) => AnimatedContainer(
                                   margin:
@@ -97,11 +99,12 @@ class _TestimonialSectionState extends State<TestimonialSection> {
                                   height: 15,
                                   width: 15,
                                   decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: index == currentIndex
-                                          ? context.primaryColor
-                                          : context.primaryColor
-                                              .withOpacity(0.4)),
+                                    shape: BoxShape.circle,
+                                    color: index == currentIndex
+                                        ? context.primaryColor
+                                        : context.primaryColor
+                                            .withValues(alpha: .4),
+                                  ),
                                   duration: const Duration(milliseconds: 300))
                               .onTap(() {
                             pageController.animateToPage(index);

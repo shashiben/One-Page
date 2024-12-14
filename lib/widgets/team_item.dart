@@ -1,20 +1,20 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 import 'package:line_icons/line_icons.dart';
 
 import '../app/fonts.dart';
 import '../models/team_model.dart';
-import 'package:flutter_next/flutter_next.dart';
-import 'package:flutter/material.dart';
 
 class TeamItem extends StatelessWidget {
-  final TeamModel member;
   const TeamItem({super.key, required this.member});
+  final TeamModel member;
 
   @override
   Widget build(BuildContext context) {
     return HoverableWidget(
       hoverBuilder: (BuildContext context, bool isHovered) => Container(
         width: context.width,
-        decoration: BoxDecoration(boxShadow: [
+        decoration: BoxDecoration(boxShadow: <BoxShadow>[
           BoxShadow(
             color: const Color.fromRGBO(18, 66, 101, 0.08),
             blurRadius: 15,
@@ -25,9 +25,9 @@ class TeamItem extends StatelessWidget {
             ),
           ),
         ], color: Colors.white, borderRadius: BorderRadius.circular(6)),
-        child: Column(children: [
+        child: Column(children: <Widget>[
           Stack(
-            children: [
+            children: <Widget>[
               Image.asset(
                 member.image,
                 fit: BoxFit.fitHeight,
@@ -42,16 +42,16 @@ class TeamItem extends StatelessWidget {
                   opacity: isHovered ? 1 : 0,
                   child: Container(
                     padding: const EdgeInsets.symmetric(vertical: 10),
-                    decoration:
-                        BoxDecoration(color: Colors.white.withOpacity(0.8)),
+                    decoration: BoxDecoration(
+                        color: Colors.white.withValues(alpha: .8)),
                     width: double.infinity,
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          (LineIcons.twitter),
-                          (LineIcons.facebook),
-                          (LineIcons.instagram),
-                          (LineIcons.linkedin)
+                        children: <IconData>[
+                          LineIcons.twitter,
+                          LineIcons.facebook,
+                          LineIcons.instagram,
+                          LineIcons.linkedin
                         ]
                             .map((IconData e) => HoverableWidget(
                                   hoverBuilder: (BuildContext context,
@@ -73,7 +73,7 @@ class TeamItem extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
             child: Column(
-              children: [
+              children: <Widget>[
                 Text(
                   member.name,
                   style: const TextStyle(

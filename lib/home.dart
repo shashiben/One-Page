@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_next/flutter_next.dart';
 
@@ -16,7 +17,8 @@ import 'views/services_section.dart';
 import 'views/team_section.dart';
 import 'views/testimonial_section.dart';
 
-final Map<String, GlobalKey<State<StatefulWidget>>> sectionKeys = {
+final Map<String, GlobalKey<State<StatefulWidget>>> sectionKeys =
+    <String, GlobalKey<State<StatefulWidget>>>{
   'Home': GlobalKey(debugLabel: 'Home'),
   'About': GlobalKey(debugLabel: 'About'),
   'Services': GlobalKey(debugLabel: 'Services'),
@@ -34,17 +36,34 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
-  ScrollController scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
   double currentHeight = 0.0;
 
   @override
   void initState() {
     super.initState();
-    scrollController.addListener(() {
+    _scrollController.addListener(() {
       setState(() {
-        currentHeight = scrollController.offset;
+        currentHeight = _scrollController.offset;
       });
     });
+  }
+
+  int scrollStartTime = 0;
+  int previousScrollTime = 0;
+  void _animateTo(double targetPosition) {
+    if (_scrollController.hasClients) {
+      final int deltaScrollTime =
+          DateTime.now().millisecondsSinceEpoch - previousScrollTime;
+      final int animationDuration =
+          deltaScrollTime < 500 ? deltaScrollTime : 500;
+      _scrollController.animateTo(
+        targetPosition,
+        duration: Duration(milliseconds: animationDuration),
+        curve: Curves.easeOut,
+      );
+      previousScrollTime = DateTime.now().millisecondsSinceEpoch;
+    }
   }
 
   @override
@@ -60,7 +79,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4)),
                   onPressed: () {
-                    scrollController.animateTo(0,
+                    _scrollController.animateTo(0,
                         duration: const Duration(milliseconds: 800),
                         curve: Curves.linear);
                   },
@@ -72,9 +91,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               : const SizedBox.shrink(),
         ),
         body: Column(
-          children: [
+          children: <Widget>[
             HeaderSection(
-              titles: const [
+              titles: const <String>[
                 'Home',
                 'About',
                 'Services',
@@ -86,51 +105,65 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               keyList: sectionKeys,
             ),
             Expanded(
-              child: SingleChildScrollView(
-                controller: scrollController,
-                child: Column(children: [
-                  Container(
-                    decoration: const BoxDecoration(
-                        color: Colors.white,
-                        image: DecorationImage(
-                            colorFilter: ColorFilter.mode(
-                                Color.fromRGBO(255, 255, 255, 0.8),
-                                BlendMode.lighten),
-                            image: AssetImage('assets/hero-bg.jpg'),
-                            fit: BoxFit.fill)),
-                    child: Column(
-                      children: [
-                        HomeSection(
-                          key: sectionKeys['Home'],
-                        ),
-                        const IconSection(),
-                      ],
+              child: Listener(
+                onPointerSignal: (PointerSignalEvent event) {
+                  if (event is PointerScrollEvent) {
+                    final double nextPosition =
+                        _scrollController.position.pixels +
+                            event.scrollDelta.dy;
+                    scrollStartTime = DateTime.now().millisecondsSinceEpoch;
+                    _animateTo(
+                      nextPosition,
+                    );
+                  }
+                  return;
+                },
+                child: SingleChildScrollView(
+                  controller: _scrollController,
+                  child: Column(children: <Widget>[
+                    Container(
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          image: DecorationImage(
+                              colorFilter: ColorFilter.mode(
+                                  Color.fromRGBO(255, 255, 255, 0.8),
+                                  BlendMode.lighten),
+                              image: AssetImage('assets/hero-bg.jpg'),
+                              fit: BoxFit.fill)),
+                      child: Column(
+                        children: <Widget>[
+                          HomeSection(
+                            key: sectionKeys['Home'],
+                          ),
+                          const IconSection(),
+                        ],
+                      ),
                     ),
-                  ),
-                  AboutSection(
-                    key: sectionKeys['About'],
-                  ),
-                  const ClientSection(),
-                  const TestimonialSection(),
-                  ServicesSection(
-                    key: sectionKeys['Services'],
-                  ),
-                  const CTASection(),
-                  PortfolioSection(
-                    key: sectionKeys['Portfolio'],
-                  ),
-                  TeamSection(
-                    key: sectionKeys['Team'],
-                  ),
-                  PriceSection(
-                    key: sectionKeys['Pricing'],
-                  ),
-                  const FAQSection(),
-                  ContactSection(
-                    key: sectionKeys['Contact'],
-                  ),
-                  const FooterSection()
-                ]),
+                    AboutSection(
+                      key: sectionKeys['About'],
+                    ),
+                    const ClientSection(),
+                    const TestimonialSection(),
+                    ServicesSection(
+                      key: sectionKeys['Services'],
+                    ),
+                    const CTASection(),
+                    PortfolioSection(
+                      key: sectionKeys['Portfolio'],
+                    ),
+                    TeamSection(
+                      key: sectionKeys['Team'],
+                    ),
+                    PriceSection(
+                      key: sectionKeys['Pricing'],
+                    ),
+                    const FAQSection(),
+                    ContactSection(
+                      key: sectionKeys['Contact'],
+                    ),
+                    const FooterSection()
+                  ]),
+                ),
               ),
             ),
           ],

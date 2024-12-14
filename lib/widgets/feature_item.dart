@@ -1,13 +1,13 @@
-import 'package:flutter_next/flutter_next.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 import '../app/colors.dart';
 import '../app/text_styles.dart';
 import '../models/feature_model.dart';
 
 class FeatureItem extends StatefulWidget {
-  final FeatureModel feature;
   const FeatureItem({super.key, required this.feature});
+  final FeatureModel feature;
 
   @override
   State<FeatureItem> createState() => _FeatureItemState();
@@ -43,13 +43,13 @@ class _FeatureItemState extends State<FeatureItem>
             _controller.reverse();
           }
           return ScaleTransition(
-            scale: Tween(begin: 1.0, end: 1.08).animate(_controller),
+            scale: Tween<double>(begin: 1.0, end: 1.08).animate(_controller),
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 700),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 color: Colors.white,
-                boxShadow: [
+                boxShadow: <BoxShadow>[
                   BoxShadow(
                     color: const Color.fromRGBO(18, 66, 101, 0.08),
                     blurRadius: 15,
@@ -64,7 +64,7 @@ class _FeatureItemState extends State<FeatureItem>
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: <Widget>[
                     Icon(
                       widget.feature.icon,
                       size: 36,

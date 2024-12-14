@@ -1,19 +1,19 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 import 'package:line_icons/line_icons.dart';
 
 import '../app/fonts.dart';
-import 'package:flutter_next/flutter_next.dart';
-import 'package:flutter/material.dart';
 import '../models/testimonial_model.dart';
 import 'message_clipper.dart';
 
 class TestimonialItem extends StatelessWidget {
-  final TestimonialModel review;
   const TestimonialItem({super.key, required this.review});
+  final TestimonialModel review;
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
+      children: <Widget>[
         Container(
             width: 400,
             height: 250,
@@ -26,7 +26,7 @@ class TestimonialItem extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: <Widget>[
                 const Icon(
                   LineIcons.quoteLeft,
                   color: Color(0xFFc9e3f5),

@@ -1,5 +1,5 @@
-import 'package:flutter_next/flutter_next.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 import '../app/fonts.dart';
 
@@ -10,7 +10,7 @@ class NewsLetterWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+      children: <Widget>[
         const Text(
           'Join Our Newsletter',
           style: TextStyle(
@@ -38,7 +38,7 @@ class NewsLetterWidget extends StatelessWidget {
                     bottomRight: Radius.circular(8)),
                 margin: EdgeInsets.zero,
                 style: const TextStyle(color: Colors.white),
-                child: const Text("Subscribe"),
+                child: const Text('Subscribe'),
                 onPressed: () {},
               ),
             ),

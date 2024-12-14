@@ -1,6 +1,7 @@
-import '../app/fonts.dart';
-import 'package:flutter_next/flutter_next.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
+
+import '../app/fonts.dart';
 
 class CTASection extends StatelessWidget {
   const CTASection({super.key});
@@ -12,7 +13,7 @@ class CTASection extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 50),
       decoration: BoxDecoration(color: context.primaryColor),
       child: Column(
-        children: [
+        children: <Widget>[
           const Text(
             'Call To Action',
             style: TextStyle(
@@ -43,7 +44,7 @@ class CTASection extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
               onPressed: () {},
-              child: const Text("Call To Action"))
+              child: const Text('Call To Action'))
         ],
       ).zoom(
         duration: const Duration(milliseconds: 250),

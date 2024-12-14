@@ -1,12 +1,12 @@
-import 'package:flutter_next/flutter_next.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 class CommonTextField extends StatelessWidget {
+  const CommonTextField(
+      {super.key, required this.controller, required this.hint, this.maxLines});
   final TextEditingController controller;
   final String hint;
   final int? maxLines;
-  const CommonTextField(
-      {super.key, required this.controller, required this.hint, this.maxLines});
 
   @override
   Widget build(BuildContext context) {

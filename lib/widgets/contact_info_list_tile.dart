@@ -1,22 +1,22 @@
-import 'package:flutter_next/flutter_next.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
 
 import '../app/fonts.dart';
 
 class ContactListTile extends StatelessWidget {
-  final String title, subtitle;
-  final IconData leadingIcon;
   const ContactListTile(
       {super.key,
       required this.title,
       required this.subtitle,
       required this.leadingIcon});
+  final String title, subtitle;
+  final IconData leadingIcon;
 
   @override
   Widget build(BuildContext context) {
     return HoverableWidget(
       hoverBuilder: (BuildContext context, bool isHovered) => Row(
-        children: [
+        children: <Widget>[
           AnimatedContainer(
               duration: const Duration(milliseconds: 400),
               width: 44,
@@ -24,7 +24,7 @@ class ContactListTile extends StatelessWidget {
               decoration: BoxDecoration(
                   color: isHovered
                       ? const Color(0xFF2487ce)
-                      : context.primaryColor.withOpacity(0.2),
+                      : context.primaryColor.withValues(alpha: .2),
                   borderRadius: BorderRadius.circular(5)),
               padding: const EdgeInsets.all(8),
               child: Icon(
@@ -34,7 +34,7 @@ class ContactListTile extends StatelessWidget {
               )),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: <Widget>[
               Text(
                 title,
                 style: const TextStyle(

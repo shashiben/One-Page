@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
+
 import '../app/fonts.dart';
 import '../app/text_styles.dart';
-
-import 'package:flutter_next/flutter_next.dart';
-import 'package:flutter/material.dart';
 import '../home.dart';
 
 class HomeSection extends StatelessWidget {
@@ -12,9 +12,10 @@ class HomeSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: context.height * 0.8,
-      child: NextRow(verticalAlignment: WrapAlignment.center, children: [
+      child:
+          NextRow(verticalAlignment: WrapAlignment.center, children: <NextCol>[
         NextCol(
-            widthPercentages: const {
+            widthPercentages: const <GridPrefix, double>{
               GridPrefix.xs: 100,
               GridPrefix.sm: 100,
               GridPrefix.md: 100,
@@ -22,7 +23,7 @@ class HomeSection extends StatelessWidget {
               GridPrefix.xl: 100
             },
             child: Column(
-              children: [
+              children: <Widget>[
                 Text(
                   'One Page Bootstrap\nWebsite Template',
                   style: h1(context),
@@ -40,7 +41,7 @@ class HomeSection extends StatelessWidget {
                   margin: const EdgeInsets.only(top: 30),
                   onPressed: () {
                     Scrollable.ensureVisible(
-                        sectionKeys["About"]?.currentContext ?? context,
+                        sectionKeys['About']?.currentContext ?? context,
                         duration: const Duration(milliseconds: 800),
                         curve: Curves.linear);
                   },

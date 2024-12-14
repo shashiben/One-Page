@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_next/flutter_next.dart';
+
 import '../app/data.dart';
 import '../app/text_styles.dart';
-
-import 'package:flutter_next/flutter_next.dart';
-import 'package:flutter/material.dart';
 import '../widgets/service_item.dart';
 
 class ServicesSection extends StatelessWidget {
@@ -17,10 +17,10 @@ class ServicesSection extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Color(0xFFFDFDFD),
       ),
-      child: Column(children: [
+      child: Column(children: <Widget>[
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: <Widget>[
             Text(
               'SERVICES',
               style: SectionTitle.h2(context),
@@ -41,16 +41,17 @@ class ServicesSection extends StatelessWidget {
         ),
         SizedBox(
           width: context.isMobile ? context.width * 0.92 : context.width * 0.8,
-          child: NextRow(verticalSpacing: 30, children: [
-            ...List.generate(
+          child: NextRow(verticalSpacing: 30, children: <NextCol>[
+            ...List<NextCol>.generate(
                 servicesList.length,
-                (index) => NextCol(
-                        widthPercentages: const {
+                (int index) => NextCol(
+                        widthPercentages: const <GridPrefix, double>{
                           GridPrefix.xs: 100,
                           GridPrefix.sm: 100,
                           GridPrefix.md: 50,
                           GridPrefix.lg: 33.33,
-                          GridPrefix.xl: 33.33
+                          GridPrefix.xl: 33.33,
+                          GridPrefix.xxl: 33.33
                         },
                         child: ServiceItem(
                           serviceModel: servicesList[index],
