@@ -16,10 +16,10 @@ jobs:
       with:
         channel: beta
     - run: flutter config --enable-web
-    - run: flutter build web
+    - run: flutter build web --release
 
     - name: Deploy to Netlify
-      uses: nwtgck/actions-netlify@v1.1
+      uses: nwtgck/actions-netlify@v3.0
       with:
         publish-dir: './build/web'
         production-branch: master
